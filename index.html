@@ -1,171 +1,541 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <title>ملف إنجاز المعلم سمران الدوسري</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    body { direction: rtl; font-family: "Tahoma", sans-serif; }
-    header { background: #006699; color: white; padding: 20px; text-align: center; }
-    footer { background: #f1f1f1; text-align: center; padding: 15px; margin-top: 30px; }
-    h2 { color: #006699; margin-top: 20px; }
-    .sidebar {
-      background: #f8f9fa;
-      padding: 20px;
-      border-left: 2px solid #ddd;
-      height: 100%;
-    }
-    .sidebar a {
-      display: block;
-      padding: 10px;
-      margin-bottom: 5px;
-      color: #006699;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .sidebar a:hover {
-      background: #006699;
-      color: white;
-    }
-    section { margin-bottom: 40px; }
-    .banner {
-      width: 100%;
-      height: 250px;
-      background: url('https://upload.wikimedia.org/wikipedia/commons/6/6d/Saudi_Ministry_of_Education_logo.png') no-repeat center;
-      background-size: contain;
-      background-color: #e6f2ff;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سمران بن عبد العزيز شديد · ملف الإنجاز</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===== الثيمات: فاتح (افتراضي) · داكن · أخضر ===== */
+  :root, [data-theme="light"] {
+    --bg: #fbfaf7; --card: #ffffff; --text: #1d2733; --muted: #64707f;
+    --heading: #0f2238; --line: #e7e2d6;
+    --hero-1: #0f2238; --hero-2: #1d3b5e; --hero-glow: rgba(201,162,74,.28);
+    --accent: #c9a24a; --accent-soft: #f7f0de; --accent-ink: #8a6a22;
+    --green: #146c43; --green-soft: #e8f3ec;
+    --header: rgba(255,255,255,.92); --alt: #ffffff;
+    --shadow: 0 6px 24px rgba(15,34,56,.07); --shadow-hover: 0 14px 36px rgba(15,34,56,.14);
+  }
+  [data-theme="dark"] {
+    --bg: #0b1220; --card: #121b2d; --text: #e3e9f2; --muted: #94a3b8;
+    --heading: #f1f5fa; --line: #23314a;
+    --hero-1: #060b16; --hero-2: #0f1d33; --hero-glow: rgba(232,184,74,.18);
+    --accent: #e8b84a; --accent-soft: #2a2415; --accent-ink: #f0c865;
+    --green: #5fd49a; --green-soft: #13261d;
+    --header: rgba(11,18,32,.92); --alt: #0e1728;
+    --shadow: 0 6px 24px rgba(0,0,0,.35); --shadow-hover: 0 14px 36px rgba(0,0,0,.5);
+  }
+  [data-theme="green"] {
+    --bg: #f3f8f4; --card: #ffffff; --text: #1c2b22; --muted: #5b6b61;
+    --heading: #0d3b26; --line: #d6e6db;
+    --hero-1: #0d4d30; --hero-2: #146c43; --hero-glow: rgba(201,162,74,.3);
+    --accent: #c9a24a; --accent-soft: #f7f0de; --accent-ink: #8a6a22;
+    --green: #146c43; --green-soft: #e3f1e8;
+    --header: rgba(255,255,255,.92); --alt: #ffffff;
+    --shadow: 0 6px 24px rgba(13,59,38,.08); --shadow-hover: 0 14px 36px rgba(13,59,38,.16);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  html.large-text { font-size: 19px; }
+  body { font-family: 'Tajawal', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; font-size: 17px; transition: background .4s, color .4s; }
+  a { color: inherit; text-decoration: none; }
+  .container { width: min(1120px, 92%); margin-inline: auto; }
+
+  #progress { position: fixed; top: 0; right: 0; height: 3px; width: 0; background: linear-gradient(90deg, var(--accent), var(--green)); z-index: 100; }
+
+  /* ===== الهيدر ===== */
+  header.nav { position: sticky; top: 0; z-index: 90; background: var(--header); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 12px; }
+  .logo { font-weight: 800; color: var(--heading); font-size: 1.05rem; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+  .logo .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .nav-links { display: flex; gap: 2px; list-style: none; }
+  .nav-links a { padding: 8px 12px; border-radius: 999px; font-size: .92rem; color: var(--muted); transition: .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--heading); background: var(--accent-soft); }
+
+  .tools { display: flex; align-items: center; gap: 6px; }
+  .tool-btn { border: 1px solid var(--line); background: var(--card); color: var(--heading); border-radius: 999px; padding: 5px 12px; font-family: inherit; font-size: .85rem; cursor: pointer; transition: .2s; }
+  .tool-btn:hover, .tool-btn.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); }
+  .menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; padding: 6px 12px; cursor: pointer; font-family: inherit; color: var(--heading); }
+
+  /* ===== الواجهة الرئيسية ===== */
+  .hero { background: linear-gradient(160deg, var(--hero-1) 0%, var(--hero-2) 100%); color: #fff; padding: 110px 0 120px; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: 0; opacity: .08; pointer-events: none; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 22px 22px; }
+  .hero::after { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; bottom: -240px; left: -180px; background: radial-gradient(circle, var(--hero-glow), transparent 70%); }
+  .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
+  .eyebrow-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); padding: 6px 16px; border-radius: 999px; font-size: .9rem; color: #e6ecf4; margin-bottom: 22px; }
+  .eyebrow-pill i { width: 8px; height: 8px; border-radius: 50%; background: #5fd49a; }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+  .hero h1 span { color: #e8b84a; }
+  .typing { min-height: 2em; color: #cfe0f2; font-size: 1.2rem; font-weight: 500; }
+  .typing::after { content: "|"; margin-right: 4px; animation: blink 1s steps(2) infinite; color: #e8b84a; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .role { color: #b9c7d8; margin: 14px 0 28px; }
+  .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: .98rem; transition: transform .2s, box-shadow .2s, background .2s; border: 1px solid transparent; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-gold { background: #e8b84a; color: #0f2238; box-shadow: 0 8px 22px rgba(201,162,74,.35); }
+  .btn-ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+  .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+  .profile-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 24px; padding: 30px; backdrop-filter: blur(6px); text-align: center; }
+  .avatar { width: 150px; height: 150px; border-radius: 50%; margin: 0 auto 18px; overflow: hidden; border: 4px solid rgba(255,255,255,.85); box-shadow: 0 0 0 6px rgba(255,255,255,.1), 0 12px 30px rgba(0,0,0,.25); background: #1d3b5e; }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
+  .profile-card h3 { font-size: 1.15rem; margin-bottom: 4px; }
+  .profile-card p { color: #b9c7d8; font-size: .95rem; }
+  .mini-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
+  .mini-stats div { background: rgba(255,255,255,.08); border-radius: 14px; padding: 12px 6px; }
+  .mini-stats b { display: block; font-size: 1.5rem; color: #e8b84a; line-height: 1.2; }
+  .mini-stats span { font-size: .8rem; color: #cfd9e6; }
+
+  /* ===== الأقسام ===== */
+  section { padding: 96px 0; }
+  section.alt { background: var(--alt); }
+  .section-head { margin-bottom: 44px; }
+  .eyebrow { color: var(--green); font-weight: 700; font-size: .9rem; letter-spacing: .3px; }
+  .title { font-size: clamp(1.8rem, 3.6vw, 2.5rem); font-weight: 800; color: var(--heading); margin: 4px 0 10px; }
+  .sub { color: var(--muted); max-width: 640px; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  .about-box { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 40px; box-shadow: var(--shadow); }
+  .about-box p { font-size: 1.1rem; color: var(--text); opacity: .9; margin-bottom: 12px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--accent); }
+  .icon { width: 50px; height: 50px; border-radius: 14px; background: var(--accent-soft); display: grid; place-items: center; font-size: 1.4rem; margin-bottom: 14px; }
+  .card h3 { color: var(--heading); font-size: 1.08rem; margin-bottom: 4px; }
+  .card p { color: var(--muted); font-size: .95rem; }
+
+  /* ===== المسيرة المهنية ===== */
+  .timeline { position: relative; max-width: 820px; padding-right: 30px; }
+  .timeline::before { content: ""; position: absolute; right: 9px; top: 6px; bottom: 6px; width: 2px; background: var(--line); }
+  .tl-item { position: relative; margin-bottom: 22px; }
+  .tl-item::before { content: ""; position: absolute; right: -27px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid var(--bg); box-shadow: 0 0 0 1px var(--accent); }
+  .tl-item.current::before { background: var(--green); box-shadow: 0 0 0 1px var(--green), 0 0 0 6px var(--green-soft); }
+  .tl-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px 26px; box-shadow: var(--shadow); }
+  .tl-date { color: var(--accent-ink); font-weight: 700; font-size: .88rem; }
+  .tl-card h3 { color: var(--heading); font-size: 1.12rem; margin: 2px 0 6px; }
+  .tl-card p { color: var(--muted); font-size: .95rem; }
+  .tl-card ul { list-style: none; margin-top: 8px; display: grid; gap: 6px; }
+  .tl-card li { color: var(--text); font-size: .95rem; padding-right: 18px; position: relative; }
+  .tl-card li::before { content: "◆"; color: var(--accent); position: absolute; right: 0; font-size: .6rem; top: .4em; }
+  .tl-card .sub-role { font-weight: 700; color: var(--heading); }
+
+  .edu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 16px; margin-top: 40px; }
+  .edu { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow); display: flex; gap: 14px; align-items: center; }
+  .edu .icon { margin: 0; flex-shrink: 0; }
+  .edu h4 { color: var(--heading); font-size: 1rem; }
+  .edu small { color: var(--muted); }
+  .sub-head { margin-top: 56px; color: var(--heading); font-size: 1.2rem; font-weight: 800; }
+
+  /* ===== الوثائق والأبحاث والشهادات ===== */
+  .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 26px; }
+  .search { flex: 1; min-width: 220px; max-width: 380px; background: var(--card); border: 1px solid var(--line); padding: 11px 18px; border-radius: 999px; font-family: inherit; font-size: 1rem; color: var(--text); outline: none; }
+  .search:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+  .count { color: var(--muted); font-size: .92rem; }
+  .file-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 16px; }
+  .file { display: flex; flex-direction: column; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s, border-color .25s; }
+  .file:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-color: var(--green); }
+  .file-top { display: flex; justify-content: space-between; align-items: center; }
+  .file-emo { font-size: 1.5rem; width: 44px; height: 44px; border-radius: 12px; background: var(--green-soft); display: grid; place-items: center; }
+  .tag { background: var(--accent-soft); color: var(--accent-ink); padding: 3px 12px; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+  .file h3 { font-size: 1rem; color: var(--heading); line-height: 1.5; }
+  .file small { color: var(--muted); font-size: .85rem; }
+  .file .open { margin-top: auto; color: var(--green); font-weight: 700; font-size: .92rem; }
+  .hidden { display: none !important; }
+
+  /* ===== التواصل ===== */
+  .contact-band { background: linear-gradient(160deg, var(--hero-1), var(--hero-2)); color: #fff; border-radius: 28px; padding: 56px 40px; text-align: center; }
+  .contact-band h2 { font-size: clamp(1.7rem, 3.5vw, 2.3rem); font-weight: 800; margin-bottom: 8px; }
+  .contact-band p { color: #b9c7d8; margin-bottom: 28px; }
+  .contact-cards { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .contact-item { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); border-radius: 16px; padding: 16px 24px; min-width: 230px; transition: background .2s; }
+  .contact-item:hover { background: rgba(255,255,255,.14); }
+  .contact-item small { display: block; color: #b9c7d8; font-size: .85rem; }
+  .contact-item strong { direction: ltr; display: inline-block; color: #fff; font-size: 1.02rem; }
+
+  footer { text-align: center; color: var(--muted); padding: 30px 0; font-size: .9rem; border-top: 1px solid var(--line); background: var(--card); }
+
+  @media (max-width: 960px) {
+    .tools { display: none; }
+    .nav-links { display: none; position: absolute; top: 68px; right: 0; left: 0; flex-direction: column; background: var(--card); padding: 10px 4% 16px; border-bottom: 1px solid var(--line); }
+    .nav-links.open { display: flex; }
+    .menu-btn { display: block; }
+  }
+  @media (max-width: 880px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .profile-card { max-width: 380px; margin: 0 auto; }
+    .about-box { padding: 26px; }
+    section { padding: 70px 0; }
+    .contact-band { padding: 40px 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
 </head>
 <body>
 
-<!-- القائمة العلوية -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">ملف الإنجاز</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div id="progress"></div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo"><span class="dot"></span>سمران شديد</a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">عنّي</a></li>
+      <li><a href="#tasks">مهامي</a></li>
+      <li><a href="#career">المسيرة</a></li>
+      <li><a href="#documents">الوثائق</a></li>
+      <li><a href="#research">الأبحاث</a></li>
+      <li><a href="#certs">الشهادات</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+
+    <div class="tools" aria-label="خيارات العرض">
+      <button class="tool-btn on" data-theme-btn="light">فاتح</button>
+      <button class="tool-btn" data-theme-btn="dark">داكن</button>
+      <button class="tool-btn" data-theme-btn="green">أخضر</button>
+      <button class="tool-btn" id="fontBtn">خط كبير</button>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="القائمة">☰</button>
   </div>
-</nav>
-
-<!-- بانر الصور -->
-<div class="banner"></div>
-
-<header>
-  <h1>ملف إنجاز المعلم سمران الدوسري</h1>
-  <p>متوسطة أوس بن ثابت – مكتب طويق</p>
 </header>
 
-<div class="container-fluid">
-  <div class="row">
-    <!-- الشريط الجانبي -->
-    <aside class="col-md-3 sidebar">
-      <h4>التنقل السريع</h4>
-      <a href="#about">🏠 الرئيسية</a>
-      <a href="#tasks">📝 مهامي</a>
-      <a href="#achievements">📑 شواهد الإنجاز</a>
-      <a href="#courses">🎓 الدورات والتطوير</a>
-      <a href="#research">📘 الأبحاث والتقارير</a>
-      <a href="#contact">📧 التواصل</a>
-    </aside>
-
-    <!-- المحتوى الرئيسي -->
-    <main class="col-md-9 p-4">
-      <!-- الرئيسية -->
-      <section id="about">
-        <h2>عنّي</h2>
-        <p>أنا المعلم سمران الدوسري، متخصص في اللغة العربية والمهارات الرقمية، بخبرة تزيد عن 13 عامًا في التعليم والتقنية. أعمل كأمين مصادر التعلم، مسؤول منصة مدرستي ونظام نور، وسفير التعليم الإلكتروني.</p>
-      </section>
-
-      <!-- مهامي -->
-      <section id="tasks">
-        <h2>مهامي في المدرسة</h2>
-        <ul class="list-group">
-          <li class="list-group-item">📚 أمين مصادر التعلم</li>
-          <li class="list-group-item">🤝 منسق العمل التطوعي</li>
-          <li class="list-group-item">💻 مسؤول نظام نور</li>
-          <li class="list-group-item">🌐 مسؤول منصة مدرستي</li>
-          <li class="list-group-item">🚀 سفير التعليم الإلكتروني</li>
-          <li class="list-group-item">🏆 عضو لجنة التميز</li>
-          <li class="list-group-item">📊 عضو لجنة التحصيل الدراسي</li>
-          <li class="list-group-item">🎯 عضو لجنة نافس</li>
-          <li class="list-group-item">📱 مسؤول قروبات أولياء الأمور</li>
-          <li class="list-group-item">🛠️ صيانة أجهزة المدرسة</li>
-        </ul>
-      </section>
-
-      <!-- شواهد الإنجاز -->
-      <section id="achievements">
-        <h2>شواهد الإنجاز</h2>
-        <table class="table table-bordered table-striped text-center">
-          <thead class="table-primary">
-            <tr>
-              <th>المهمة</th>
-              <th>تاريخ الإنجاز</th>
-              <th>نوع الشاهد</th>
-              <th>الرابط</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>تنسيق العمل التطوعي</td>
-              <td>1446/02/15هـ</td>
-              <td>صور النشاط + خطاب شكر</td>
-              <td><a href="https://drive.google.com/your-link1" target="_blank">عرض</a></td>
-            </tr>
-            <tr>
-              <td>صيانة أجهزة المدرسة</td>
-              <td>1446/03/10هـ</td>
-              <td>صور قبل وبعد الصيانة</td>
-              <td><a href="https://drive.google.com/your-link2" target="_blank">عرض</a></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- معرض صور -->
-        <div class="row gallery">
-          <div class="col-md-4"><img src="https://via.placeholder.com/300x200.png?text=صورة+1" alt="صورة 1"></div>
-          <div class="col-md-4"><img src="https://via.placeholder.com/300x200.png?text=صورة+2" alt="صورة 2"></div>
-          <div class="col-md-4"><img src="https://via.placeholder.com/300x200.png?text=صورة+3" alt="صورة 3"></div>
+<main>
+  <!-- الواجهة الرئيسية -->
+  <div class="hero" id="top">
+    <div class="container hero-inner">
+      <div>
+        <span class="eyebrow-pill"><i></i> متاح للتعاون في المشاريع التعليمية والتقنية</span>
+        <h1>سمران بن عبد العزيز <span>شديد</span></h1>
+        <div class="typing" id="typing"></div>
+        <p class="role">المنسق التقني ومسؤول منصة مدرستي ونظام نور · متوسطة أوس بن ثابت · مكتب طويق</p>
+        <div class="btn-row">
+          <a href="#certs" class="btn btn-gold">استعرض الشواهد</a>
+          <a href="#contact" class="btn btn-ghost">تواصل معي</a>
         </div>
-      </section>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar"><img src="samran.jpg" alt="صورة سمران شديد"></div>
+        <h3>سمران شديد</h3>
+        <p>بكالوريوس لغة عربية · دبلوم عالي مهارات رقمية</p>
+        <div class="mini-stats">
+          <div><b data-count="13">0</b><span>سنة خبرة</span></div>
+          <div><b data-count="18">0</b><span>شهادة ودورة</span></div>
+          <div><b data-count="15">0</b><span>بحثًا</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
 
-      <!-- الدورات والتطوير -->
-      <section id="courses">
-        <h2>الدورات والتطوير المهني</h2>
-        <ul class="list-group">
-          <li class="list-group-item">📘 دورة المهارات الرقمية – 1444هـ <a href="https://drive.google.com/your-link3" target="_blank">عرض الشهادة</a></li>
-          <li class="list-group-item">💡 ورشة التفكير التصميمي – 1445هـ <a href="https://drive.google.com/your-link4" target="_blank">عرض الشهادة</a></li>
-          <li class="list-group-item">🏆 شهادة شكر من مدير المدرسة – 1446هـ <a href="https://drive.google.com/your-link5" target="_blank">عرض الشهادة</a></li>
-        </ul>
-      </section>
+  <!-- عنّي -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">نبذة</div>
+        <h2 class="title">عنّي</h2>
+      </div>
+      <div class="about-box reveal">
+        <p>متخصص في اللغة العربية والمهارات الرقمية، بخبرة تزيد على 13 عامًا في التعليم والتقنية وإدارة الأعمال. حاصل على بكالوريوس لغة عربية (1430هـ) والدبلوم العالي في المهارات الرقمية (1444هـ).</p>
+        <p>بدأت مسيرتي الإدارية مساعدًا إداريًا في شركة الحكير، تنقلت خلالها بين الموارد البشرية وتقنية المعلومات والمالية، ثم انتقلت إلى التعليم، حيث أجمع اليوم بين الروح التربوية والحلول الرقمية لأحوّل الأدوات التقنية إلى تجربة تعليمية تصنع الفرق.</p>
+      </div>
+    </div>
+  </section>
 
-      <!-- الأبحاث والتقارير -->
-      <section id="research">
-        <h2>الأبحاث والتقارير</h2>
-        <ul class="list-group">
-          <li class="list-group-item">📄 بحث حول التحول الرقمي في التعليم – 1445هـ <a href="https://drive.google.com/your-link6" target="_blank">عرض البحث</a></li>
-          <li class="list-group-item">📄 تقرير عن أثر العمل التطوعي في المدارس – 1446هـ <a href="https://drive.google.com/your-link7" target="_blank">عرض التقرير</a></li>
-        </ul>
-      </section>
+  <!-- المهام -->
+  <section id="tasks" class="alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">المسؤوليات</div>
+        <h2 class="title">مهامي في المدرسة</h2>
+        <p class="sub">مسؤوليات تجمع بين التعليم والتقنية والعمل المجتمعي.</p>
+      </div>
+      <div class="grid">
+        <div class="card reveal"><div class="icon">💻</div><h3>مسؤول نظام نور</h3><p>إدارة النظام والدعم الفني المرتبط به.</p></div>
+        <div class="card reveal"><div class="icon">🌐</div><h3>مسؤول منصة مدرستي</h3><p>إدارة المنصة ودعم المعلمين وأولياء الأمور.</p></div>
+        <div class="card reveal"><div class="icon">🚀</div><h3>السفير الرقمي</h3><p>نشر ثقافة التعلم الرقمي وتدريب الزملاء على أدواته.</p></div>
+        <div class="card reveal"><div class="icon">📚</div><h3>أمين مصادر التعلم</h3><p>تنظيم مصادر التعلم وإتاحتها للطلاب والمعلمين.</p></div>
+        <div class="card reveal"><div class="icon">🏆</div><h3>عضو لجنة التميز</h3><p>المشاركة في معايير التميز ومتابعة تحقيقها.</p></div>
+        <div class="card reveal"><div class="icon">📊</div><h3>عضو لجنة التحصيل</h3><p>تحليل مؤشرات التحصيل واقتراح خطط التحسين.</p></div>
+        <div class="card reveal"><div class="icon">🤝</div><h3>منسق العمل التطوعي</h3><p>تنظيم الأنشطة التطوعية وإشراك الطلاب فيها.</p></div>
+        <div class="card reveal"><div class="icon">📱</div><h3>قروبات أولياء الأمور</h3><p>تواصل منظم ينقل المستجدات بوضوح.</p></div>
+        <div class="card reveal"><div class="icon">🎓</div><h3>معلم اللغة العربية</h3><p>تدريس اللغة العربية وتنمية مهارات الطلاب فيها.</p></div>
+        <div class="card reveal"><div class="icon">🖥️</div><h3>معلم المهارات الرقمية</h3><p>تدريس المهارات الرقمية وتطبيقاتها في التعليم.</p></div>
+      </div>
+    </div>
+  </section>
 
-      <!-- التواصل -->
-      <section id="contact">
-        <h2>التواصل</h2>
-        <ul class="list-group">
-          <li class="list-group-item">📧 البريد الإلكتروني: <a href="mailto:somran28@gmail.com">somran28@gmail.com</a></li>
-          <li class="list-group-item">📱 الجوال: +966557717661</li>
-          <li class="list-group-item">🐦 تويتر: <a href="https://twitter.com/Somran88" target="_blank">@Somran88</a></li>
-        </ul>
+  <!-- المسيرة المهنية -->
+  <section id="career">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">المسيرة المهنية</div>
+        <h2 class="title">رحلتي المهنية</h2>
+        <p class="sub">من الإدارة إلى التعليم، ثم إلى التقنية التعليمية.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item current reveal">
+          <div class="tl-card">
+            <div class="tl-date">الحالي</div>
+            <h3>المنسق التقني ومسؤول منصة مدرستي ونظام نور</h3>
+            <p>متوسطة أوس بن ثابت · مكتب طويق · الرياض</p>
+            <ul>
+              <li>أمين مصادر التعلم بالمدرسة</li>
+              <li>معلم لمادة اللغة العربية ومادة المهارات الرقمية</li>
+              <li>عضو لجنة التميز ولجنة التحصيل الدراسي</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-date">مدارس التضامن الأهلية</div>
+            <h3>معلم لغة عربية ثم وكيل لشؤون الطلاب</h3>
+            <ul>
+              <li><span class="sub-role">معلم لغة عربية</span> في مدارس التضامن الأهلية</li>
+              <li><span class="sub-role">وكيل لشؤون الطلاب</span> لمدة سنتين</li>
+              <li><span class="sub-role">مدير قسم الليلي للمرحلة الثانوية</span> لمدة 3 أشهر</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-card">
+            <div class="tl-date">شركة الحكير</div>
+            <h3>مساعد إداري</h3>
+            <p>لمدة ثلاث سنوات، تنقلت خلالها بين الأقسام التالية:</p>
+            <ul>
+              <li>الموارد البشرية</li>
+              <li>تقنية المعلومات</li>
+              <li>المالية</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-        <!-- نموذج تواصل -->
-        <form class="mt-3">
-          <div class="mb-3">
-            <label for="name" class="form-label
+      <h3 class="sub-head reveal">المؤهلات العلمية</h3>
+      <div class="edu-grid">
+        <div class="edu reveal"><div class="icon">🎓</div><div><h4>الدبلوم العالي في المهارات الرقمية</h4><small>1444هـ</small></div></div>
+        <div class="edu reveal"><div class="icon">📖</div><div><h4>بكالوريوس اللغة العربية</h4><small>1430هـ</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الوثائق -->
+  <section id="documents" class="alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">الوثائق الرسمية</div>
+        <h2 class="title">الوثائق</h2>
+        <p class="sub">المؤهلات الأكاديمية والوثائق الرسمية.</p>
+      </div>
+      <div class="file-grid" id="docGrid"></div>
+    </div>
+  </section>
+
+  <!-- الأبحاث -->
+  <section id="research">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">الإنتاج المعرفي</div>
+        <h2 class="title">الأبحاث والتقارير</h2>
+        <p class="sub">أبحاث وتقارير وأوراق علمية في التقنية والتعليم.</p>
+      </div>
+      <div class="toolbar reveal">
+        <input class="search" id="researchSearch" placeholder="ابحث في الأبحاث..." aria-label="بحث في الأبحاث">
+        <span class="count" id="researchCount"></span>
+      </div>
+      <div class="file-grid" id="researchGrid"></div>
+    </div>
+  </section>
+
+  <!-- الشهادات -->
+  <section id="certs" class="alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">الاعتمادات</div>
+        <h2 class="title">الشهادات والدورات</h2>
+        <p class="sub">دورات مهنية وشهادات شكر وخبرات عملية.</p>
+      </div>
+      <div class="toolbar reveal">
+        <input class="search" id="certSearch" placeholder="ابحث في الشهادات..." aria-label="بحث في الشهادات">
+        <span class="count" id="certCount"></span>
+      </div>
+      <div class="file-grid" id="certGrid"></div>
+    </div>
+  </section>
+
+  <!-- التواصل -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-band reveal">
+        <h2>لنصنع شيئًا معًا</h2>
+        <p>أنا متاح للتعاون في المشاريع التعليمية والتقنية.</p>
+        <div class="contact-cards">
+          <a class="contact-item" href="mailto:somran28@gmail.com"><small>البريد الإلكتروني</small><strong>somran28@gmail.com</strong></a>
+          <a class="contact-item" href="tel:+966557717661"><small>الجوال</small><strong>+966 55 771 7661</strong></a>
+          <a class="contact-item" href="https://twitter.com/Somran88" target="_blank" rel="noopener"><small>تويتر</small><strong>@Somran88</strong></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© سمران بن عبد العزيز شديد · ملف الإنجاز المهني</footer>
+
+<script>
+  /* ===================== البيانات الفعلية من Google Drive ===================== */
+  const DOCUMENTS = [
+    { emo: "🎓", title: "وثيقة الدبلوم العالي", meta: "الدبلوم العالي في المهارات الرقمية", id: "15-0t0ziXHn7kPz3apNXiMORi10hBDc0A" },
+    { emo: "📜", title: "وثيقة التخرج", meta: "بكالوريوس اللغة العربية", id: "1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds" }
+  ];
+
+  const RESEARCH = [
+    { title: "قضايا ومشكلات في تدريس المهارات الرقمية", id: "1lgxN1CGGbqEQZvupPgWA_yC3-o0Xa0iZ" },
+    { title: "نقد الورقة العلمية", id: "15jisK_fmeelOIw5AG0TDx90lcRYyTX19" },
+    { title: "تقرير أهم البرامج والمحتوى الرقمي (المجموعة الثانية)", id: "1G3XWSFXBqUmHEQlaViGBsBie7UmvYh1q" },
+    { title: "عرض سياسة التعليم", id: "1btSZFlWJp1pxPRfvjG2M_mNFKq0Z0yG5" },
+    { title: "برامج الذكاء الاصطناعي (المجموعة الثانية)", id: "1Auv0N17T94Y_-sponMzMrcSsYzurY3la" },
+    { title: "العروض البيانية المتقدمة بالإكسل", id: "1Zecvo9y6dYZFghTseXY42FlgaDkiX-Mf" },
+    { title: "البرمجة المرئية", id: "1Vn2_eM-qjtTV2cPTR42KmeDlPHnCPGz4" },
+    { title: "تطبيقات للتقويم التكويني", id: "1YJOVAIVEq3dts1B6GtIOJU4dyRjKfOAn" },
+    { title: "التقرير النهائي: موضوعات مختارة (المجموعة الثانية)", id: "1ibYhUtujv3iBM-1TnD545B9-oe2nSuyZ" },
+    { title: "تجربتي في ظل جائحة كورونا", id: "1TPhfJk9Bk5g3eWPSj9Ja8W-eYw_Q6zkX" },
+    { title: "الخريطة الذهنية", id: "1V1JOzixiDiP45Vcdkyn10QQB2pphMVfO" },
+    { title: "برامج الحماية وVPN", id: "1jh8CU1vXsyZTxhW3AM6eJSVSm97-UcU9" },
+    { title: "المواصفات الفنية للكتاب المدرسي", id: "1Y27v7gVH1MJ6KzkBe2OVILxv1hoaslJ-" },
+    { title: "سلم تقدير لفظي", id: "1qeHzXT3JQDN30_ryXthTuKYO5mBMShHX" },
+    { title: "دراسة حالة", id: "12YJM7u1x1gdTEb3Ll0IVO-Sk85iRlcy4" }
+  ];
+
+  const CERTIFICATES = [
+    { emo: "🛡️", cat: "دورة", title: "شهادة NIEPD 008", id: "103w_WWMYfGnqBlOU5jAsphaiK1_QVo6k" },
+    { emo: "🔬", cat: "دورة", title: "شهادة البحث الإجرائي وتطوير الميدان التعليمي", id: "1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn" },
+    { emo: "🏫", cat: "ندوة", title: "ندوة النموذج الإشرافي لتمكين المدرسة", id: "1H_p33y6x0YOC1dEYZ6tA-zudC9_huzR9" },
+    { emo: "🪟", cat: "تقنية", title: "دورة أمن ويندوز", id: "16wrWCQv-0KrYnmQoqa3L7w0JDwwd5OQs" },
+    { emo: "📝", cat: "تقنية", title: "إتمام مساق معالج النصوص (إدراك)", id: "1sMs4OugAJM8-JsIt6SQKy2E0qYLaDvcS" },
+    { emo: "🔐", cat: "تقنية", title: "برنامج تدريبي أمن المعلومات (معهد الإدارة)", id: "1gQ5PJkuTRwr4BLiHBMhifsdH3GVrwfFa" },
+    { emo: "📊", cat: "تقنية", title: "إتمام مساق الجداول الإلكترونية (إدراك)", id: "1XfEc_X7EaA7fcjMruSwH96_0bKqfBSuE" },
+    { emo: "🇬🇧", cat: "لغات", title: "الإنجليزي مستوى تأسيسي (15 ساعة)", id: "1JB5naHpF_jwOQ_U9-DPnz-fuorPwcmRo" },
+    { emo: "🧑‍🎓", cat: "تربوية", title: "فنيات التعامل مع الطلاب المراهقين", id: "1LsW6lqLzION7gX1a9jE1Hnx9l-tyB_F4" },
+    { emo: "🇬🇧", cat: "لغات", title: "الإنجليزي مستوى تمهيدي (50 ساعة)", id: "1CLP3ExHHMkkDor-34nWQQmNUMCw5Eueo" },
+    { emo: "🌟", cat: "تطوير", title: "البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)", id: "1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L" },
+    { emo: "🧩", cat: "تطوير", title: "بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي", id: "1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe" },
+    { emo: "💼", cat: "خبرة", title: "خبرة عمل مساعد إداري (3 سنوات)", id: "1T1EmPxlx4Lt7UQz-OWpYv-jQEi7THFMl" },
+    { emo: "📐", cat: "تقنية", title: "أدوات القياس والتقويم الإلكتروني (الابتعاث)", id: "1yuDn499a9NsGkuZIk_NZ4JJTZkdRm_k_" },
+    { emo: "🎒", cat: "تربوية", title: "التعامل مع طلاب المرحلة الابتدائية", id: "15xEZhUXZnek6OzIMijE5kK4S9wSlL4qP" },
+    { emo: "🇬🇧", cat: "لغات", title: "الإنجليزي مستوى 1B (33 ساعة)", id: "1wfLDBROxA4RenWjJuxMq2ZZvLAEMSpVT" },
+    { emo: "🇬🇧", cat: "لغات", title: "الإنجليزي مستوى A1 (30 ساعة)", id: "1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
+    { emo: "⚖️", cat: "ورشة", title: "ورشة تدريبية: جدول مواصفات الأوزان النسبية", id: "1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
+  ];
+
+  const viewUrl = id => `https://drive.google.com/file/d/${id}/view`;
+
+  function fileCard({ emo, title, meta, tag, id }) {
+    const el = document.createElement('a');
+    el.className = 'file reveal';
+    el.href = viewUrl(id);
+    el.target = '_blank';
+    el.rel = 'noopener';
+    el.innerHTML = `
+      <div class="file-top"><span class="file-emo">${emo}</span>${tag ? `<span class="tag">${tag}</span>` : ''}</div>
+      <h3>${title}</h3>
+      ${meta ? `<small>${meta}</small>` : ''}
+      <span class="open">عرض الملف ↗</span>`;
+    return el;
+  }
+
+  document.getElementById('docGrid').append(...DOCUMENTS.map(d => fileCard({ ...d, tag: 'رسمية' })));
+  document.getElementById('researchGrid').append(...RESEARCH.map(r => fileCard({ emo: '📄', title: r.title, id: r.id })));
+  document.getElementById('certGrid').append(...CERTIFICATES.map(c => fileCard({ emo: c.emo, title: c.title, tag: c.cat, id: c.id })));
+
+  function bindSearch(inputId, gridId, countId) {
+    const input = document.getElementById(inputId);
+    const grid = document.getElementById(gridId);
+    const count = document.getElementById(countId);
+    const update = () => {
+      const q = input.value.trim();
+      let shown = 0;
+      [...grid.children].forEach(card => {
+        const match = card.textContent.includes(q);
+        card.classList.toggle('hidden', !match);
+        if (match) shown++;
+      });
+      count.textContent = `${shown} من ${grid.children.length}`;
+    };
+    input.addEventListener('input', update);
+    update();
+  }
+  bindSearch('researchSearch', 'researchGrid', 'researchCount');
+  bindSearch('certSearch', 'certGrid', 'certCount');
+
+  /* ===================== خيارات العرض للزائر ===================== */
+  const themeButtons = document.querySelectorAll('[data-theme-btn]');
+  themeButtons.forEach(btn => btn.addEventListener('click', () => {
+    document.documentElement.setAttribute('data-theme', btn.dataset.themeBtn);
+    themeButtons.forEach(b => b.classList.toggle('on', b === btn));
+  }));
+
+  const fontBtn = document.getElementById('fontBtn');
+  fontBtn.addEventListener('click', () => {
+    const large = document.documentElement.classList.toggle('large-text');
+    fontBtn.classList.toggle('on', large);
+    fontBtn.textContent = large ? 'خط عادي' : 'خط كبير';
+  });
+
+  /* ===================== التأثيرات ===================== */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('visible');
+        en.target.querySelectorAll('[data-count]').forEach(countUp);
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  function countUp(el) {
+    const target = +el.dataset.count; let n = 0;
+    const step = Math.max(1, Math.ceil(target / 35));
+    const t = setInterval(() => {
+      n += step;
+      if (n >= target) { el.textContent = target; clearInterval(t); }
+      else el.textContent = n;
+    }, 40);
+  }
+
+  const phrases = ["مربي ومعلم للغة العربية", "خبير في التعليم الرقمي", "سفير التعليم الإلكتروني", "مصمم حلول تعليمية مبتكرة"];
+  let pi = 0, ci = 0, deleting = false;
+  const typingEl = document.getElementById('typing');
+  (function type() {
+    const word = phrases[pi];
+    typingEl.textContent = deleting ? word.slice(0, ci--) : word.slice(0, ci++);
+    let delay = deleting ? 45 : 90;
+    if (!deleting && ci > word.length) { deleting = true; delay = 1600; }
+    else if (deleting && ci < 0) { deleting = false; pi = (pi + 1) % phrases.length; ci = 0; delay = 400; }
+    setTimeout(type, delay);
+  })();
+
+  const progress = document.getElementById('progress');
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navAnchors = [...document.querySelectorAll('.nav-links a')];
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    progress.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + '%';
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 180) current = s.id; });
+    navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+  });
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.onclick = () => navLinks.classList.toggle('open');
+  navAnchors.forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+</body>
+</html>
