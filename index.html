@@ -92,7 +92,8 @@
 
   /* المحتوى الرئيسي */
   .main-wrap { margin-right:var(--sidebar-w); padding:24px 26px 120px; position:relative; z-index:1; transition:margin-right .35s; }
-  .container { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }
+  .container { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:28px; }
+  section[id] { scroll-margin-top:24px; }
 
   .glow-card { background:var(--card-bg); border:1.5px solid var(--border-glow); border-radius:var(--radius-lg); padding:30px 32px; box-shadow:var(--shadow-glow); backdrop-filter:blur(12px); position:relative; transition:transform .3s,box-shadow .3s,border-color .3s; transform-style:preserve-3d; }
   .glow-card:hover { border-color:var(--accent-bright); box-shadow:var(--shadow-strong); }
@@ -112,8 +113,8 @@
   .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.48); }
   .btn-outline { display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:13px; background:var(--card-inner); border:1px solid var(--border-glow); color:var(--heading); font-weight:700; font-size:.89rem; cursor:pointer; font-family:inherit; transition:.22s; }
   .btn-outline:hover { border-color:var(--accent-bright); transform:translateY(-2px); }
-  .hero-avatar { width:160px; height:160px; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--accent-bright),var(--fill-2),var(--accent-bright)); box-shadow:0 0 34px rgba(var(--particle-rgb),.42); flex-shrink:0; position:relative; }
-  .hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center top; display:block; background:var(--bg-mid); }
+  .hero-avatar { width:180px; height:180px; margin:auto; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--accent-bright),var(--fill-2),var(--accent-bright)); box-shadow:0 0 34px rgba(var(--particle-rgb),.42); flex-shrink:0; position:relative; }
+  .hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center center; display:block; background:var(--bg-mid); }
 
   /* ترويسات الأقسام */
   .pill-tag { display:inline-flex; align-items:center; gap:7px; padding:5px 15px; border-radius:999px; background:rgba(var(--particle-rgb),.13); border:1px solid var(--border-glow); color:var(--accent-bright); font-size:.83rem; font-weight:800; white-space:nowrap; }
@@ -359,6 +360,42 @@
   .cv-sec h4 { background:#f0f6fa; color:#082336; border-right:4px solid #0b6e91; padding:5px 12px; font-size:1rem; margin-bottom:8px; }
   .cv-sec ul { padding-right:20px; font-size:.91rem; color:#243647; display:grid; gap:4px; }
   .cv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:.9rem; }
+
+
+  /* ===== الأيقونات الرئيسية الملونة لكل قسم ===== */
+  .sec-icon { width:52px; height:52px; border-radius:15px; border:none; color:#ffffff; box-shadow:0 8px 20px rgba(0,0,0,.22); }
+  .sec-icon svg { width:24px; height:24px; }
+  section#dashboard .sec-icon   { background:linear-gradient(135deg,#38d6ff,#0b6e91); }
+  section#featured-works .sec-icon { background:linear-gradient(135deg,#fbbf24,#d97706); }
+  section#ai-impact .sec-icon   { background:linear-gradient(135deg,#c3a6ff,#5229a8); }
+  section#impact .sec-icon      { background:linear-gradient(135deg,#43e8a0,#0a663f); }
+  section#leadership .sec-icon  { background:linear-gradient(135deg,#fb923c,#c2410c); }
+  section#qualifications .sec-icon { background:linear-gradient(135deg,#60a5fa,#1d4ed8); }
+  section#about .sec-icon       { background:linear-gradient(135deg,#2dd4bf,#0f766e); }
+  section#vision .sec-icon      { background:linear-gradient(135deg,#f472b6,#be185d); }
+  section#achievements .sec-icon { background:linear-gradient(135deg,#facc15,#a16207); }
+  section#testimonials .sec-icon { background:linear-gradient(135deg,#38bdf8,#0369a1); }
+  section#honors .sec-icon      { background:linear-gradient(135deg,#f59e0b,#b45309); }
+  section#top-evidence .sec-icon { background:linear-gradient(135deg,#34d399,#047857); }
+  section#evidence .sec-icon    { background:linear-gradient(135deg,#818cf8,#4338ca); }
+  section#contact .sec-icon     { background:linear-gradient(135deg,#25D366,#128C7E); }
+
+  .nav-item[href="#home"] .nav-ico        { color:#38d6ff; }
+  .nav-item[href="#dashboard"] .nav-ico   { color:#38d6ff; }
+  .nav-item[href="#featured-works"] .nav-ico { color:#fbbf24; }
+  .nav-item[href="#ai-impact"] .nav-ico   { color:#c3a6ff; }
+  .nav-item[href="#impact"] .nav-ico      { color:#43e8a0; }
+  .nav-item[href="#leadership"] .nav-ico  { color:#fb923c; }
+  .nav-item[href="#qualifications"] .nav-ico { color:#60a5fa; }
+  .nav-item[href="#about"] .nav-ico       { color:#2dd4bf; }
+  .nav-item[href="#vision"] .nav-ico      { color:#f472b6; }
+  .nav-item[href="#achievements"] .nav-ico { color:#facc15; }
+  .nav-item[href="#testimonials"] .nav-ico { color:#38bdf8; }
+  .nav-item[href="#honors"] .nav-ico      { color:#f59e0b; }
+  .nav-item[href="#top-evidence"] .nav-ico { color:#34d399; }
+  .nav-item[href="#evidence"] .nav-ico    { color:#818cf8; }
+  .nav-item[href="#contact"] .nav-ico     { color:#25D366; }
+  .nav-item.active .nav-ico { color:var(--btn-ink) !important; }
 
   @media print {
     body * { visibility:hidden !important; }
