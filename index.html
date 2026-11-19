@@ -1,60 +1,163 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="cyan" data-font="tajawal" data-size="m">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>سمران بن عبد العزيز شديد · ملف الإنجاز الإلكتروني</title>
+<meta name="description" content="ملف الإنجاز الإلكتروني للأستاذ سمران بن عبد العزيز شديد - المنسق التقني ومسؤول منصة مدرستي ونظام نور">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
+  /* ================= نظام الثيمات والألوان ================= */
+  :root, [data-theme="cyan"] {
     --bg-deep: #04131e;
     --bg-mid: #071e2e;
-    --sidebar-bg: #061927;
-    --card-bg: rgba(9, 35, 53, 0.84);
+    --sidebar-bg: rgba(6, 25, 39, 0.94);
+    --card-bg: rgba(9, 35, 53, 0.82);
     --card-inner: rgba(5, 22, 35, 0.72);
-    --cyan: #16b8e0;
-    --cyan-bright: #38d6ff;
-    --cyan-fill-1: #149ec7;
-    --cyan-fill-2: #0b6e91;
+    --accent: #16b8e0;
+    --accent-bright: #38d6ff;
+    --fill-1: #149ec7;
+    --fill-2: #0b6e91;
     --border-glow: rgba(22, 184, 224, 0.42);
     --shadow-glow: 0 0 28px rgba(22, 184, 224, 0.16);
-    --shadow-strong: 0 0 38px rgba(22, 184, 224, 0.34);
-    --text-main: #e4f3fa;
+    --shadow-strong: 0 0 40px rgba(56, 214, 255, 0.34);
+    --text-main: #e6f4fb;
     --text-muted: #9bc2d6;
+    --heading: #ffffff;
+    --particle-rgb: 56, 214, 255;
+    --btn-ink: #ffffff;
+  }
+
+  [data-theme="gold"] {
+    --bg-deep: #120d04;
+    --bg-mid: #1f1607;
+    --sidebar-bg: rgba(24, 17, 6, 0.95);
+    --card-bg: rgba(36, 26, 10, 0.84);
+    --card-inner: rgba(20, 14, 5, 0.74);
+    --accent: #d4a017;
+    --accent-bright: #ffd35c;
+    --fill-1: #c89211;
+    --fill-2: #8a6006;
+    --border-glow: rgba(212, 160, 23, 0.45);
+    --shadow-glow: 0 0 28px rgba(212, 160, 23, 0.18);
+    --shadow-strong: 0 0 40px rgba(255, 211, 92, 0.34);
+    --text-main: #fbf3df;
+    --text-muted: #d6c294;
+    --heading: #ffffff;
+    --particle-rgb: 255, 211, 92;
+    --btn-ink: #ffffff;
+  }
+
+  [data-theme="emerald"] {
+    --bg-deep: #04170f;
+    --bg-mid: #082619;
+    --sidebar-bg: rgba(6, 30, 20, 0.95);
+    --card-bg: rgba(10, 44, 29, 0.84);
+    --card-inner: rgba(5, 25, 16, 0.74);
+    --accent: #18b874;
+    --accent-bright: #43e8a0;
+    --fill-1: #139960;
+    --fill-2: #0a663f;
+    --border-glow: rgba(24, 184, 116, 0.42);
+    --shadow-glow: 0 0 28px rgba(24, 184, 116, 0.16);
+    --shadow-strong: 0 0 40px rgba(67, 232, 160, 0.32);
+    --text-main: #e5f9ef;
+    --text-muted: #9ad1b7;
+    --heading: #ffffff;
+    --particle-rgb: 67, 232, 160;
+    --btn-ink: #ffffff;
+  }
+
+  [data-theme="amethyst"] {
+    --bg-deep: #0d071c;
+    --bg-mid: #170d30;
+    --sidebar-bg: rgba(18, 10, 38, 0.95);
+    --card-bg: rgba(29, 17, 58, 0.84);
+    --card-inner: rgba(16, 9, 34, 0.74);
+    --accent: #9b6dff;
+    --accent-bright: #c3a6ff;
+    --fill-1: #7e4ce6;
+    --fill-2: #5229a8;
+    --border-glow: rgba(155, 109, 255, 0.45);
+    --shadow-glow: 0 0 28px rgba(155, 109, 255, 0.18);
+    --shadow-strong: 0 0 40px rgba(195, 166, 255, 0.34);
+    --text-main: #f1ebff;
+    --text-muted: #bca9e6;
+    --heading: #ffffff;
+    --particle-rgb: 195, 166, 255;
+    --btn-ink: #ffffff;
+  }
+
+  [data-theme="light"] {
+    --bg-deep: #f2f6fa;
+    --bg-mid: #ffffff;
+    --sidebar-bg: rgba(255, 255, 255, 0.96);
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --card-inner: #f5f9fc;
+    --accent: #0f7ea6;
+    --accent-bright: #0c6282;
+    --fill-1: #0f7ea6;
+    --fill-2: #0a4d68;
+    --border-glow: rgba(15, 126, 166, 0.28);
+    --shadow-glow: 0 8px 28px rgba(10, 77, 104, 0.08);
+    --shadow-strong: 0 14px 36px rgba(10, 77, 104, 0.16);
+    --text-main: #1e2d3b;
+    --text-muted: #52677a;
+    --heading: #0a2538;
+    --particle-rgb: 15, 126, 166;
+    --btn-ink: #ffffff;
+  }
+
+  /* أحجام وأنواع الخطوط */
+  html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: 24px; }
+  html[data-size="s"] { font-size: 14.5px; }
+  html[data-size="l"] { font-size: 17.5px; }
+  html[data-font="tajawal"] body { font-family: 'Tajawal', system-ui, sans-serif; }
+  html[data-font="cairo"] body { font-family: 'Cairo', system-ui, sans-serif; }
+  html[data-font="kufi"] body { font-family: 'Noto Kufi Arabic', system-ui, sans-serif; }
+
+  :root {
     --radius-lg: 22px;
     --radius-md: 16px;
     --sidebar-w: 245px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; scroll-padding-top: 28px; font-size: 16px; }
 
   body {
-    font-family: 'Tajawal', system-ui, -apple-system, sans-serif;
-    background:
-      radial-gradient(900px 520px at 18% 8%, rgba(20, 158, 199, 0.16), transparent 65%),
-      radial-gradient(800px 500px at 85% 65%, rgba(11, 110, 145, 0.18), transparent 65%),
-      linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
+    background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
     color: var(--text-main);
     line-height: 1.85;
     min-height: 100vh;
     overflow-x: hidden;
+    transition: background 0.45s ease, color 0.35s ease;
   }
 
   a { color: inherit; text-decoration: none; }
+
+  /* خلفية الجزيئات التفاعلية */
+  #bgCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.55;
+  }
 
   /* شريط التقدم العلوي */
   #scrollProgress {
     position: fixed;
     top: 0;
     right: 0;
-    height: 3px;
+    height: 3.5px;
     width: 0%;
-    background: linear-gradient(90deg, var(--cyan-bright), var(--cyan-fill-1));
-    box-shadow: 0 0 12px var(--cyan-bright);
-    z-index: 300;
+    background: linear-gradient(90deg, var(--accent-bright), var(--fill-1));
+    box-shadow: 0 0 12px var(--accent-bright);
+    z-index: 350;
   }
 
   /* ================= القائمة الجانبية اليمنى ================= */
@@ -65,22 +168,23 @@
     bottom: 0;
     width: var(--sidebar-w);
     background: var(--sidebar-bg);
-    border-left: 1px solid rgba(22, 184, 224, 0.22);
-    padding: 20px 14px;
+    border-left: 1px solid var(--border-glow);
+    padding: 18px 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     z-index: 150;
     overflow-y: auto;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    backdrop-filter: blur(14px);
+    transition: transform 0.35s ease, opacity 0.35s ease, background 0.35s ease;
   }
 
   .sidebar-header {
-    padding: 8px 12px 16px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid rgba(22, 184, 224, 0.18);
-    font-size: 0.86rem;
-    font-weight: 700;
+    padding: 8px 12px 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid var(--border-glow);
+    font-size: 0.85rem;
+    font-weight: 800;
     color: var(--text-muted);
     display: flex;
     align-items: center;
@@ -92,52 +196,52 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--cyan-bright);
-    box-shadow: 0 0 10px var(--cyan-bright);
+    background: var(--accent-bright);
+    box-shadow: 0 0 10px var(--accent-bright);
     flex-shrink: 0;
   }
 
   .nav-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 11px 14px;
+    gap: 11px;
+    padding: 10px 13px;
     border-radius: 12px;
     color: var(--text-main);
     font-weight: 700;
-    font-size: 0.96rem;
+    font-size: 0.93rem;
     transition: all 0.25s ease;
     border: 1px solid transparent;
   }
 
   .nav-item .nav-ico {
-    width: 26px;
-    height: 26px;
+    width: 25px;
+    height: 25px;
     display: grid;
     place-items: center;
-    font-size: 1.05rem;
-    color: var(--cyan-bright);
+    font-size: 1.02rem;
+    color: var(--accent-bright);
     transition: transform 0.25s ease;
   }
 
   .nav-item:hover {
-    background: rgba(22, 184, 224, 0.12);
-    border-color: rgba(22, 184, 224, 0.28);
+    background: rgba(var(--particle-rgb), 0.12);
+    border-color: var(--border-glow);
     transform: translateX(-3px);
   }
 
   .nav-item.active {
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
-    color: #ffffff;
-    box-shadow: 0 4px 18px rgba(20, 158, 199, 0.42);
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    color: var(--btn-ink);
+    box-shadow: 0 4px 18px rgba(var(--particle-rgb), 0.35);
   }
 
   .nav-item.active .nav-ico {
-    color: #ffffff;
-    transform: scale(1.1);
+    color: var(--btn-ink);
+    transform: scale(1.12);
   }
 
-  /* نمط العرض المتتالي (إخفاء القائمة الجانبية وتوسيع المحتوى) */
+  /* نمط العرض المتتالي */
   body.sequential-mode .sidebar {
     transform: translateX(105%);
     opacity: 0;
@@ -153,18 +257,18 @@
     position: sticky;
     top: 0;
     z-index: 160;
-    background: rgba(6, 25, 39, 0.95);
+    background: var(--sidebar-bg);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(22, 184, 224, 0.25);
+    border-bottom: 1px solid var(--border-glow);
     padding: 12px 18px;
     align-items: center;
     justify-content: space-between;
   }
-  .mobile-bar strong { color: #fff; font-size: 1.02rem; }
+  .mobile-bar strong { color: var(--heading); font-size: 1.02rem; }
   .mobile-toggle {
-    background: rgba(22, 184, 224, 0.15);
+    background: rgba(var(--particle-rgb), 0.14);
     border: 1px solid var(--border-glow);
-    color: var(--cyan-bright);
+    color: var(--accent-bright);
     border-radius: 10px;
     padding: 6px 12px;
     font-family: inherit;
@@ -175,16 +279,18 @@
   /* ================= المحتوى الرئيسي ================= */
   .main-wrap {
     margin-right: var(--sidebar-w);
-    padding: 28px 26px 110px;
+    padding: 26px 26px 120px;
+    position: relative;
+    z-index: 1;
     transition: margin-right 0.35s ease;
   }
 
   .container {
-    max-width: 1040px;
+    max-width: 1050px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: 26px;
   }
 
   /* البطاقة القياسية المتوهجة */
@@ -194,31 +300,30 @@
     border-radius: var(--radius-lg);
     padding: 32px 34px;
     box-shadow: var(--shadow-glow);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background 0.35s ease;
     transform-style: preserve-3d;
   }
 
   .glow-card:hover {
-    border-color: var(--cyan-bright);
+    border-color: var(--accent-bright);
     box-shadow: var(--shadow-strong);
   }
 
-  /* وضع النبض والتوهج */
   body.anim-pulse .glow-card {
-    animation: cardPulse 4.5s ease-in-out infinite;
+    animation: cardPulse 4.2s ease-in-out infinite;
   }
   @keyframes cardPulse {
-    0%, 100% { box-shadow: 0 0 24px rgba(22, 184, 224, 0.16); }
-    50% { box-shadow: 0 0 38px rgba(56, 214, 255, 0.34); }
+    0%, 100% { box-shadow: var(--shadow-glow); }
+    50% { box-shadow: var(--shadow-strong); }
   }
 
   /* ================= بطاقة الواجهة الرئيسية ================= */
   .hero-card {
-    padding: 40px 42px;
+    padding: 38px 40px;
     background:
-      radial-gradient(circle at 20% 50%, rgba(22, 184, 224, 0.16), transparent 55%),
+      radial-gradient(circle at 18% 45%, rgba(var(--particle-rgb), 0.16), transparent 55%),
       var(--card-bg);
   }
 
@@ -235,77 +340,99 @@
     gap: 8px;
     padding: 5px 15px;
     border-radius: 999px;
-    background: rgba(22, 184, 224, 0.14);
-    border: 1px solid rgba(56, 214, 255, 0.38);
-    color: var(--cyan-bright);
-    font-size: 0.85rem;
-    font-weight: 700;
+    background: rgba(var(--particle-rgb), 0.13);
+    border: 1px solid var(--border-glow);
+    color: var(--accent-bright);
+    font-size: 0.84rem;
+    font-weight: 800;
   }
 
   .hero-card h1 {
-    font-size: clamp(2rem, 4vw, 2.95rem);
+    font-size: clamp(1.95rem, 4vw, 2.9rem);
     font-weight: 900;
-    color: #ffffff;
-    margin: 14px 0 6px;
+    color: var(--heading);
+    margin: 12px 0 4px;
     line-height: 1.25;
   }
 
+  .typewriter-line {
+    min-height: 1.9em;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--accent-bright);
+    margin-bottom: 4px;
+  }
+  .typewriter-line::after {
+    content: "|";
+    margin-right: 4px;
+    animation: blink 0.9s steps(2) infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
   .hero-subtitle {
-    font-size: 1.12rem;
+    font-size: 1.04rem;
     color: var(--text-muted);
     font-weight: 500;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
   .hero-actions {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
-  .btn-cyan {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 26px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 0.98rem;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow: 0 6px 22px rgba(20, 158, 199, 0.38);
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-    cursor: pointer;
-  }
-
-  .btn-cyan:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(56, 214, 255, 0.5);
-  }
-
-  .year-badge {
+  .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 9px;
+    padding: 11px 24px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    color: var(--btn-ink);
+    font-weight: 800;
+    font-size: 0.96rem;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 6px 20px rgba(var(--particle-rgb), 0.35);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(var(--particle-rgb), 0.48);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 11px 20px;
     border-radius: 14px;
-    background: rgba(5, 22, 35, 0.78);
-    border: 1px solid rgba(22, 184, 224, 0.32);
-    color: var(--text-main);
+    background: var(--card-inner);
+    border: 1px solid var(--border-glow);
+    color: var(--heading);
     font-weight: 700;
-    font-size: 0.95rem;
-    direction: ltr;
+    font-size: 0.93rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.22s ease;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--accent-bright);
+    transform: translateY(-2px);
   }
 
   .hero-avatar {
-    width: 195px;
-    height: 195px;
+    width: 192px;
+    height: 192px;
     border-radius: 50%;
     padding: 6px;
-    background: linear-gradient(135deg, var(--cyan-bright), var(--cyan-fill-2), var(--cyan-bright));
-    box-shadow: 0 0 36px rgba(56, 214, 255, 0.42);
+    background: linear-gradient(135deg, var(--accent-bright), var(--fill-2), var(--accent-bright));
+    box-shadow: 0 0 36px rgba(var(--particle-rgb), 0.42);
     flex-shrink: 0;
   }
 
@@ -315,10 +442,44 @@
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    background: #082336;
+    background: var(--bg-mid);
   }
 
-  /* ================= ترويسة الأقسام الداخلية ================= */
+  /* شريط الإحصائيات السريعة داخل الواجهة */
+  .hero-stats {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .stat-pill {
+    background: var(--card-inner);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-md);
+    padding: 14px 10px;
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .stat-pill:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-bright);
+  }
+  .stat-pill b {
+    display: block;
+    font-size: 1.65rem;
+    font-weight: 900;
+    color: var(--accent-bright);
+    line-height: 1.2;
+  }
+  .stat-pill span {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+
+  /* ================= ترويسة الأقسام ================= */
   .card-head {
     display: flex;
     align-items: center;
@@ -338,19 +499,19 @@
     width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(22, 184, 224, 0.15);
-    border: 1px solid rgba(56, 214, 255, 0.38);
+    background: rgba(var(--particle-rgb), 0.14);
+    border: 1px solid var(--border-glow);
     display: grid;
     place-items: center;
     font-size: 1.25rem;
-    color: var(--cyan-bright);
+    color: var(--accent-bright);
     flex-shrink: 0;
   }
 
   .card-head h2 {
-    font-size: clamp(1.35rem, 2.5vw, 1.7rem);
+    font-size: clamp(1.35rem, 2.5vw, 1.68rem);
     font-weight: 800;
-    color: #ffffff;
+    color: var(--heading);
   }
 
   .card-body p {
@@ -360,26 +521,26 @@
   }
   .card-body p:last-child { margin-bottom: 0; }
 
-  /* صندوق المرفقات التفاعلي (مطابق لصناديق المرفقات في الفيديو) */
+  /* صندوق المرفقات التفاعلي */
   .attach-box {
     margin-top: 22px;
     background: var(--card-inner);
-    border: 1.5px solid rgba(22, 184, 224, 0.34);
+    border: 1.5px solid var(--border-glow);
     border-radius: var(--radius-md);
-    padding: 26px 20px;
+    padding: 24px 20px;
     text-align: center;
     cursor: pointer;
     transition: all 0.25s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
   }
 
   .attach-box:hover {
-    border-color: var(--cyan-bright);
-    background: rgba(20, 158, 199, 0.14);
-    box-shadow: 0 0 24px rgba(56, 214, 255, 0.24);
+    border-color: var(--accent-bright);
+    background: rgba(var(--particle-rgb), 0.12);
+    box-shadow: 0 0 24px rgba(var(--particle-rgb), 0.22);
     transform: translateY(-2px);
   }
 
@@ -387,26 +548,24 @@
     width: 48px;
     height: 48px;
     border-radius: 14px;
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
     display: grid;
     place-items: center;
     font-size: 1.35rem;
-    color: #fff;
-    box-shadow: 0 4px 16px rgba(20, 158, 199, 0.4);
+    color: var(--btn-ink);
+    box-shadow: 0 4px 16px rgba(var(--particle-rgb), 0.35);
   }
 
   .attach-box strong {
-    font-size: 1.08rem;
-    color: #ffffff;
+    font-size: 1.06rem;
+    color: var(--heading);
     font-weight: 800;
   }
 
   .attach-box span {
     font-size: 0.88rem;
-    color: var(--cyan-bright);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    color: var(--accent-bright);
+    font-weight: 700;
   }
 
   /* شبكات البطاقات الداخلية */
@@ -418,13 +577,13 @@
 
   .sub-panel {
     background: var(--card-inner);
-    border: 1px solid rgba(22, 184, 224, 0.28);
+    border: 1px solid var(--border-glow);
     border-radius: var(--radius-md);
     padding: 22px 24px;
   }
 
   .sub-panel h3 {
-    color: var(--cyan-bright);
+    color: var(--accent-bright);
     font-size: 1.12rem;
     margin-bottom: 8px;
     display: flex;
@@ -434,11 +593,11 @@
 
   .sub-divider {
     height: 1px;
-    background: rgba(22, 184, 224, 0.2);
+    background: var(--border-glow);
     margin: 16px 0;
   }
 
-  /* قائمة الأهداف المرقمة */
+  /* قائمة الأهداف */
   .goals-list {
     list-style: none;
     display: grid;
@@ -449,36 +608,36 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 1.02rem;
+    font-size: 1.01rem;
   }
 
   .goals-list li b {
     min-width: 28px;
     height: 28px;
     border-radius: 8px;
-    background: rgba(22, 184, 224, 0.16);
-    border: 1px solid rgba(56, 214, 255, 0.35);
-    color: var(--cyan-bright);
+    background: rgba(var(--particle-rgb), 0.15);
+    border: 1px solid var(--border-glow);
+    color: var(--accent-bright);
     display: grid;
     place-items: center;
     font-size: 0.9rem;
     margin-top: 2px;
   }
 
-  /* بطاقات الإنجازات والشواهد (التدرج الفيروزي الممتلئ كما في الفيديو) */
-  .cyan-grid {
+  /* بطاقات الإنجازات والشواهد الممتلئة */
+  .accent-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 16px;
   }
 
-  .cyan-box {
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
-    border: 1px solid rgba(255, 255, 255, 0.24);
+  .accent-box {
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: var(--radius-md);
     padding: 24px;
-    color: #ffffff;
-    box-shadow: 0 8px 24px rgba(11, 110, 145, 0.35);
+    color: var(--btn-ink);
+    box-shadow: 0 8px 24px rgba(var(--particle-rgb), 0.25);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
     display: flex;
@@ -486,174 +645,251 @@
     justify-content: center;
   }
 
-  .cyan-box:hover {
+  .accent-box:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(56, 214, 255, 0.45);
+    box-shadow: 0 12px 32px rgba(var(--particle-rgb), 0.42);
   }
 
-  .cyan-box h3 {
-    font-size: 1.15rem;
+  .accent-box h3 {
+    font-size: 1.14rem;
     font-weight: 800;
     margin-bottom: 8px;
     text-align: center;
   }
 
-  .cyan-box p {
+  .accent-box p {
     font-size: 0.93rem;
-    color: rgba(255, 255, 255, 0.92);
+    opacity: 0.94;
     text-align: center;
     line-height: 1.7;
   }
 
-  .dark-evidence-box {
+  /* بطاقات الابتكارات التقنية الميدانية */
+  .tool-card {
     background: var(--card-inner);
-    border: 1px solid rgba(22, 184, 224, 0.32);
+    border: 1px solid var(--border-glow);
     border-radius: var(--radius-md);
-    padding: 24px;
-    text-align: center;
-    transition: border-color 0.25s ease, transform 0.25s ease;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.25s ease;
   }
-
-  .dark-evidence-box:hover {
-    border-color: var(--cyan-bright);
-    transform: translateY(-3px);
+  .tool-card:hover {
+    border-color: var(--accent-bright);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-glow);
   }
-
-  .dark-evidence-box h3 {
-    color: #ffffff;
-    font-size: 1.12rem;
-    margin-bottom: 8px;
+  .tool-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-
-  .dark-evidence-box p {
+  .tool-ico {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(var(--particle-rgb), 0.14);
+    border: 1px solid var(--border-glow);
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+  }
+  .tool-badge {
+    font-size: 0.76rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(var(--particle-rgb), 0.14);
+    color: var(--accent-bright);
+  }
+  .tool-card h3 {
+    color: var(--heading);
+    font-size: 1.06rem;
+    font-weight: 800;
+  }
+  .tool-card p {
     color: var(--text-muted);
     font-size: 0.92rem;
+    line-height: 1.7;
   }
 
   /* المسيرة والخبرات */
   .exp-item {
     background: var(--card-inner);
-    border-right: 3px solid var(--cyan-bright);
+    border-right: 3.5px solid var(--accent-bright);
     border-radius: 12px;
     padding: 16px 20px;
     margin-bottom: 12px;
   }
   .exp-item:last-child { margin-bottom: 0; }
-  .exp-item h4 { color: #ffffff; font-size: 1.04rem; margin-bottom: 4px; }
-  .exp-item span { color: var(--cyan-bright); font-size: 0.86rem; font-weight: 700; display: block; margin-bottom: 4px; }
+  .exp-item h4 { color: var(--heading); font-size: 1.04rem; margin-bottom: 4px; }
+  .exp-item span { color: var(--accent-bright); font-size: 0.86rem; font-weight: 700; display: block; margin-bottom: 4px; }
   .exp-item p { color: var(--text-muted); font-size: 0.93rem; }
 
   /* بطاقات التواصل */
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 14px;
   }
 
   .contact-box {
     background: var(--card-inner);
-    border: 1px solid rgba(22, 184, 224, 0.32);
+    border: 1px solid var(--border-glow);
     border-radius: var(--radius-md);
-    padding: 20px 22px;
+    padding: 18px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
+    gap: 12px;
     transition: all 0.25s ease;
+    cursor: pointer;
+    text-align: right;
+    font-family: inherit;
+    color: inherit;
   }
 
   .contact-box:hover {
-    border-color: var(--cyan-bright);
-    background: rgba(20, 158, 199, 0.14);
+    border-color: var(--accent-bright);
+    background: rgba(var(--particle-rgb), 0.12);
     transform: translateY(-2px);
   }
 
   .contact-box small {
     display: block;
     color: var(--text-muted);
-    font-size: 0.84rem;
+    font-size: 0.82rem;
   }
 
   .contact-box strong {
-    color: #ffffff;
-    font-size: 1rem;
+    color: var(--heading);
+    font-size: 0.98rem;
     direction: ltr;
     display: inline-block;
   }
 
   .contact-ico {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     border-radius: 12px;
-    background: rgba(22, 184, 224, 0.15);
-    border: 1px solid rgba(56, 214, 255, 0.35);
+    background: rgba(var(--particle-rgb), 0.14);
+    border: 1px solid var(--border-glow);
     display: grid;
     place-items: center;
-    font-size: 1.2rem;
-    color: var(--cyan-bright);
+    font-size: 1.15rem;
+    color: var(--accent-bright);
     flex-shrink: 0;
   }
 
-  /* شريط حقوق الملكية الفيروزي السفلي */
+  /* شريط حقوق الملكية السفلي */
   .footer-banner {
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
     border-radius: var(--radius-md);
     padding: 18px 24px;
     text-align: center;
-    color: #ffffff;
-    font-weight: 700;
+    color: var(--btn-ink);
+    font-weight: 800;
     font-size: 0.95rem;
-    box-shadow: 0 6px 24px rgba(20, 158, 199, 0.32);
+    box-shadow: 0 6px 24px rgba(var(--particle-rgb), 0.28);
   }
 
-  /* ================= شريط التحكم السفلي العائم (كما في الفيديو) ================= */
-  .floating-controls {
+  /* ================= شريط الأيقونات العائم لتغيير الألوان والستايلات ================= */
+  .studio-dock {
     position: fixed;
-    bottom: 18px;
-    left: 20px;
-    z-index: 220;
+    bottom: 16px;
+    left: 18px;
+    z-index: 250;
     display: flex;
     align-items: center;
     gap: 8px;
     flex-wrap: wrap;
-    background: rgba(5, 22, 35, 0.92);
-    border: 1px solid rgba(56, 214, 255, 0.38);
-    padding: 8px 10px;
+    background: var(--sidebar-bg);
+    border: 1.5px solid var(--border-glow);
+    padding: 8px 12px;
     border-radius: 999px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(14px);
+  }
+
+  .theme-dots {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-left: 8px;
+    border-left: 1px solid var(--border-glow);
+  }
+
+  .theme-ico-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    font-size: 0.88rem;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .theme-ico-btn:hover { transform: scale(1.14); }
+  .theme-ico-btn.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 12px var(--accent-bright);
+    transform: scale(1.12);
   }
 
   .ctrl-btn {
-    border: 1px solid rgba(56, 214, 255, 0.35);
-    background: rgba(22, 184, 224, 0.14);
-    color: #e4f3fa;
-    padding: 7px 14px;
+    border: 1px solid var(--border-glow);
+    background: rgba(var(--particle-rgb), 0.13);
+    color: var(--heading);
+    padding: 6px 13px;
     border-radius: 999px;
     font-family: inherit;
-    font-size: 0.82rem;
+    font-size: 0.81rem;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     transition: all 0.2s ease;
     white-space: nowrap;
   }
 
   .ctrl-btn:hover {
-    border-color: var(--cyan-bright);
-    background: rgba(56, 214, 255, 0.24);
+    border-color: var(--accent-bright);
+    background: rgba(var(--particle-rgb), 0.24);
   }
 
   .ctrl-btn.active {
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    color: var(--btn-ink);
     border-color: transparent;
-    box-shadow: 0 0 14px rgba(56, 214, 255, 0.45);
   }
 
-  /* ================= نافذة المرفقات والمعاينة ================= */
+  /* لوحة الخطوط الإضافية المنبثقة فوق الشريط */
+  .font-popover {
+    position: fixed;
+    bottom: 74px;
+    left: 18px;
+    z-index: 251;
+    background: var(--sidebar-bg);
+    border: 1.5px solid var(--border-glow);
+    border-radius: 18px;
+    padding: 14px 16px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(14px);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 250px;
+  }
+  .font-popover.open { display: flex; }
+  .pop-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .pop-row small { color: var(--text-muted); font-weight: 700; font-size: 0.82rem; }
+  .pop-opts { display: flex; gap: 6px; }
+
+  /* ================= نافذة المرفقات والمعاينة + QR ================= */
   .modal-backdrop {
     position: fixed;
     inset: 0;
@@ -669,32 +905,32 @@
   .modal-backdrop.open { display: flex; }
 
   .modal-window {
-    background: #071e2e;
-    border: 1.5px solid var(--cyan-bright);
+    background: var(--bg-mid);
+    border: 1.5px solid var(--accent-bright);
     border-radius: var(--radius-lg);
     width: min(980px, 100%);
     max-height: 88vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    box-shadow: 0 0 45px rgba(56, 214, 255, 0.35);
+    box-shadow: 0 0 45px rgba(var(--particle-rgb), 0.35);
   }
 
   .modal-top {
-    padding: 16px 22px;
-    border-bottom: 1px solid rgba(22, 184, 224, 0.25);
+    padding: 15px 22px;
+    border-bottom: 1px solid var(--border-glow);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
   }
 
-  .modal-top h3 { color: #ffffff; font-size: 1.15rem; }
+  .modal-top h3 { color: var(--heading); font-size: 1.12rem; }
 
   .close-btn {
-    background: rgba(22, 184, 224, 0.16);
-    border: 1px solid rgba(56, 214, 255, 0.35);
-    color: #fff;
+    background: rgba(var(--particle-rgb), 0.16);
+    border: 1px solid var(--border-glow);
+    color: var(--heading);
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -704,9 +940,9 @@
 
   .modal-search-bar {
     padding: 12px 22px;
-    border-bottom: 1px solid rgba(22, 184, 224, 0.18);
+    border-bottom: 1px solid var(--border-glow);
     display: flex;
-    gap: 12px;
+    gap: 10px;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -714,17 +950,19 @@
   .modal-search-bar input {
     flex: 1;
     min-width: 200px;
-    background: rgba(4, 19, 30, 0.85);
-    border: 1px solid rgba(22, 184, 224, 0.35);
+    background: var(--card-inner);
+    border: 1px solid var(--border-glow);
     border-radius: 999px;
-    padding: 9px 16px;
-    color: #fff;
+    padding: 8px 16px;
+    color: var(--heading);
     font-family: inherit;
-    font-size: 0.94rem;
+    font-size: 0.93rem;
     outline: none;
   }
 
-  .modal-search-bar input:focus { border-color: var(--cyan-bright); }
+  .modal-search-bar input:focus { border-color: var(--accent-bright); }
+
+  .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
 
   .modal-body {
     padding: 20px 22px;
@@ -735,8 +973,8 @@
   }
 
   .doc-item {
-    background: rgba(4, 19, 30, 0.8);
-    border: 1px solid rgba(22, 184, 224, 0.28);
+    background: var(--card-inner);
+    border: 1px solid var(--border-glow);
     border-radius: 14px;
     padding: 16px;
     display: flex;
@@ -745,17 +983,17 @@
     transition: border-color 0.2s;
   }
 
-  .doc-item:hover { border-color: var(--cyan-bright); }
+  .doc-item:hover { border-color: var(--accent-bright); }
   .doc-item .doc-badge {
     align-self: flex-start;
     font-size: 0.76rem;
-    font-weight: 700;
+    font-weight: 800;
     padding: 2px 10px;
     border-radius: 999px;
-    background: rgba(22, 184, 224, 0.18);
-    color: var(--cyan-bright);
+    background: rgba(var(--particle-rgb), 0.16);
+    color: var(--accent-bright);
   }
-  .doc-item h4 { font-size: 0.96rem; color: #fff; line-height: 1.5; }
+  .doc-item h4 { font-size: 0.96rem; color: var(--heading); line-height: 1.5; }
   .doc-btns { margin-top: auto; display: flex; gap: 8px; padding-top: 6px; }
   .doc-btns button, .doc-btns a {
     flex: 1;
@@ -766,13 +1004,13 @@
     font-weight: 700;
     font-family: inherit;
     cursor: pointer;
-    border: 1px solid rgba(56, 214, 255, 0.35);
+    border: 1px solid var(--border-glow);
     background: transparent;
-    color: var(--cyan-bright);
+    color: var(--accent-bright);
   }
   .doc-btns button {
-    background: linear-gradient(135deg, var(--cyan-fill-1), var(--cyan-fill-2));
-    color: #fff;
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    color: var(--btn-ink);
     border: none;
   }
 
@@ -785,24 +1023,41 @@
     border-radius: 12px;
   }
 
-  /* ================= التجاوب مع الشاشات الصغيرة ================= */
+  /* إشعار النسخ السريع */
+  .toast {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-80px);
+    background: linear-gradient(135deg, var(--fill-1), var(--fill-2));
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.92rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    z-index: 500;
+    transition: transform 0.35s ease;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  /* ================= التجاوب مع الجوال ================= */
   @media (max-width: 900px) {
     .sidebar {
       transform: translateX(105%);
       width: 260px;
       box-shadow: -10px 0 35px rgba(0, 0, 0, 0.65);
     }
-    .sidebar.mobile-open {
-      transform: translateX(0);
-    }
+    .sidebar.mobile-open { transform: translateX(0); }
     .mobile-bar { display: flex; }
-    .main-wrap { margin-right: 0; padding: 18px 14px 115px; }
+    .main-wrap { margin-right: 0; padding: 18px 14px 135px; }
     .hero-grid { grid-template-columns: 1fr; text-align: center; }
-    .hero-avatar { margin: 0 auto; width: 155px; height: 155px; }
+    .hero-avatar { margin: 0 auto; width: 150px; height: 150px; }
     .hero-actions { justify-content: center; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
     .two-col { grid-template-columns: 1fr; }
-    .glow-card { padding: 24px 20px; }
-    .floating-controls {
+    .glow-card { padding: 24px 18px; }
+    .studio-dock {
       left: 10px;
       right: 10px;
       bottom: 10px;
@@ -814,7 +1069,9 @@
 </head>
 <body>
 
+<canvas id="bgCanvas"></canvas>
 <div id="scrollProgress"></div>
+<div class="toast" id="toastMsg">تم نسخ رابط ملف الإنجاز بنجاح ✓</div>
 
 <!-- شريط الجوال -->
 <div class="mobile-bar">
@@ -826,11 +1083,12 @@
 <aside class="sidebar" id="sidebar" aria-label="التنقل بين الأقسام">
   <div class="sidebar-header">ملف إنجاز : سمران شديد</div>
   <a href="#home" class="nav-item active"><span class="nav-ico">🏠</span><span>الرئيسية</span></a>
-  <a href="#intro" class="nav-item"><span class="nav-ico">👤</span><span>المقدمة</span></a>
+  <a href="#intro" class="nav-item"><span class="nav-ico">👋</span><span>المقدمة</span></a>
   <a href="#about" class="nav-item"><span class="nav-ico">🪪</span><span>نبذة عني</span></a>
   <a href="#vision" class="nav-item"><span class="nav-ico">🎯</span><span>الرؤية والرسالة</span></a>
   <a href="#goals" class="nav-item"><span class="nav-ico">🚀</span><span>الأهداف</span></a>
-  <a href="#qualifications" class="nav-item"><span class="nav-ico">🎓</span><span>المؤهلات</span></a>
+  <a href="#qualifications" class="nav-item"><span class="nav-ico">🎓</span><span>المؤهلات والخبرات</span></a>
+  <a href="#innovations" class="nav-item"><span class="nav-ico">💡</span><span>ابتكاراتي الرقمية</span></a>
   <a href="#achievements" class="nav-item"><span class="nav-ico">🏆</span><span>الإنجازات</span></a>
   <a href="#evidence" class="nav-item"><span class="nav-ico">📊</span><span>شواهد الأداء</span></a>
   <a href="#conclusion" class="nav-item"><span class="nav-ico">✨</span><span>الخاتمة</span></a>
@@ -844,16 +1102,24 @@
     <section id="home" class="glow-card hero-card tilt-card">
       <div class="hero-grid">
         <div>
-          <span class="pill-tag">ملف إنجاز إلكتروني</span>
+          <span class="pill-tag">ملف إنجاز إلكتروني · 2026 - 2027</span>
           <h1>سمران بن عبد العزيز شديد</h1>
-          <p class="hero-subtitle">المنسق التقني ومسؤول منصة مدرستي ونظام نور · متوسطة أوس بن ثابت · مكتب طويق</p>
+          <div class="typewriter-line" id="typewriter"></div>
+          <p class="hero-subtitle">المنسق التقني ومسؤول منصة مدرستي ونظام نور وأمين مصادر التعلم · متوسطة أوس بن ثابت · مكتب طويق</p>
           <div class="hero-actions">
-            <a href="#contact" class="btn-cyan">✉️ التواصل المباشر</a>
-            <span class="year-badge">📅 2026 - 2027</span>
+            <a href="#contact" class="btn-primary">✉️ التواصل المباشر</a>
+            <button type="button" class="btn-outline" data-open-modal="all">🗂️ تصفح 35 شاهدًا ووثيقة</button>
+            <button type="button" class="btn-outline" id="openQrBtn">📱 باركود الموقع</button>
           </div>
         </div>
         <div class="hero-avatar">
           <img src="samran.jpg" alt="سمران بن عبد العزيز شديد" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23082336%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2276%22 fill=%22%2338d6ff%22 font-family=%22sans-serif%22>س</text></svg>'">
+        </div>
+        <div class="hero-stats">
+          <div class="stat-pill"><b data-count="13">0</b><span>+ سنة خبرة تربوية وإدارية</span></div>
+          <div class="stat-pill"><b data-count="18">0</b><span>شهادة ودورة تدريبية</span></div>
+          <div class="stat-pill"><b data-count="15">0</b><span>بحثًا وتقريرًا علميًا</span></div>
+          <div class="stat-pill"><b data-count="5">0</b><span>أنظمة وأدوات رقمية مبتكرة</span></div>
         </div>
       </div>
     </section>
@@ -870,7 +1136,7 @@
       <div class="card-body">
         <p>بسم الله الرحمن الرحيم، الحمد لله رب العالمين، والصلاة والسلام على أشرف الأنبياء والمرسلين نبينا محمد وعلى آله وصحبه أجمعين.</p>
         <p>يسرّني أن أقدّم لكم ملف إنجازي، وهو توثيق شامل لرحلتي في التعليم والتقنية، وليس مجرد تجميع للشهادات والوثائق؛ بل هو شاهد حي على مسيرتي في الجمع بين الروح التربوية والحلول الرقمية المبتكرة.</p>
-        <p>يمثّل هذا الملف مرآة لجهودي المستمرة في تطوير مهاراتي وتوسيع آفاقي المعرفية، حيث حرصت على توثيق كل إنجاز وكل خطوة في رحلتي المهنية لثمرة سنوات من العمل الجاد والتفاني في خدمة الطالب والمعلم والبيئة المدرسية.</p>
+        <p>يمثّل هذا الملف مرآة لجهودي المستمرة في تطوير مهاراتي وتوسيع آفاقي المعرفية، حيث حرصت على توثيق كل إنجاز ومبادرة لخدمة الطالب والمعلم والبيئة المدرسية بروح الإتقان والعطاء.</p>
       </div>
     </section>
 
@@ -890,7 +1156,7 @@
       <div class="attach-box" data-open-modal="documents">
         <div class="att-ico">📁</div>
         <strong>مرفقات نبذة عني والوثائق الرسمية (2)</strong>
-        <span>👁️ لمشاهدة المرفقات اضغط هنا</span>
+        <span>👁️ لمشاهدة الوثائق الرسمية اضغط هنا</span>
       </div>
     </section>
 
@@ -899,7 +1165,7 @@
       <div class="card-head">
         <div class="card-title-wrap">
           <div class="sec-icon">🎯</div>
-          <h2>الرؤية والرسالة</h2>
+          <h2>الرؤية والرسالة والقيم</h2>
         </div>
         <span class="pill-tag">التوجه المستقبلي</span>
       </div>
@@ -913,7 +1179,7 @@
         </div>
         <div class="sub-panel">
           <h3>💎 القيم</h3>
-          <p>الارتقاء بالعملية التعليمية والمهنية عبر توظيف أحدث الأساليب التقنية، وترسيخ ثقافة الإبداع المستدام والإتقان والجودة وخدمة المجتمع المدرسي بروح المبادرة والعطاء.</p>
+          <p>الارتقاء بالعملية التعليمية والمهنية عبر توظيف أحدث الأساليب التقنية، وترسيخ ثقافة الإبداع المستدام والإتقان والجودة وخدمة المجتمع المدرسي بروح المبادرة والعطاء التطوعي.</p>
         </div>
       </div>
     </section>
@@ -951,13 +1217,13 @@
         <span class="pill-tag">السيرة العلمية</span>
       </div>
       <div class="card-body">
-        <p>حرصت طوال مسيرتي المهنية على الجمع بين التأصيل الأكاديمي والتطوير التقني المستمر؛ فحصلت على <strong>بكالوريوس اللغة العربية (1430هـ)</strong> ثم <strong>الدبلوم العالي في المهارات الرقمية (1444هـ)</strong>، إلى جانب أكثر من 18 دورة تدريبية وشهادة تخصصية في أمن المعلومات والقياس الإلكتروني والتعامل التربوي.</p>
+        <p>حرصت طوال مسيرتي المهنية على الجمع بين التأصيل الأكاديمي والتطوير التقني المستمر؛ فحصلت على <strong>بكالوريوس اللغة العربية (1430هـ)</strong> ثم <strong>الدبلوم العالي في المهارات الرقمية (1444هـ)</strong>، إلى جانب أكثر من 18 دورة تدريبية وشهادة تخصصية.</p>
       </div>
       <div style="margin-top: 18px;">
         <div class="exp-item">
           <span>العمل الحالي · متوسطة أوس بن ثابت (مكتب طويق - الرياض)</span>
           <h4>المنسق التقني ومسؤول منصة مدرستي ونظام نور</h4>
-          <p>أمين مصادر التعلم، معلم اللغة العربية والمهارات الرقمية، وعضو لجنتي التميز والتحصيل الدراسي.</p>
+          <p>أمين مصادر التعلم، معلم المهارات الحياتية والتفكير الناقد واللغة العربية والمهارات الرقمية، وعضو لجنتي التميز والتحصيل الدراسي.</p>
         </div>
         <div class="exp-item">
           <span>خبرة تربوية وإدارية · مدارس التضامن الأهلية</span>
@@ -977,7 +1243,45 @@
       </div>
     </section>
 
-    <!-- 7. سجل الإنجازات والمبادرات -->
+    <!-- 7. ابتكاراتي وأدواتي الرقمية في الميدان -->
+    <section id="innovations" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon">💡</div>
+          <h2>ابتكاراتي وأدواتي الرقمية في الميدان</h2>
+        </div>
+        <span class="pill-tag">أتمتة وحلول ذكية</span>
+      </div>
+      <div class="accent-grid">
+        <div class="tool-card">
+          <div class="tool-top"><div class="tool-ico">🧩</div><span class="tool-badge">إضافة متصفح</span></div>
+          <h3>إضافة «تحضيري من Teams»</h3>
+          <p>إضافة برمجية للمتصفح تتيح للمعلمين رصد حضور وغياب الطلاب من منصة مايكروسوفت تيمز بدقة وسرعة فائقة.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-top"><div class="tool-ico">📊</div><span class="tool-badge">Apps Script</span></div>
+          <h3>النظام الموحد لتقارير التفعيل اليومية</h3>
+          <p>منظومة سحابية لأتمتة تقارير تفعيل منصة مدرستي اليومية وربطها آليًا بملفات Google Drive وجداول المتابعة.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-top"><div class="tool-ico">📝</div><span class="tool-badge">بوابة إلكترونية</span></div>
+          <h3>منصة الأعذار الإلكترونية للطلاب</h3>
+          <p>بوابة رقمية لتقديم أعذار غياب الطلاب برقم تتبع آلي، مع تنبيهات منظمة لأولياء الأمور وشؤون الطلاب.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-top"><div class="tool-ico">🤖</div><span class="tool-badge">ذكاء اصطناعي</span></div>
+          <h3>مساعد «AwsNafesBot» لاختبارات نافس</h3>
+          <p>بوت تفاعلي ومنصة تدريبية لتهيئة طلاب المرحلة المتوسطة وتدريبهم على نماذج اختبارات نافس الوطنية.</p>
+        </div>
+        <div class="tool-card">
+          <div class="tool-top"><div class="tool-ico">⏱️</div><span class="tool-badge">Excel VBA</span></div>
+          <h3>نظام إدارة ومتابعة الانضباط الوظيفي</h3>
+          <p>نظام برمجي متكامل لرصد التأخر الصباحي واحتساب الدقائق آليًا وإصدار المساءلات والتنبيهات النظامية.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. سجل الإنجازات والمبادرات -->
     <section id="achievements" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -986,23 +1290,23 @@
         </div>
         <span class="pill-tag">الإنجازات</span>
       </div>
-      <div class="cyan-grid">
-        <div class="cyan-box" data-open-modal="certificates">
-          <h3>المبادرات التقنية والرقمية</h3>
-          <p>إدارة منظومة مدرستي ونظام نور، ونشر ثقافة التعلم الرقمي بصفتي السفير الرقمي، وتدريب الزملاء على الأدوات التقنية الحديثة.</p>
+      <div class="accent-grid">
+        <div class="accent-box" data-open-modal="certificates">
+          <h3>القيادة التقنية والتحول الرقمي</h3>
+          <p>إدارة منظومة مدرستي ونظام نور، ونشر ثقافة التعلم الرقمي بصفتي السفير الرقمي، وتدريب الزملاء على الأدوات التقنية.</p>
         </div>
-        <div class="cyan-box" data-open-modal="research">
+        <div class="accent-box" data-open-modal="research">
           <h3>الأبحاث والتقارير العلمية (15)</h3>
           <p>إعداد 15 بحثًا وتقريرًا وورقة عمل في المهارات الرقمية، وتطبيقات الذكاء الاصطناعي، والتقويم التكويني، وأمن المعلومات.</p>
         </div>
-        <div class="cyan-box" data-open-modal="all">
-          <h3>منسق العمل التطوعي</h3>
-          <p>تنظيم الأنشطة التطوعية في المدرسة وإشراك الطلاب فيها لتعزيز قيم المواطنة والمسؤولية المجتمعية.</p>
+        <div class="accent-box" data-open-modal="all">
+          <h3>منسق العمل التطوعي والمجتمعي</h3>
+          <p>تنظيم المبادرات التطوعية في المدرسة وإشراك الطلاب فيها لتعزيز قيم المواطنة والمسؤولية المجتمعية.</p>
         </div>
       </div>
     </section>
 
-    <!-- 8. شواهد الأداء الموثقة -->
+    <!-- 9. شواهد الأداء الموثقة -->
     <section id="evidence" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -1012,34 +1316,26 @@
         <span class="pill-tag">المهام والشواهد</span>
       </div>
       <div class="two-col">
-        <div class="cyan-box" data-open-modal="certificates">
-          <h3>القيادة التقنية وإدارة المنصات</h3>
-          <p>الإشراف الكامل على نظام نور ومنصة مدرستي وتقديم الدعم الفني المستمر للمعلمين والطلاب.</p>
+        <div class="accent-box" data-open-modal="certificates">
+          <h3>إدارة المنصات والدعم الفني</h3>
+          <p>الإشراف الكامل على نظام نور ومنصة مدرستي وتقديم الدعم الفني المستمر للمعلمين والطلاب وأولياء الأمور.</p>
         </div>
-        <div class="dark-evidence-box">
-          <h3>التفاعل مع المجتمع المهني</h3>
+        <div class="sub-panel" style="text-align:center">
+          <h3 style="justify-content:center">التفاعل مع المجتمع المهني</h3>
           <p>نشر ثقافة التحول الرقمي وتنفيذ ورش العمل واللقاءات التطويرية للزملاء في المدرسة.</p>
         </div>
-        <div class="dark-evidence-box">
-          <h3>التفاعل مع أولياء الأمور</h3>
-          <p>إدارة قنوات التواصل وقروبات أولياء الأمور لنقل المستجدات التعليمية بوضوح وسرعة.</p>
+        <div class="sub-panel" style="text-align:center">
+          <h3 style="justify-content:center">الشراكة مع أولياء الأمور</h3>
+          <p>إدارة قنوات التواصل الرقمية لنقل المستجدات التعليمية والتربوية بوضوح وسرعة.</p>
         </div>
-        <div class="cyan-box" data-open-modal="research">
-          <h3>توظيف المنصات الرقمية في التعليم</h3>
-          <p>دمج أدوات التقويم الإلكتروني ومصادر التعلم الرقمية في تدريس اللغة العربية والمهارات الرقمية.</p>
-        </div>
-        <div class="cyan-box" data-open-modal="certificates">
-          <h3>التطوير المهني المستمر</h3>
-          <p>اجتياز برامج تدريبية متخصصة في أمن المعلومات، القياس والتقويم، وفنيات التعامل مع الطلاب.</p>
-        </div>
-        <div class="dark-evidence-box">
-          <h3>لجان التميز والتحصيل الدراسي</h3>
-          <p>المشاركة الفاعلة في تطبيق معايير التميز المدرسي وتحليل مؤشرات التحصيل واقتراح خطط التحسين.</p>
+        <div class="accent-box" data-open-modal="research">
+          <h3>توظيف التقنية في التعليم</h3>
+          <p>دمج أدوات التقويم الإلكتروني ومصادر التعلم الرقمية في تدريس الطلاب وتنمية مهاراتهم.</p>
         </div>
       </div>
     </section>
 
-    <!-- 9. الخاتمة -->
+    <!-- 10. الخاتمة -->
     <section id="conclusion" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -1054,16 +1350,23 @@
       </div>
     </section>
 
-    <!-- 10. وسائل التواصل -->
+    <!-- 11. وسائل التواصل والمشاركة -->
     <section id="contact" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
           <div class="sec-icon">✉️</div>
-          <h2>وسائل التواصل</h2>
+          <h2>وسائل التواصل والمشاركة</h2>
         </div>
         <span class="pill-tag">اتصل بي</span>
       </div>
       <div class="contact-grid">
+        <a href="https://wa.me/966557717661" target="_blank" rel="noopener" class="contact-box">
+          <div>
+            <small>واتساب مباشر</small>
+            <strong>+966 55 771 7661</strong>
+          </div>
+          <div class="contact-ico">💬</div>
+        </a>
         <a href="mailto:somran28@gmail.com" class="contact-box">
           <div>
             <small>البريد الإلكتروني</small>
@@ -1073,7 +1376,7 @@
         </a>
         <a href="tel:+966557717661" class="contact-box">
           <div>
-            <small>رقم الهاتف</small>
+            <small>اتصال هاتفي</small>
             <strong>+966 55 771 7661</strong>
           </div>
           <div class="contact-ico">📞</div>
@@ -1085,6 +1388,13 @@
           </div>
           <div class="contact-ico">𝕏</div>
         </a>
+        <button type="button" class="contact-box" id="copyLinkBtn">
+          <div>
+            <small>مشاركة الملف</small>
+            <strong style="direction:rtl">نسخ رابط الموقع</strong>
+          </div>
+          <div class="contact-ico">🔗</div>
+        </button>
       </div>
     </section>
 
@@ -1095,11 +1405,39 @@
   </div>
 </main>
 
-<!-- شريط التحكم السفلي العائم (مطابق للفيديو) -->
-<div class="floating-controls" role="toolbar" aria-label="خيارات العرض والحركة">
-  <button class="ctrl-btn active" id="btnLayoutMode" type="button">📑 نمط القائمة جانبية</button>
-  <button class="ctrl-btn active" id="btnAnimMode" type="button">✨ حركة: دوران 3D</button>
-  <button class="ctrl-btn active" id="btnTiltToggle" type="button">🎛️ إمالة 3D: مفعلة</button>
+<!-- شريط الأيقونات العائم لتغيير الألوان والستايلات -->
+<div class="studio-dock" role="toolbar" aria-label="أيقونات تغيير الألوان والستايلات">
+  <div class="theme-dots" title="اختر لون الموقع">
+    <button type="button" class="theme-ico-btn active" data-set-theme="cyan" style="background:linear-gradient(135deg,#38d6ff,#082336)" title="الأزرق السماوي">🌌</button>
+    <button type="button" class="theme-ico-btn" data-set-theme="gold" style="background:linear-gradient(135deg,#ffd35c,#3d2906)" title="الذهبي الملكي">👑</button>
+    <button type="button" class="theme-ico-btn" data-set-theme="emerald" style="background:linear-gradient(135deg,#43e8a0,#062b1b)" title="الأخضر الزمردي">🇸🇦</button>
+    <button type="button" class="theme-ico-btn" data-set-theme="amethyst" style="background:linear-gradient(135deg,#c3a6ff,#1f0f42)" title="البنفسجي التقني">🔮</button>
+    <button type="button" class="theme-ico-btn" data-set-theme="light" style="background:linear-gradient(135deg,#ffffff,#cbe7f5)" title="النمط الفاتح">☀️</button>
+  </div>
+  <button class="ctrl-btn active" id="btnLayoutMode" type="button" title="تبديل نمط القائمة">📑 جانبية</button>
+  <button class="ctrl-btn active" id="btnAnimMode" type="button" title="تغيير نمط الحركة">✨ دوران 3D</button>
+  <button class="ctrl-btn active" id="btnTiltToggle" type="button" title="إمالة البطاقات بالماوس">🎛️ إمالة: مفعلة</button>
+  <button class="ctrl-btn" id="btnFontPanel" type="button" title="إعدادات الخط">🔤 الخط</button>
+</div>
+
+<!-- لوحة الخطوط المنبثقة -->
+<div class="font-popover" id="fontPopover">
+  <div class="pop-row">
+    <small>نوع الخط:</small>
+    <div class="pop-opts">
+      <button type="button" class="ctrl-btn active" data-set-font="tajawal">تجوال</button>
+      <button type="button" class="ctrl-btn" data-set-font="cairo">القاهرة</button>
+      <button type="button" class="ctrl-btn" data-set-font="kufi">كوفي</button>
+    </div>
+  </div>
+  <div class="pop-row">
+    <small>حجم النص:</small>
+    <div class="pop-opts">
+      <button type="button" class="ctrl-btn" data-set-size="s">صغير</button>
+      <button type="button" class="ctrl-btn active" data-set-size="m">متوسط</button>
+      <button type="button" class="ctrl-btn" data-set-size="l">كبير</button>
+    </div>
+  </div>
 </div>
 
 <!-- نافذة استعراض ومعاينة المرفقات -->
@@ -1111,57 +1449,78 @@
     </div>
     <div class="modal-search-bar" id="modalSearchBar">
       <input type="text" id="modalSearchInput" placeholder="ابحث باسم الوثيقة أو البحث أو الشهادة...">
-      <span id="modalCounter" style="color: var(--cyan-bright); font-size: 0.88rem; font-weight: 700;"></span>
+      <div class="filter-pills" id="filterPills"></div>
+      <span id="modalCounter" style="color: var(--accent-bright); font-size: 0.88rem; font-weight: 800;"></span>
     </div>
     <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- نافذة الباركود (QR Code) -->
+<div class="modal-backdrop" id="qrModal" role="dialog" aria-modal="true">
+  <div class="modal-window" style="max-width:420px; text-align:center;">
+    <div class="modal-top">
+      <h3>رمز الاستجابة السريعة (QR)</h3>
+      <button class="close-btn" id="closeQrBtn" aria-label="إغلاق">✕</button>
+    </div>
+    <div style="padding:28px 22px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+      <div style="background:#fff; padding:14px; border-radius:18px; box-shadow:0 8px 25px rgba(0,0,0,0.3);">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=210x210&data=https://ksa2020q.github.io/samran/" alt="QR Code ملف إنجاز سمران شديد" width="210" height="210" style="display:block;">
+      </div>
+      <strong style="color:var(--heading); font-size:1.05rem;">سمران بن عبد العزيز شديد</strong>
+      <small style="color:var(--accent-bright); direction:ltr;">https://ksa2020q.github.io/samran/</small>
+      <p style="color:var(--text-muted); font-size:0.88rem;">امسح الرمز بكاميرا الجوال لفتح ملف الإنجاز الإلكتروني مباشرة</p>
+    </div>
   </div>
 </div>
 
 <script>
   /* ===================== بيانات المرفقات من Google Drive ===================== */
   const DOCUMENTS = [
-    { cat: "وثيقة رسمية", title: "وثيقة الدبلوم العالي في المهارات الرقمية", id: "15-0t0ziXHn7kPz3apNXiMORi10hBDc0A" },
-    { cat: "وثيقة رسمية", title: "وثيقة التخرج · بكالوريوس اللغة العربية", id: "1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds" }
+    { group: "documents", cat: "وثيقة رسمية", title: "وثيقة الدبلوم العالي في المهارات الرقمية", id: "15-0t0ziXHn7kPz3apNXiMORi10hBDc0A" },
+    { group: "documents", cat: "وثيقة رسمية", title: "وثيقة التخرج · بكالوريوس اللغة العربية", id: "1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds" }
   ];
 
   const RESEARCH = [
-    { cat: "بحث وتقرير", title: "قضايا ومشكلات في تدريس المهارات الرقمية", id: "1lgxN1CGGbqEQZvupPgWA_yC3-o0Xa0iZ" },
-    { cat: "بحث وتقرير", title: "نقد الورقة العلمية", id: "15jisK_fmeelOIw5AG0TDx90lcRYyTX19" },
-    { cat: "بحث وتقرير", title: "تقرير أهم البرامج والمحتوى الرقمي (المجموعة الثانية)", id: "1G3XWSFXBqUmHEQlaViGBsBie7UmvYh1q" },
-    { cat: "بحث وتقرير", title: "عرض سياسة التعليم", id: "1btSZFlWJp1pxPRfvjG2M_mNFKq0Z0yG5" },
-    { cat: "بحث وتقرير", title: "برامج الذكاء الاصطناعي (المجموعة الثانية)", id: "1Auv0N17T94Y_-sponMzMrcSsYzurY3la" },
-    { cat: "بحث وتقرير", title: "العروض البيانية المتقدمة بالإكسل", id: "1Zecvo9y6dYZFghTseXY42FlgaDkiX-Mf" },
-    { cat: "بحث وتقرير", title: "البرمجة المرئية", id: "1Vn2_eM-qjtTV2cPTR42KmeDlPHnCPGz4" },
-    { cat: "بحث وتقرير", title: "تطبيقات للتقويم التكويني", id: "1YJOVAIVEq3dts1B6GtIOJU4dyRjKfOAn" },
-    { cat: "بحث وتقرير", title: "التقرير النهائي: موضوعات مختارة (المجموعة الثانية)", id: "1ibYhUtujv3iBM-1TnD545B9-oe2nSuyZ" },
-    { cat: "بحث وتقرير", title: "تجربتي في ظل جائحة كورونا", id: "1TPhfJk9Bk5g3eWPSj9Ja8W-eYw_Q6zkX" },
-    { cat: "بحث وتقرير", title: "الخريطة الذهنية", id: "1V1JOzixiDiP45Vcdkyn10QQB2pphMVfO" },
-    { cat: "بحث وتقرير", title: "برامج الحماية وVPN", id: "1jh8CU1vXsyZTxhW3AM6eJSVSm97-UcU9" },
-    { cat: "بحث وتقرير", title: "المواصفات الفنية للكتاب المدرسي", id: "1Y27v7gVH1MJ6KzkBe2OVILxv1hoaslJ-" },
-    { cat: "بحث وتقرير", title: "سلم تقدير لفظي", id: "1qeHzXT3JQDN30_ryXthTuKYO5mBMShHX" },
-    { cat: "بحث وتقرير", title: "دراسة حالة", id: "12YJM7u1x1gdTEb3Ll0IVO-Sk85iRlcy4" }
+    { group: "research", cat: "بحث وتقرير", title: "قضايا ومشكلات في تدريس المهارات الرقمية", id: "1lgxN1CGGbqEQZvupPgWA_yC3-o0Xa0iZ" },
+    { group: "research", cat: "بحث وتقرير", title: "نقد الورقة العلمية", id: "15jisK_fmeelOIw5AG0TDx90lcRYyTX19" },
+    { group: "research", cat: "بحث وتقرير", title: "تقرير أهم البرامج والمحتوى الرقمي (المجموعة الثانية)", id: "1G3XWSFXBqUmHEQlaViGBsBie7UmvYh1q" },
+    { group: "research", cat: "بحث وتقرير", title: "عرض سياسة التعليم", id: "1btSZFlWJp1pxPRfvjG2M_mNFKq0Z0yG5" },
+    { group: "research", cat: "بحث وتقرير", title: "برامج الذكاء الاصطناعي (المجموعة الثانية)", id: "1Auv0N17T94Y_-sponMzMrcSsYzurY3la" },
+    { group: "research", cat: "بحث وتقرير", title: "العروض البيانية المتقدمة بالإكسل", id: "1Zecvo9y6dYZFghTseXY42FlgaDkiX-Mf" },
+    { group: "research", cat: "بحث وتقرير", title: "البرمجة المرئية", id: "1Vn2_eM-qjtTV2cPTR42KmeDlPHnCPGz4" },
+    { group: "research", cat: "بحث وتقرير", title: "تطبيقات للتقويم التكويني", id: "1YJOVAIVEq3dts1B6GtIOJU4dyRjKfOAn" },
+    { group: "research", cat: "بحث وتقرير", title: "التقرير النهائي: موضوعات مختارة (المجموعة الثانية)", id: "1ibYhUtujv3iBM-1TnD545B9-oe2nSuyZ" },
+    { group: "research", cat: "بحث وتقرير", title: "تجربتي في ظل جائحة كورونا", id: "1TPhfJk9Bk5g3eWPSj9Ja8W-eYw_Q6zkX" },
+    { group: "research", cat: "بحث وتقرير", title: "الخريطة الذهنية", id: "1V1JOzixiDiP45Vcdkyn10QQB2pphMVfO" },
+    { group: "research", cat: "بحث وتقرير", title: "برامج الحماية وVPN", id: "1jh8CU1vXsyZTxhW3AM6eJSVSm97-UcU9" },
+    { group: "research", cat: "بحث وتقرير", title: "المواصفات الفنية للكتاب المدرسي", id: "1Y27v7gVH1MJ6KzkBe2OVILxv1hoaslJ-" },
+    { group: "research", cat: "بحث وتقرير", title: "سلم تقدير لفظي", id: "1qeHzXT3JQDN30_ryXthTuKYO5mBMShHX" },
+    { group: "research", cat: "بحث وتقرير", title: "دراسة حالة", id: "12YJM7u1x1gdTEb3Ll0IVO-Sk85iRlcy4" }
   ];
 
   const CERTIFICATES = [
-    { cat: "دورة", title: "شهادة NIEPD 008", id: "103w_WWMYfGnqBlOU5jAsphaiK1_QVo6k" },
-    { cat: "دورة", title: "شهادة البحث الإجرائي وتطوير الميدان التعليمي", id: "1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn" },
-    { cat: "ندوة", title: "ندوة النموذج الإشرافي لتمكين المدرسة", id: "1H_p33y6x0YOC1dEYZ6tA-zudC9_huzR9" },
-    { cat: "تقنية", title: "دورة أمن ويندوز", id: "16wrWCQv-0KrYnmQoqa3L7w0JDwwd5OQs" },
-    { cat: "تقنية", title: "إتمام مساق معالج النصوص (إدراك)", id: "1sMs4OugAJM8-JsIt6SQKy2E0qYLaDvcS" },
-    { cat: "تقنية", title: "برنامج تدريبي أمن المعلومات (معهد الإدارة)", id: "1gQ5PJkuTRwr4BLiHBMhifsdH3GVrwfFa" },
-    { cat: "تقنية", title: "إتمام مساق الجداول الإلكترونية (إدراك)", id: "1XfEc_X7EaA7fcjMruSwH96_0bKqfBSuE" },
-    { cat: "لغات", title: "الإنجليزي مستوى تأسيسي (15 ساعة)", id: "1JB5naHpF_jwOQ_U9-DPnz-fuorPwcmRo" },
-    { cat: "تربوية", title: "فنيات التعامل مع الطلاب المراهقين", id: "1LsW6lqLzION7gX1a9jE1Hnx9l-tyB_F4" },
-    { cat: "لغات", title: "الإنجليزي مستوى تمهيدي (50 ساعة)", id: "1CLP3ExHHMkkDor-34nWQQmNUMCw5Eueo" },
-    { cat: "تطوير", title: "البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)", id: "1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L" },
-    { cat: "تطوير", title: "بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي", id: "1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe" },
-    { cat: "خبرة", title: "خبرة عمل مساعد إداري (3 سنوات)", id: "1T1EmPxlx4Lt7UQz-OWpYv-jQEi7THFMl" },
-    { cat: "تقنية", title: "أدوات القياس والتقويم الإلكتروني (الابتعاث)", id: "1yuDn499a9NsGkuZIk_NZ4JJTZkdRm_k_" },
-    { cat: "تربوية", title: "التعامل مع طلاب المرحلة الابتدائية", id: "15xEZhUXZnek6OzIMijE5kK4S9wSlL4qP" },
-    { cat: "لغات", title: "الإنجليزي مستوى 1B (33 ساعة)", id: "1wfLDBROxA4RenWjJuxMq2ZZvLAEMSpVT" },
-    { cat: "لغات", title: "الإنجليزي مستوى A1 (30 ساعة)", id: "1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
-    { cat: "ورشة", title: "ورشة تدريبية: جدول مواصفات الأوزان النسبية", id: "1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
+    { group: "certificates", cat: "دورة", title: "شهادة NIEPD 008", id: "103w_WWMYfGnqBlOU5jAsphaiK1_QVo6k" },
+    { group: "certificates", cat: "دورة", title: "شهادة البحث الإجرائي وتطوير الميدان التعليمي", id: "1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn" },
+    { group: "certificates", cat: "ندوة", title: "ندوة النموذج الإشرافي لتمكين المدرسة", id: "1H_p33y6x0YOC1dEYZ6tA-zudC9_huzR9" },
+    { group: "certificates", cat: "تقنية", title: "دورة أمن ويندوز", id: "16wrWCQv-0KrYnmQoqa3L7w0JDwwd5OQs" },
+    { group: "certificates", cat: "تقنية", title: "إتمام مساق معالج النصوص (إدراك)", id: "1sMs4OugAJM8-JsIt6SQKy2E0qYLaDvcS" },
+    { group: "certificates", cat: "تقنية", title: "برنامج تدريبي أمن المعلومات (معهد الإدارة)", id: "1gQ5PJkuTRwr4BLiHBMhifsdH3GVrwfFa" },
+    { group: "certificates", cat: "تقنية", title: "إتمام مساق الجداول الإلكترونية (إدراك)", id: "1XfEc_X7EaA7fcjMruSwH96_0bKqfBSuE" },
+    { group: "certificates", cat: "لغات", title: "الإنجليزي مستوى تأسيسي (15 ساعة)", id: "1JB5naHpF_jwOQ_U9-DPnz-fuorPwcmRo" },
+    { group: "certificates", cat: "تربوية", title: "فنيات التعامل مع الطلاب المراهقين", id: "1LsW6lqLzION7gX1a9jE1Hnx9l-tyB_F4" },
+    { group: "certificates", cat: "لغات", title: "الإنجليزي مستوى تمهيدي (50 ساعة)", id: "1CLP3ExHHMkkDor-34nWQQmNUMCw5Eueo" },
+    { group: "certificates", cat: "تطوير", title: "البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)", id: "1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L" },
+    { group: "certificates", cat: "تطوير", title: "بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي", id: "1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe" },
+    { group: "certificates", cat: "خبرة", title: "خبرة عمل مساعد إداري (3 سنوات)", id: "1T1EmPxlx4Lt7UQz-OWpYv-jQEi7THFMl" },
+    { group: "certificates", cat: "تقنية", title: "أدوات القياس والتقويم الإلكتروني (الابتعاث)", id: "1yuDn499a9NsGkuZIk_NZ4JJTZkdRm_k_" },
+    { group: "certificates", cat: "تربوية", title: "التعامل مع طلاب المرحلة الابتدائية", id: "15xEZhUXZnek6OzIMijE5kK4S9wSlL4qP" },
+    { group: "certificates", cat: "لغات", title: "الإنجليزي مستوى 1B (33 ساعة)", id: "1wfLDBROxA4RenWjJuxMq2ZZvLAEMSpVT" },
+    { group: "certificates", cat: "لغات", title: "الإنجليزي مستوى A1 (30 ساعة)", id: "1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
+    { group: "certificates", cat: "ورشة", title: "ورشة تدريبية: جدول مواصفات الأوزان النسبية", id: "1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
   ];
+
+  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...RESEARCH];
 
   /* ===================== نافذة المرفقات والمعاينة ===================== */
   const modal = document.getElementById('attachModal');
@@ -1169,9 +1528,10 @@
   const modalBody = document.getElementById('modalBody');
   const modalSearchBar = document.getElementById('modalSearchBar');
   const modalSearchInput = document.getElementById('modalSearchInput');
+  const filterPills = document.getElementById('filterPills');
   const modalCounter = document.getElementById('modalCounter');
-  let activeItems = [];
-  let activeGroupTitle = "";
+  let activeGroup = 'all';
+  let activeGroupTitle = '';
 
   function renderItems(items) {
     modalBody.innerHTML = "";
@@ -1192,104 +1552,214 @@
     });
   }
 
+  function applyModalFilter() {
+    const q = modalSearchInput.value.trim();
+    const base = activeGroup === 'all' ? ALL_FILES : ALL_FILES.filter(f => f.group === activeGroup);
+    const filtered = base.filter(i => i.title.includes(q) || i.cat.includes(q));
+    renderItems(filtered);
+  }
+
   function openGroupModal(type) {
     modalSearchBar.style.display = 'flex';
     modalSearchInput.value = '';
-    if (type === 'documents') {
-      activeGroupTitle = 'الوثائق الرسمية والمؤهلات';
-      activeItems = DOCUMENTS;
-    } else if (type === 'research') {
-      activeGroupTitle = 'الأبحاث والتقارير العلمية';
-      activeItems = RESEARCH;
-    } else if (type === 'certificates') {
-      activeGroupTitle = 'الشهادات والدورات التدريبية';
-      activeItems = CERTIFICATES;
-    } else {
-      activeGroupTitle = 'جميع المرفقات والشواهد الموثقة';
-      activeItems = [...DOCUMENTS, ...CERTIFICATES, ...RESEARCH];
-    }
+    activeGroup = type;
+
+    const titles = {
+      documents: 'الوثائق الرسمية والمؤهلات',
+      research: 'الأبحاث والتقارير العلمية',
+      certificates: 'الشهادات والدورات التدريبية',
+      all: 'جميع المرفقات والشواهد الموثقة'
+    };
+    activeGroupTitle = titles[type] || titles.all;
     modalTitle.textContent = activeGroupTitle;
-    renderItems(activeItems);
+
+    const tabs = [
+      { key: 'all', label: 'الكل (35)' },
+      { key: 'documents', label: 'الوثائق (2)' },
+      { key: 'certificates', label: 'الشهادات (18)' },
+      { key: 'research', label: 'الأبحاث (15)' }
+    ];
+    filterPills.innerHTML = '';
+    tabs.forEach(t => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'ctrl-btn' + (t.key === activeGroup ? ' active' : '');
+      b.textContent = t.label;
+      b.addEventListener('click', () => {
+        activeGroup = t.key;
+        modalTitle.textContent = titles[t.key];
+        [...filterPills.children].forEach(c => c.classList.remove('active'));
+        b.classList.add('active');
+        applyModalFilter();
+      });
+      filterPills.appendChild(b);
+    });
+
+    applyModalFilter();
     modal.classList.add('open');
   }
 
   function openFileFrame(item) {
-    modalTitle.innerHTML = `<button id="backToListBtn" style="background:rgba(22,184,224,.2);border:1px solid #38d6ff;color:#fff;border-radius:999px;padding:3px 12px;margin-left:10px;cursor:pointer;font-family:inherit;font-size:.85rem;">→ رجوع</button> ${item.title}`;
+    modalTitle.innerHTML = `<button id="backToListBtn" class="ctrl-btn active" style="margin-left:10px;">→ رجوع للقائمة</button> ${item.title}`;
     modalSearchBar.style.display = 'none';
     modalBody.innerHTML = `<iframe class="frame-view" src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay"></iframe>`;
     document.getElementById('backToListBtn').addEventListener('click', () => {
       modalTitle.textContent = activeGroupTitle;
       modalSearchBar.style.display = 'flex';
-      renderItems(activeItems);
+      applyModalFilter();
     });
   }
 
-  modalSearchInput.addEventListener('input', () => {
-    const q = modalSearchInput.value.trim();
-    const filtered = activeItems.filter(i => i.title.includes(q) || i.cat.includes(q));
-    renderItems(filtered);
-  });
+  modalSearchInput.addEventListener('input', applyModalFilter);
 
   document.querySelectorAll('[data-open-modal]').forEach(el => {
     el.addEventListener('click', () => openGroupModal(el.dataset.openModal));
   });
 
-  const closeModal = () => {
-    modal.classList.remove('open');
-    modalBody.innerHTML = '';
-  };
+  const closeModal = () => { modal.classList.remove('open'); modalBody.innerHTML = ''; };
   document.getElementById('closeModalBtn').addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-  /* ===================== شريط التحكم السفلي العائم ===================== */
-  let isSidebarMode = true;
-  let isPulseMode = false;
-  let isTiltEnabled = true;
+  /* ===================== QR ونسخ الرابط ===================== */
+  const qrModal = document.getElementById('qrModal');
+  document.getElementById('openQrBtn').addEventListener('click', () => qrModal.classList.add('open'));
+  document.getElementById('closeQrBtn').addEventListener('click', () => qrModal.classList.remove('open'));
+  qrModal.addEventListener('click', e => { if (e.target === qrModal) qrModal.classList.remove('open'); });
 
-  const btnLayoutMode = document.getElementById('btnLayoutMode');
-  const btnAnimMode = document.getElementById('btnAnimMode');
-  const btnTiltToggle = document.getElementById('btnTiltToggle');
-
-  btnLayoutMode.addEventListener('click', () => {
-    isSidebarMode = !isSidebarMode;
-    document.body.classList.toggle('sequential-mode', !isSidebarMode);
-    btnLayoutMode.textContent = isSidebarMode ? '📑 نمط القائمة جانبية' : '📜 نمط متتالي';
-    btnLayoutMode.classList.toggle('active', isSidebarMode);
+  const toast = document.getElementById('toastMsg');
+  document.getElementById('copyLinkBtn').addEventListener('click', () => {
+    const url = 'https://ksa2020q.github.io/samran/';
+    navigator.clipboard?.writeText(url).catch(() => {});
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2600);
   });
 
-  btnAnimMode.addEventListener('click', () => {
-    isPulseMode = !isPulseMode;
-    document.body.classList.toggle('anim-pulse', isPulseMode);
-    btnAnimMode.textContent = isPulseMode ? '💫 حركة: تنبض وتوهج' : '✨ حركة: دوران 3D';
-  });
-
-  btnTiltToggle.addEventListener('click', () => {
-    isTiltEnabled = !isTiltEnabled;
-    btnTiltToggle.textContent = isTiltEnabled ? '🎛️ إمالة 3D: مفعلة' : '🎛️ إمالة 3D: معطلة';
-    btnTiltToggle.classList.toggle('active', isTiltEnabled);
-    if (!isTiltEnabled) {
-      document.querySelectorAll('.tilt-card').forEach(c => c.style.transform = '');
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeModal();
+      qrModal.classList.remove('open');
+      fontPopover.classList.remove('open');
     }
   });
 
-  /* تأثير الإمالة ثلاثية الأبعاد عند تحريك الفأرة */
+  /* ===================== شريط الأيقونات لتغيير الألوان والستايلات ===================== */
+  const htmlEl = document.documentElement;
+  const PREF_KEY = 'samran_portfolio_prefs_v2';
+  const prefs = { theme: 'cyan', font: 'tajawal', size: 'm', sidebar: true, anim: '3d', tilt: true };
+
+  try {
+    Object.assign(prefs, JSON.parse(localStorage.getItem(PREF_KEY) || '{}'));
+  } catch (e) {}
+
+  function savePrefs() {
+    try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch (e) {}
+  }
+
+  function applyPrefs() {
+    htmlEl.setAttribute('data-theme', prefs.theme);
+    htmlEl.setAttribute('data-font', prefs.font);
+    htmlEl.setAttribute('data-size', prefs.size);
+
+    document.querySelectorAll('[data-set-theme]').forEach(b => {
+      b.classList.toggle('active', b.dataset.setTheme === prefs.theme);
+    });
+    document.querySelectorAll('[data-set-font]').forEach(b => {
+      b.classList.toggle('active', b.dataset.setFont === prefs.font);
+    });
+    document.querySelectorAll('[data-set-size]').forEach(b => {
+      b.classList.toggle('active', b.dataset.setSize === prefs.size);
+    });
+
+    document.body.classList.toggle('sequential-mode', !prefs.sidebar);
+    const btnLayout = document.getElementById('btnLayoutMode');
+    btnLayout.textContent = prefs.sidebar ? '📑 جانبية' : '📜 متتالي';
+    btnLayout.classList.toggle('active', prefs.sidebar);
+
+    document.body.classList.toggle('anim-pulse', prefs.anim === 'pulse');
+    const btnAnim = document.getElementById('btnAnimMode');
+    btnAnim.textContent = prefs.anim === 'pulse' ? '💫 تنبض وتوهج' : '✨ دوران 3D';
+
+    const btnTilt = document.getElementById('btnTiltToggle');
+    btnTilt.textContent = prefs.tilt ? '🎛️ إمالة: مفعلة' : '🎛️ إمالة: معطلة';
+    btnTilt.classList.toggle('active', prefs.tilt);
+    if (!prefs.tilt) document.querySelectorAll('.tilt-card').forEach(c => c.style.transform = '');
+  }
+
+  applyPrefs();
+
+  document.querySelectorAll('[data-set-theme]').forEach(btn => {
+    btn.addEventListener('click', () => { prefs.theme = btn.dataset.setTheme; savePrefs(); applyPrefs(); });
+  });
+  document.querySelectorAll('[data-set-font]').forEach(btn => {
+    btn.addEventListener('click', () => { prefs.font = btn.dataset.setFont; savePrefs(); applyPrefs(); });
+  });
+  document.querySelectorAll('[data-set-size]').forEach(btn => {
+    btn.addEventListener('click', () => { prefs.size = btn.dataset.setSize; savePrefs(); applyPrefs(); });
+  });
+
+  document.getElementById('btnLayoutMode').addEventListener('click', () => {
+    prefs.sidebar = !prefs.sidebar; savePrefs(); applyPrefs();
+  });
+  document.getElementById('btnAnimMode').addEventListener('click', () => {
+    prefs.anim = prefs.anim === '3d' ? 'pulse' : '3d'; savePrefs(); applyPrefs();
+  });
+  document.getElementById('btnTiltToggle').addEventListener('click', () => {
+    prefs.tilt = !prefs.tilt; savePrefs(); applyPrefs();
+  });
+
+  const fontPopover = document.getElementById('fontPopover');
+  document.getElementById('btnFontPanel').addEventListener('click', e => {
+    e.stopPropagation();
+    fontPopover.classList.toggle('open');
+  });
+  document.addEventListener('click', e => {
+    if (!fontPopover.contains(e.target) && e.target.id !== 'btnFontPanel') {
+      fontPopover.classList.remove('open');
+    }
+  });
+
+  /* إمالة ثلاثية الأبعاد بالماوس */
   document.querySelectorAll('.tilt-card').forEach(card => {
     card.addEventListener('mousemove', e => {
-      if (!isTiltEnabled || window.innerWidth < 900) return;
+      if (!prefs.tilt || window.innerWidth < 900) return;
       const rect = card.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-      const rotateX = (-y * 4).toFixed(2);
-      const rotateY = (x * 4).toFixed(2);
-      card.style.transform = `perspective(1100px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      card.style.transform = `perspective(1100px) rotateX(${(-y * 3.8).toFixed(2)}deg) rotateY(${(x * 3.8).toFixed(2)}deg)`;
     });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 
-  /* ===================== تتبع التمرير وتفعيل القائمة الجانبية ===================== */
+  /* ===================== الكتابة التلقائية والعدادات ===================== */
+  const phrases = [
+    "مربي ومعلم للغة العربية والمهارات الرقمية",
+    "مطور حلول وأدوات رقمية تعليمية",
+    "سفير التحول الرقمي والابتكار المدرسي",
+    "المنسق التقني ومسؤول منصة مدرستي ونظام نور"
+  ];
+  let pi = 0, ci = 0, del = false;
+  const tw = document.getElementById('typewriter');
+  (function loopType() {
+    const word = phrases[pi];
+    tw.textContent = del ? word.slice(0, ci--) : word.slice(0, ci++);
+    let delay = del ? 40 : 80;
+    if (!del && ci > word.length) { del = true; delay = 1700; }
+    else if (del && ci < 0) { del = false; pi = (pi + 1) % phrases.length; ci = 0; delay = 350; }
+    setTimeout(loopType, delay);
+  })();
+
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = +el.dataset.count;
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target / 30));
+    const timer = setInterval(() => {
+      cur += step;
+      if (cur >= target) { el.textContent = target; clearInterval(timer); }
+      else el.textContent = cur;
+    }, 45);
+  });
+
+  /* ===================== تتبع التمرير والقائمة الجانبية ===================== */
   const progressBar = document.getElementById('scrollProgress');
   const sections = [...document.querySelectorAll('section[id]')];
   const navLinks = [...document.querySelectorAll('.sidebar .nav-item')];
@@ -1297,9 +1767,7 @@
 
   window.addEventListener('scroll', () => {
     const doc = document.documentElement;
-    const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
-    progressBar.style.width = pct + '%';
-
+    progressBar.style.width = ((doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100) + '%';
     let currentId = 'home';
     sections.forEach(sec => {
       if (window.scrollY >= sec.offsetTop - 190) currentId = sec.id;
@@ -1309,12 +1777,59 @@
     });
   });
 
-  document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-    sidebar.classList.toggle('mobile-open');
-  });
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => sidebar.classList.remove('mobile-open'));
-  });
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+  navLinks.forEach(link => link.addEventListener('click', () => sidebar.classList.remove('mobile-open')));
+
+  /* ===================== خلفية الجزيئات التفاعلية ===================== */
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  for (let i = 0; i < 42; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      vx: (Math.random() - 0.5) * 0.45,
+      vy: (Math.random() - 0.5) * 0.45,
+      r: Math.random() * 2 + 1
+    });
+  }
+
+  (function animateBg() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const rgb = getComputedStyle(document.documentElement).getPropertyValue('--particle-rgb').trim() || '56, 214, 255';
+    particles.forEach((p, idx) => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${rgb}, 0.65)`;
+      ctx.fill();
+
+      for (let j = idx + 1; j < particles.length; j++) {
+        const p2 = particles[j];
+        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+        if (dist < 130) {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(${rgb}, ${(1 - dist / 130) * 0.18})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    });
+    requestAnimationFrame(animateBg);
+  })();
 </script>
 </body>
 </html>
