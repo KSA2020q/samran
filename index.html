@@ -201,6 +201,17 @@
   .opt.on { border-color: var(--accent); background: var(--accent-soft); color: var(--accent-ink); font-weight: 700; }
   .swatch { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(0,0,0,.15); display: inline-block; }
 
+  .file-actions { margin-top: auto; display: flex; gap: 8px; flex-wrap: wrap; }
+  .act { border: 1px solid var(--line); background: var(--bg); color: var(--heading); border-radius: 999px; padding: 6px 14px; font-family: inherit; font-size: .88rem; font-weight: 700; cursor: pointer; transition: .2s; }
+  .act:hover { border-color: var(--green); color: var(--green); }
+  .act.primary { background: var(--green); color: #fff; border-color: var(--green); }
+  .preview-modal { position: fixed; inset: 0; z-index: 200; background: rgba(5,10,20,.7); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; padding: 20px; }
+  .preview-modal.open { display: flex; }
+  .preview-box { background: var(--card); border-radius: calc(var(--r) * 1.2); width: min(960px, 100%); height: min(86vh, 900px); display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
+  .preview-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 18px; border-bottom: 1px solid var(--line); color: var(--heading); font-weight: 700; }
+  .preview-head button { background: none; border: none; color: var(--muted); font-size: 1.3rem; cursor: pointer; }
+  .preview-box iframe { flex: 1; width: 100%; border: 0; background: #fff; }
+
   /* ================= الجوال ================= */
   @media (max-width: 960px) {
     .nav-links { display: none; position: absolute; top: 68px; right: 0; left: 0; flex-direction: column; background: var(--card); padding: 10px 4% 16px; border-bottom: 1px solid var(--line); }
@@ -403,7 +414,7 @@
         <div class="contact-cards">
           <a class="contact-item" href="mailto:somran28@gmail.com"><small>البريد الإلكتروني</small><strong>somran28@gmail.com</strong></a>
           <a class="contact-item" href="tel:+966557717661"><small>الجوال</small><strong>+966 55 771 7661</strong></a>
-          <a class="contact-item" href="https://twitter.com/Somran88" target="_blank" rel="noopener"><small>تويتر</small><strong>@Somran88</strong></a>
+          <a class="contact-item" href="https://x.com/Somran88" target="_blank" rel="noopener"><small>منصة X (تويتر سابقًا)</small><strong>@Somran88</strong></a>
         </div>
       </div>
     </div>
@@ -411,6 +422,14 @@
 </main>
 
 <footer>© سمران بن عبد العزيز شديد · ملف الإنجاز المهني</footer>
+
+<!-- نافذة معاينة الملفات -->
+<div class="preview-modal" id="previewModal" role="dialog" aria-modal="true">
+  <div class="preview-box">
+    <div class="preview-head"><span id="previewTitle"></span><button id="previewClose" aria-label="إغلاق">✕</button></div>
+    <iframe id="previewFrame" allow="autoplay" loading="lazy" title="معاينة الملف"></iframe>
+  </div>
+</div>
 
 <!-- لوحة التنسيق للزائر -->
 <button class="style-fab" id="styleFab" aria-expanded="false">🎨 التنسيق</button>
@@ -505,18 +524,34 @@
   const viewUrl = id => `https://drive.google.com/file/d/${id}/view`;
 
   function fileCard({ emo, title, meta, tag, id }) {
-    const el = document.createElement('a');
+    const el = document.createElement('div');
     el.className = 'file reveal';
-    el.href = viewUrl(id);
-    el.target = '_blank';
-    el.rel = 'noopener';
     el.innerHTML = `
       <div class="file-top"><span class="file-emo">${emo}</span>${tag ? `<span class="tag">${tag}</span>` : ''}</div>
       <h3>${title}</h3>
       ${meta ? `<small>${meta}</small>` : ''}
-      <span class="open">عرض الملف ↗</span>`;
+      <div class="file-actions">
+        <button class="act primary" type="button" data-preview="${id}" data-title="${title}">معاينة</button>
+        <a class="act" href="${viewUrl(id)}" target="_blank" rel="noopener">فتح ↗</a>
+      </div>`;
+    el.querySelector('[data-preview]').addEventListener('click', e => openPreview(e.currentTarget.dataset.preview, e.currentTarget.dataset.title));
     return el;
   }
+
+  /* نافذة المعاينة داخل الصفحة */
+  function openPreview(id, title) {
+    const modal = document.getElementById('previewModal');
+    document.getElementById('previewTitle').textContent = title;
+    document.getElementById('previewFrame').src = `https://drive.google.com/file/d/${id}/preview`;
+    modal.classList.add('open');
+  }
+  function closePreview() {
+    document.getElementById('previewModal').classList.remove('open');
+    document.getElementById('previewFrame').src = '';
+  }
+  document.getElementById('previewClose').addEventListener('click', closePreview);
+  document.getElementById('previewModal').addEventListener('click', e => { if (e.target.id === 'previewModal') closePreview(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closePreview(); });
 
   document.getElementById('docGrid').append(...DOCUMENTS.map(d => fileCard({ ...d, tag: 'رسمية' })));
   document.getElementById('researchGrid').append(...RESEARCH.map(r => fileCard({ emo: '📄', title: r.title, id: r.id })));
