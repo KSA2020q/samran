@@ -92,15 +92,14 @@
 
   /* المحتوى الرئيسي */
   .main-wrap { margin-right:var(--sidebar-w); padding:24px 26px 120px; position:relative; z-index:1; transition:margin-right .35s; }
-  .container { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:28px; }
-  section[id] { scroll-margin-top:24px; }
+  .container { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }
 
   .glow-card { background:var(--card-bg); border:1.5px solid var(--border-glow); border-radius:var(--radius-lg); padding:30px 32px; box-shadow:var(--shadow-glow); backdrop-filter:blur(12px); position:relative; transition:transform .3s,box-shadow .3s,border-color .3s; transform-style:preserve-3d; }
   .glow-card:hover { border-color:var(--accent-bright); box-shadow:var(--shadow-strong); }
   body.anim-pulse .glow-card { animation:cardPulse 4.2s ease-in-out infinite; }
   @keyframes cardPulse { 0%,100% { box-shadow:var(--shadow-glow); } 50% { box-shadow:var(--shadow-strong); } }
 
-  /* 1. الواجهة الرئيسية المختصرة (صورة 160px) */
+  /* 1. الواجهة الرئيسية المختصرة */
   .hero-card { padding:30px 34px; background:radial-gradient(circle at 18% 45%,rgba(var(--particle-rgb),.18),transparent 58%),var(--card-bg); }
   .hero-grid { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; }
   .hero-top-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
@@ -113,8 +112,8 @@
   .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.48); }
   .btn-outline { display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:13px; background:var(--card-inner); border:1px solid var(--border-glow); color:var(--heading); font-weight:700; font-size:.89rem; cursor:pointer; font-family:inherit; transition:.22s; }
   .btn-outline:hover { border-color:var(--accent-bright); transform:translateY(-2px); }
-  .hero-avatar { width:180px; height:180px; margin:auto; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--accent-bright),var(--fill-2),var(--accent-bright)); box-shadow:0 0 34px rgba(var(--particle-rgb),.42); flex-shrink:0; position:relative; }
-  .hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center center; display:block; background:var(--bg-mid); }
+  .hero-avatar { width:160px; height:160px; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--accent-bright),var(--fill-2),var(--accent-bright)); box-shadow:0 0 34px rgba(var(--particle-rgb),.42); flex-shrink:0; position:relative; }
+  .hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center top; display:block; background:var(--bg-mid); }
 
   /* ترويسات الأقسام */
   .pill-tag { display:inline-flex; align-items:center; gap:7px; padding:5px 15px; border-radius:999px; background:rgba(var(--particle-rgb),.13); border:1px solid var(--border-glow); color:var(--accent-bright); font-size:.83rem; font-weight:800; white-space:nowrap; }
@@ -125,7 +124,6 @@
   .card-body p { font-size:1.02rem; color:var(--text-main); margin-bottom:13px; line-height:1.9; }
   .card-body p:last-child { margin-bottom:0; }
 
-  /* ملاحظة توثيق منهجية احتساب المؤشرات */
   .methodology-note { margin-top:18px; background:rgba(var(--particle-rgb),.08); border:1px dashed var(--border-glow); border-right:3.5px solid var(--accent-bright); border-radius:12px; padding:12px 16px; font-size:.89rem; font-weight:700; color:var(--text-main); display:flex; align-items:center; gap:10px; }
   .methodology-note .m-ico { color:var(--accent-bright); display:grid; place-items:center; flex-shrink:0; }
 
@@ -142,7 +140,7 @@
   .kpi-bar { height:5px; border-radius:999px; background:rgba(var(--particle-rgb),.14); overflow:hidden; margin-top:4px; }
   .kpi-bar i { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--fill-1),var(--accent-bright)); }
 
-  /* 3. أبرز 5 أعمال (شبكة متوازنة: المشروع الأبرز بعرض كامل + 2x2) */
+  /* 3. أبرز 5 أعمال */
   .case-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
   .case-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:22px; display:flex; flex-direction:column; gap:13px; transition:.28s; position:relative; }
   .case-card:hover { border-color:var(--accent-bright); transform:translateY(-4px); box-shadow:var(--shadow-glow); }
@@ -180,7 +178,7 @@
   .ai-link-btn { padding:6px 12px; border-radius:999px; font-size:.81rem; font-weight:800; background:rgba(var(--particle-rgb),.14); border:1px solid var(--border-glow); color:var(--accent-bright); transition:.2s; display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-family:inherit; }
   .ai-link-btn:hover { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border-color:transparent; }
 
-  /* 4. جدول وشريط الأثر المهني بالأرقام */
+  /* 4. جدول وشريط الأثر المهني */
   .impact-summary-strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:18px; }
   .impact-stat { background:rgba(52,211,153,.09); border:1px solid rgba(52,211,153,.32); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:3px; }
   .impact-stat strong { font-size:1.45rem; font-weight:900; color:var(--success); line-height:1.2; }
@@ -194,7 +192,7 @@
   .ind-badge { display:inline-flex; align-items:center; gap:8px; font-weight:800; color:var(--accent-bright); }
   .result-pill { display:inline-block; padding:3px 10px; border-radius:8px; background:rgba(52,211,153,.14); color:var(--success); font-weight:800; font-size:.84rem; margin-bottom:5px; }
 
-  /* 5. قسم الخبرات القيادية + بطاقة المهارات القيادية */
+  /* 5. قسم الخبرات القيادية */
   .skills-highlight-card { background:linear-gradient(145deg,rgba(var(--particle-rgb),.14),var(--card-inner)); border:1.5px solid var(--accent-bright); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:18px; }
   .skills-highlight-head { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
   .skills-highlight-head h3 { font-size:1.12rem; font-weight:900; color:var(--heading); display:flex; align-items:center; gap:9px; }
@@ -214,6 +212,7 @@
 
   /* 6. المؤهلات والمسيرة */
   .two-col { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .sub-panel { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:20px 22px; }
   .sub-panel h3 { color:var(--accent-bright); font-size:1.1rem; margin-bottom:9px; display:flex; align-items:center; gap:9px; }
   .exp-item { background:var(--card-inner); border-right:3.5px solid var(--accent-bright); border-radius:12px; padding:16px 20px; margin-bottom:12px; }
@@ -222,7 +221,7 @@
   .exp-item span { color:var(--accent-bright); font-size:.86rem; font-weight:700; display:block; margin-bottom:4px; }
   .exp-item p { color:var(--text-muted); font-size:.93rem; }
 
-  /* 8. الرؤية والرسالة والأهداف الاستراتيجية (تخطيط منظم 2x2 للأهداف) */
+  /* 8. الرؤية والرسالة والأهداف */
   .goals-panel { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:20px 22px; }
   .goals-panel-head { display:flex; align-items:center; gap:9px; color:var(--accent-bright); font-size:1.1rem; font-weight:800; margin-bottom:14px; }
   .goals-grid { list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
@@ -236,7 +235,7 @@
   .attach-box strong { font-size:1.02rem; color:var(--heading); font-weight:800; }
   .attach-box span { font-size:.86rem; color:var(--accent-bright); font-weight:700; display:inline-flex; align-items:center; gap:6px; }
 
-  /* 9. الإنجازات المعززة بالأرقام (إصلاح تنسيق الشارات داخل البطاقات الزرقاء) */
+  /* 9. الإنجازات المعززة بالأرقام */
   .ach-numbers-bar { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:18px; }
   .ach-num-pill { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:14px; padding:15px 12px; text-align:center; }
   .ach-num-pill b { display:block; font-size:1.75rem; font-weight:900; color:var(--accent-bright); line-height:1.15; }
@@ -244,11 +243,11 @@
   .accent-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
   .accent-box { background:linear-gradient(145deg,var(--fill-1),var(--fill-2)); border:1px solid rgba(255,255,255,.24); border-radius:var(--radius-md); padding:24px 20px; color:var(--btn-ink); box-shadow:0 8px 24px rgba(var(--particle-rgb),.25); transition:.25s; cursor:pointer; display:flex; flex-direction:column; justify-content:flex-start; align-items:center; text-align:center; gap:10px; }
   .accent-box:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(var(--particle-rgb),.42); }
-  .accent-stat-badge { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-size:1.18rem; font-weight:900; line-height:1.2; background:rgba(255,255,255,.16); padding:8px 18px; border-radius:12px; border:1px solid rgba(255,255,255,.28); white-space:nowrap; }
+  .accent-stat-badge { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-size:1.12rem; font-weight:900; line-height:1.2; background:rgba(255,255,255,.16); padding:8px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.28); white-space:nowrap; }
   .accent-box h3 { font-size:1.12rem; font-weight:800; }
   .accent-box p { font-size:.9rem; opacity:.94; line-height:1.68; }
 
-  /* 10. شهادات المستفيدين (شبكة متوازنة 2x2 + أيقونة اقتباس SVG) */
+  /* 10. شهادات المستفيدين */
   .testimonials-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   .quote-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:22px; display:flex; flex-direction:column; gap:14px; transition:.26s; position:relative; }
   .quote-card:hover { border-color:var(--accent-bright); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
@@ -271,7 +270,7 @@
   .honor-card h3 { font-size:1.04rem; color:var(--heading); font-weight:800; }
   .honor-card p { font-size:.89rem; color:var(--text-muted); }
 
-  /* 12. قسم أبرز الشواهد (بدون علامة # + تخطيط متوازن 1 مميز + 2x2) */
+  /* 12. قسم أبرز الشواهد */
   .top-ev-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   .top-ev-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; gap:10px; transition:.26s; }
   .top-ev-card:first-child { grid-column:1 / -1; border-color:var(--accent-bright); background:linear-gradient(145deg,rgba(var(--particle-rgb),.12),var(--card-inner)); }
@@ -287,7 +286,7 @@
   .top-ev-btns a { background:rgba(var(--particle-rgb),.1); border:1px solid var(--border-glow); color:var(--accent-bright); }
   .top-ev-btns button:hover, .top-ev-btns a:hover { transform:translateY(-2px); border-color:var(--accent-bright); }
 
-  /* 14. التواصل بأيقونات SVG احترافية حديثة */
+  /* 14. التواصل */
   .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:14px; }
   .contact-box { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px; transition:all .28s ease; cursor:pointer; text-align:right; font-family:inherit; color:inherit; }
   .contact-box:hover { border-color:var(--accent-bright); background:rgba(var(--particle-rgb),.12); transform:translateY(-3px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.2); }
@@ -335,6 +334,7 @@
   .modal-body { padding:20px 22px; overflow-y:auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
   .doc-item { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:8px; }
   .doc-item .doc-badge { align-self:flex-start; font-size:.76rem; font-weight:800; padding:2px 10px; border-radius:999px; background:rgba(var(--particle-rgb),.16); color:var(--accent-bright); }
+  .doc-item .doc-badge.ms-badge { background:rgba(52,211,153,.16); color:var(--success); }
   .doc-item h4 { font-size:.95rem; color:var(--heading); line-height:1.5; }
   .doc-btns { margin-top:auto; display:flex; gap:8px; padding-top:6px; }
   .doc-btns button, .doc-btns a { flex:1; text-align:center; padding:6px 10px; border-radius:999px; font-size:.83rem; font-weight:700; font-family:inherit; cursor:pointer; border:1px solid var(--border-glow); background:transparent; color:var(--accent-bright); display:inline-flex; align-items:center; justify-content:center; gap:5px; }
@@ -361,42 +361,6 @@
   .cv-sec ul { padding-right:20px; font-size:.91rem; color:#243647; display:grid; gap:4px; }
   .cv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:.9rem; }
 
-
-  /* ===== الأيقونات الرئيسية الملونة لكل قسم ===== */
-  .sec-icon { width:52px; height:52px; border-radius:15px; border:none; color:#ffffff; box-shadow:0 8px 20px rgba(0,0,0,.22); }
-  .sec-icon svg { width:24px; height:24px; }
-  section#dashboard .sec-icon   { background:linear-gradient(135deg,#38d6ff,#0b6e91); }
-  section#featured-works .sec-icon { background:linear-gradient(135deg,#fbbf24,#d97706); }
-  section#ai-impact .sec-icon   { background:linear-gradient(135deg,#c3a6ff,#5229a8); }
-  section#impact .sec-icon      { background:linear-gradient(135deg,#43e8a0,#0a663f); }
-  section#leadership .sec-icon  { background:linear-gradient(135deg,#fb923c,#c2410c); }
-  section#qualifications .sec-icon { background:linear-gradient(135deg,#60a5fa,#1d4ed8); }
-  section#about .sec-icon       { background:linear-gradient(135deg,#2dd4bf,#0f766e); }
-  section#vision .sec-icon      { background:linear-gradient(135deg,#f472b6,#be185d); }
-  section#achievements .sec-icon { background:linear-gradient(135deg,#facc15,#a16207); }
-  section#testimonials .sec-icon { background:linear-gradient(135deg,#38bdf8,#0369a1); }
-  section#honors .sec-icon      { background:linear-gradient(135deg,#f59e0b,#b45309); }
-  section#top-evidence .sec-icon { background:linear-gradient(135deg,#34d399,#047857); }
-  section#evidence .sec-icon    { background:linear-gradient(135deg,#818cf8,#4338ca); }
-  section#contact .sec-icon     { background:linear-gradient(135deg,#25D366,#128C7E); }
-
-  .nav-item[href="#home"] .nav-ico        { color:#38d6ff; }
-  .nav-item[href="#dashboard"] .nav-ico   { color:#38d6ff; }
-  .nav-item[href="#featured-works"] .nav-ico { color:#fbbf24; }
-  .nav-item[href="#ai-impact"] .nav-ico   { color:#c3a6ff; }
-  .nav-item[href="#impact"] .nav-ico      { color:#43e8a0; }
-  .nav-item[href="#leadership"] .nav-ico  { color:#fb923c; }
-  .nav-item[href="#qualifications"] .nav-ico { color:#60a5fa; }
-  .nav-item[href="#about"] .nav-ico       { color:#2dd4bf; }
-  .nav-item[href="#vision"] .nav-ico      { color:#f472b6; }
-  .nav-item[href="#achievements"] .nav-ico { color:#facc15; }
-  .nav-item[href="#testimonials"] .nav-ico { color:#38bdf8; }
-  .nav-item[href="#honors"] .nav-ico      { color:#f59e0b; }
-  .nav-item[href="#top-evidence"] .nav-ico { color:#34d399; }
-  .nav-item[href="#evidence"] .nav-ico    { color:#818cf8; }
-  .nav-item[href="#contact"] .nav-ico     { color:#25D366; }
-  .nav-item.active .nav-ico { color:var(--btn-ink) !important; }
-
   @media print {
     body * { visibility:hidden !important; }
     #cvPrintArea, #cvPrintArea * { visibility:visible !important; }
@@ -415,7 +379,7 @@
     .hero-top-meta { justify-content:center; }
     .hero-avatar { margin:0 auto; width:145px; height:145px; }
     .hero-actions { justify-content:center; }
-    .two-col, .cv-grid-2, .case-grid, .goals-grid, .accent-grid, .testimonials-grid, .honors-grid, .top-ev-grid { grid-template-columns:1fr; }
+    .two-col, .three-col, .cv-grid-2, .case-grid, .goals-grid, .accent-grid, .testimonials-grid, .honors-grid, .top-ev-grid { grid-template-columns:1fr; }
     .case-card.flagship-case .case-points { grid-template-columns:1fr; }
     .glow-card { padding:24px 18px; }
     .studio-dock { left:10px; right:10px; bottom:10px; justify-content:center; border-radius:18px; }
@@ -448,7 +412,7 @@
   <a href="#testimonials" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span>شهادات المستفيدين</span></a>
   <a href="#honors" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span>التكريمات والشكر</span></a>
   <a href="#top-evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span>أبرز الشواهد (5)</span></a>
-  <a href="#evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>جميع الشواهد (35)</span></a>
+  <a href="#evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>جميع الشواهد (54)</span></a>
   <a href="#contact" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>التواصل والمشاركة</span></a>
 </aside>
 
@@ -481,7 +445,7 @@
             </a>
             <button type="button" class="btn-outline" data-open-modal="all">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              <span>المستودع (35)</span>
+              <span>المستودع (54)</span>
             </button>
             <button type="button" class="btn-outline" id="openQrBtn">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></svg>
@@ -516,8 +480,8 @@
           <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="kpi-tag">نمو مهني</span></div>
           <div class="kpi-num">+185</div>
           <div class="kpi-label">ساعة تدريبية معتمدة</div>
-          <div class="kpi-sub">التقنية وأمن المعلومات والتربية واللغات</div>
-          <div class="kpi-bar"><i style="width:94%"></i></div>
+          <div class="kpi-sub">37 شهادة (تشمل 19 من Microsoft)</div>
+          <div class="kpi-bar"><i style="width:96%"></i></div>
         </div>
         <div class="kpi-card">
           <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="kpi-tag">إنتاج معرفي</span></div>
@@ -535,7 +499,7 @@
         </div>
         <div class="kpi-card" style="cursor:pointer" data-open-modal="all">
           <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div><span class="kpi-tag">موثقة 100%</span></div>
-          <div class="kpi-num">35</div>
+          <div class="kpi-num">54</div>
           <div class="kpi-label">شاهدًا ووثيقة معتمدة</div>
           <div class="kpi-sub">اضغط للمعاينة المباشرة للشواهد ↗</div>
           <div class="kpi-bar"><i style="width:100%"></i></div>
@@ -829,7 +793,7 @@
       </div>
     </section>
 
-    <!-- 7. المقدمة ونبذة عني (مع حماية الأرقام من التفاف السطر) -->
+    <!-- 7. المقدمة ونبذة عني -->
     <section id="about" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -844,7 +808,7 @@
       </div>
     </section>
 
-    <!-- 8. الرؤية والرسالة والأهداف الاستراتيجية (تخطيط منظم 2x2 للأهداف) -->
+    <!-- 8. الرؤية والرسالة والأهداف الاستراتيجية -->
     <section id="vision" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -891,16 +855,16 @@
       <div class="ach-numbers-bar">
         <div class="ach-num-pill"><b>5</b><span>أنظمة ومنصات مطورة</span></div>
         <div class="ach-num-pill"><b>15</b><span>بحثًا وتقريرًا علميًا</span></div>
-        <div class="ach-num-pill"><b>18</b><span>شهادة ودورة تدريبية</span></div>
+        <div class="ach-num-pill"><b>37</b><span>شهادة تدريبية معتمدة</span></div>
         <div class="ach-num-pill"><b>7</b><span>أدوار ومبادرات قيادية</span></div>
-        <div class="ach-num-pill"><b>35</b><span>شاهدًا ووثيقة معتمدة</span></div>
+        <div class="ach-num-pill"><b>54</b><span>شاهدًا ووثيقة معتمدة</span></div>
       </div>
 
       <div class="accent-grid">
         <div class="accent-box" data-open-modal="certificates">
-          <span class="accent-stat-badge">18 شهادة · +185 ساعة</span>
+          <span class="accent-stat-badge">37 شهادة · +185 ساعة</span>
           <h3>القيادة التقنية والتطوير المهني</h3>
-          <p>إدارة منظومة مدرستي ونظام نور، وتنفيذ مبادرات التحول الرقمي وتدريب المعلمين والطلاب وأولياء الأمور.</p>
+          <p>18 شهادة مهنية عامة و19 شهادة تخصصية معتمدة من Microsoft في التقنية والذكاء الاصطناعي وTeams.</p>
         </div>
         <div class="accent-box" data-open-modal="research">
           <span class="accent-stat-badge">15 بحثًا وتقريرًا علميًا</span>
@@ -908,14 +872,14 @@
           <p>إعداد 15 بحثًا وتقريرًا وورقة عمل في الذكاء الاصطناعي، أمن المعلومات، التقويم التكويني، والمهارات الرقمية.</p>
         </div>
         <div class="accent-box" data-open-modal="all">
-          <span class="accent-stat-badge">5 أنظمة · 35 شاهدًا</span>
+          <span class="accent-stat-badge">5 أنظمة · 54 شاهدًا</span>
           <h3>الابتكار التقني والعمل التطوعي</h3>
-          <p>تطوير 5 أنظمة رقمية تطوعية لخدمة الميدان التربوي موثقة بـ 35 شاهدًا رسميًا معتمدًا.</p>
+          <p>تطوير 5 أنظمة رقمية تطوعية لخدمة الميدان التربوي موثقة بـ 54 شاهدًا رسميًا معتمدًا.</p>
         </div>
       </div>
     </section>
 
-    <!-- 10. شهادات المستفيدين والقيادات المدرسية (2x2 + SVG) -->
+    <!-- 10. شهادات المستفيدين والقيادات المدرسية -->
     <section id="testimonials" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -998,10 +962,10 @@
       </div>
       <div class="honors-grid">
         <div class="honor-card">
-          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><span class="honor-cat">تكريم وشكر</span></div>
-          <h3>شهادات الشكر والتقدير المدرسية</h3>
-          <p>تقديرًا للجهود المتميزة في إدارة المنصات الرقمية والدعم الفني المستمر لمنسوبي المدرسة والطلاب.</p>
-          <button type="button" class="ctrl-btn" data-open-modal="certificates" style="margin-top:auto">استعراض الشهادات ↗</button>
+          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><span class="honor-cat">اعتماد دولي</span></div>
+          <h3>19 شهادة تخصصية من Microsoft</h3>
+          <p>شهادات معتمدة من شركة مايكروسوفت في الذكاء الاصطناعي للمعلمين، Copilot، وإدارة منظومة Microsoft Teams.</p>
+          <button type="button" class="ctrl-btn active" data-open-modal="microsoft" style="margin-top:auto">استعراض شهادات Microsoft ↗</button>
         </div>
         <div class="honor-card">
           <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="honor-cat">بطاقة نمو مهني</span></div>
@@ -1033,7 +997,7 @@
       </div>
     </section>
 
-    <!-- 12. قسم مستقل: أبرز الشواهد (بدون علامة #) -->
+    <!-- 12. قسم مستقل: أبرز الشواهد -->
     <section id="top-evidence" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -1045,20 +1009,25 @@
       <div class="top-ev-grid" id="topEvidenceGrid"></div>
     </section>
 
-    <!-- 13. جميع شواهد الأداء (35) -->
+    <!-- 13. جميع شواهد الأداء (54) -->
     <section id="evidence" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
           <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-          <h2>جميع شواهد الأداء الموثقة (35)</h2>
+          <h2>جميع شواهد الأداء الموثقة (54)</h2>
         </div>
         <span class="pill-tag">الأرشيف الشامل</span>
       </div>
-      <div class="two-col">
+      <div class="three-col">
         <div class="accent-box" data-open-modal="certificates">
           <span class="accent-stat-badge">18 شهادة معتمدة</span>
           <h3>الشهادات والدورات المهنية</h3>
           <p>دورات معتمدة في أمن المعلومات، القياس والتقويم الإلكتروني، مهارات التعامل مع الطلاب، واللغة الإنجليزية.</p>
+        </div>
+        <div class="accent-box" data-open-modal="microsoft">
+          <span class="accent-stat-badge">19 شهادة Microsoft</span>
+          <h3>شهادات مايكروسوفت التخصصية</h3>
+          <p>شهادات معتمدة في الذكاء الاصطناعي للمعلمين، Microsoft Copilot، إدارة Teams، وDataverse.</p>
         </div>
         <div class="accent-box" data-open-modal="research">
           <span class="accent-stat-badge">15 بحثًا وتقريرًا</span>
@@ -1068,15 +1037,15 @@
       </div>
       <div class="attach-box" data-open-modal="all">
         <div class="att-ico"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-        <strong>فتح مستودع الشواهد والوثائق الشامل (35 ملفًا)</strong>
+        <strong>فتح مستودع الشواهد والوثائق الشامل (54 ملفًا)</strong>
         <span>
           <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          بحث فوري وتصفية حسب الفئة مع معاينة مباشرة للملفات
+          بحث فوري وتصفية حسب الفئة (الوثائق · الشهادات العامة · شهادات Microsoft · الأبحاث)
         </span>
       </div>
     </section>
 
-    <!-- 14. التواصل والمشاركة بأيقونات SVG حديثة -->
+    <!-- 14. التواصل والمشاركة -->
     <section id="contact" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
@@ -1107,8 +1076,8 @@
           </div>
         </a>
 
-        <a href="https://x.com/Somran88" target="_blank" rel="noopener" class="contact-box x-card">
-          <div><small>منصة X (تويتر)</small><strong>@Somran88</strong></div>
+        <a href="https://x.com/somran288" target="_blank" rel="noopener" class="contact-box x-card">
+          <div><small>منصة X (تويتر)</small><strong>@somran288</strong></div>
           <div class="contact-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </div>
@@ -1199,7 +1168,7 @@
       <button class="close-btn" id="closeModalBtn" aria-label="إغلاق">✕</button>
     </div>
     <div class="modal-search-bar" id="modalSearchBar">
-      <input type="text" id="modalSearchInput" placeholder="ابحث باسم الوثيقة أو البحث أو الشهادة...">
+      <input type="text" id="modalSearchInput" placeholder="ابحث باسم الوثيقة أو البحث أو شهادة Microsoft...">
       <div class="filter-pills" id="filterPills"></div>
       <span id="modalCounter" style="color:var(--accent-bright);font-size:.88rem;font-weight:800;"></span>
     </div>
@@ -1238,6 +1207,7 @@
           <div class="cv-meta">
             <div>somran28@gmail.com</div>
             <div>+966 55 771 7661</div>
+            <div>x.com/somran288</div>
             <div>ksa2020q.github.io/samran</div>
           </div>
         </div>
@@ -1258,7 +1228,7 @@
             <ul>
               <li>أكثر من <strong>22 عامًا</strong> خبرة تربوية وإدارية</li>
               <li>خدمة <strong>+485 مستفيدًا</strong> وتوفير <strong>85%</strong> من الوقت الإداري</li>
-              <li><strong>+185 ساعة</strong> تدريبية و<strong>15 بحثًا</strong> و<strong>5 أنظمة مطورة</strong></li>
+              <li><strong>37 شهادة تدريبية</strong> (منها <strong>19 من Microsoft</strong>) و<strong>15 بحثًا</strong> و<strong>5 أنظمة</strong></li>
             </ul>
           </div>
         </div>
@@ -1305,7 +1275,10 @@
   const SVG_EYE = `<svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
   const SVG_DL  = `<svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
 
-  /* ===================== أبرز 5 أعمال (بدون علامة # + المشروع الأبرز بعرض كامل) ===================== */
+  /* رابط مجلد شهادات Microsoft العام في Google Drive (ضع رابط المجلد العام هنا) */
+  const MS_FOLDER_URL = "https://drive.google.com/drive/folders/1icqyVXC7pW1U37al1";
+
+  /* ===================== أبرز 5 أعمال ===================== */
   const FEATURED_CASES = [
     {
       num: "01",
@@ -1464,7 +1437,7 @@
   document.getElementById('closeCaseBtn').addEventListener('click', () => caseModal.classList.remove('open'));
   caseModal.addEventListener('click', e => { if (e.target === caseModal) caseModal.classList.remove('open'); });
 
-  /* ===================== قسم أبرز الشواهد (بدون علامة #) ===================== */
+  /* ===================== قسم أبرز الشواهد ===================== */
   const TOP_5_EVIDENCE = [
     {
       rank: "الشاهد 01",
@@ -1522,7 +1495,7 @@
     topEvGrid.appendChild(card);
   });
 
-  /* ===================== بيانات المرفقات الـ 35 من Google Drive ===================== */
+  /* ===================== بيانات المرفقات الـ 54 من Google Drive ===================== */
   const DOCUMENTS = [
     { group:"documents", cat:"وثيقة رسمية", title:"وثيقة الدبلوم العالي في المهارات الرقمية", id:"15-0t0ziXHn7kPz3apNXiMORi10hBDc0A" },
     { group:"documents", cat:"وثيقة رسمية", title:"وثيقة التخرج · بكالوريوس اللغة العربية", id:"1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds" }
@@ -1564,7 +1537,31 @@
     { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى A1 (30 ساعة)", id:"1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
     { group:"certificates", cat:"ورشة", title:"ورشة تدريبية: جدول مواصفات الأوزان النسبية", id:"1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
   ];
-  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...RESEARCH];
+
+  /* شهادات Microsoft الـ 19 المعتمدة */
+  const MICROSOFT_CERTS = [
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة اجتماعات Microsoft Teams وتأمينها", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة الاجتماعات والمؤتمرات والأحداث باستخدام Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة التطبيقات والروبوتات والموصلات في Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة تعاون الفريق باستخدام Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"اكتشف فوائد أن تصبح مدربًا للمعلمين لدى Microsoft", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الاستعداد لنشر Teams باستخدام Microsoft 365", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إعداد اجتماعات Microsoft Teams لمنظمتك", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الذكاء الاصطناعي للمعلمين", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الشروع في العمل باستخدام AI Builder", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إنشاء جداول في Dataverse", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تجهيز المتعلمين ودعمهم باستخدام أدوات الذكاء الاصطناعي من Microsoft", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تحسين التدريس والتعلم باستخدام Microsoft Copilot", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تمكين المعلمين من استكشاف إمكانات الذكاء الاصطناعي", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"خطط لنشر اجتماعات Teams الخاصة بك", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"مقدمة إلى التطبيقات المعتمدة على النماذج في Microsoft Dataverse", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"مقدمة حول تخصيص عميل Office باستخدام الوظائف الإضافية", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"نشر الاجتماعات باستخدام Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"نشر عملاء Microsoft Teams", id:"" }
+  ];
+
+  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...MICROSOFT_CERTS, ...RESEARCH];
 
   const modal = document.getElementById('attachModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -1581,14 +1578,21 @@
     items.forEach(item => {
       const card = document.createElement('div');
       card.className = 'doc-item';
+      const isMs = item.group === 'microsoft';
+      const hasFileId = item.id && item.id.trim() !== '';
+      const viewHref = hasFileId ? `https://drive.google.com/file/d/${item.id}/view` : MS_FOLDER_URL;
       card.innerHTML = `
-        <span class="doc-badge">${item.cat}</span>
+        <span class="doc-badge ${isMs ? 'ms-badge' : ''}">${item.cat}</span>
         <h4>${item.title}</h4>
         <div class="doc-btns">
-          <button type="button">${SVG_EYE}<span>معاينة</span></button>
-          <a href="https://drive.google.com/file/d/${item.id}/view" target="_blank" rel="noopener">فتح ↗</a>
+          ${hasFileId
+            ? `<button type="button">${SVG_EYE}<span>معاينة</span></button>`
+            : `<a href="${MS_FOLDER_URL}" target="_blank" rel="noopener" style="background:linear-gradient(135deg,var(--fill-1),var(--fill-2));color:var(--btn-ink);border:none;">مجلد Microsoft ↗</a>`
+          }
+          <a href="${viewHref}" target="_blank" rel="noopener">فتح ↗</a>
         </div>`;
-      card.querySelector('button').addEventListener('click', () => openFileFrame(item));
+      const btn = card.querySelector('button');
+      if (btn) btn.addEventListener('click', () => openFileFrame(item));
       modalBody.appendChild(card);
     });
   }
@@ -1603,10 +1607,22 @@
     modalSearchBar.style.display = 'flex';
     modalSearchInput.value = '';
     activeGroup = type;
-    const titles = { documents:'الوثائق الرسمية والمؤهلات', research:'الأبحاث والتقارير العلمية', certificates:'الشهادات والدورات التدريبية', all:'جميع المرفقات والشواهد الموثقة' };
+    const titles = {
+      documents:'الوثائق الرسمية والمؤهلات (2)',
+      research:'الأبحاث والتقارير العلمية (15)',
+      certificates:'الشهادات والدورات المهنية العامة (18)',
+      microsoft:'شهادات Microsoft التخصصية المعتمدة (19)',
+      all:'جميع المرفقات والشواهد الموثقة (54)'
+    };
     activeGroupTitle = titles[type] || titles.all;
     modalTitle.textContent = activeGroupTitle;
-    const tabs = [{key:'all',label:'الكل (35)'},{key:'documents',label:'الوثائق (2)'},{key:'certificates',label:'الشهادات (18)'},{key:'research',label:'الأبحاث (15)'}];
+    const tabs = [
+      {key:'all',label:'الكل (54)'},
+      {key:'documents',label:'الوثائق (2)'},
+      {key:'certificates',label:'الشهادات العامة (18)'},
+      {key:'microsoft',label:'Microsoft (19)'},
+      {key:'research',label:'الأبحاث (15)'}
+    ];
     filterPills.innerHTML = '';
     tabs.forEach(t => {
       const b = document.createElement('button');
@@ -1675,7 +1691,7 @@
 
   /* شريط الألوان والستايلات */
   const htmlEl = document.documentElement;
-  const PREF_KEY = 'samran_exec_prefs_v9';
+  const PREF_KEY = 'samran_exec_prefs_v10';
   const prefs = { theme:'cyan', font:'tajawal', size:'m', sidebar:true, anim:'3d', tilt:true };
   try { Object.assign(prefs, JSON.parse(localStorage.getItem(PREF_KEY) || '{}')); } catch (e) {}
   function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch (e) {} }
