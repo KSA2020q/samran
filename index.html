@@ -1,1311 +1,1777 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="cyan" data-font="tajawal" data-size="m">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ملف الإنجاز القيادي الإلكتروني | أ. سمران بن عبدالعزيز شديد</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #0f2942;
-      --primary-light: #1a436b;
-      --accent: #0d7a5f;
-      --accent-light: #e6f4f0;
-      --gold: #c89b3c;
-      --gold-light: #fbf6ea;
-      --bg: #f4f7fa;
-      --surface: #ffffff;
-      --text: #1e293b;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --shadow-sm: 0 2px 8px rgba(15, 41, 66, 0.06);
-      --shadow-md: 0 10px 28px rgba(15, 41, 66, 0.10);
-      --radius: 16px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Tajawal', 'Cairo', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cairo', 'Tajawal', sans-serif;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    /* Navigation Bar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(15, 41, 66, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid rgba(200, 155, 60, 0.35);
-      padding: 0.75rem 1.5rem;
-    }
-
-    .nav-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: #fff;
-      text-decoration: none;
-      font-family: 'Cairo', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-    }
-
-    .nav-badge {
-      background: linear-gradient(135deg, var(--gold), #e0b454);
-      color: var(--primary);
-      padding: 0.2rem 0.65rem;
-      border-radius: 8px;
-      font-size: 0.8rem;
-      font-weight: 800;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: #e2e8f0;
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 600;
-      padding: 0.4rem 0.85rem;
-      border-radius: 8px;
-      transition: all 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-    }
-
-    .btn-print {
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      padding: 0.45rem 1rem;
-      border-radius: 8px;
-      font-family: 'Tajawal', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .btn-print:hover {
-      background: #0a634d;
-    }
-
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, #0b1f33 0%, #14385c 55%, #0d5c48 100%);
-      color: #fff;
-      padding: 3.5rem 1.5rem 4.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(200, 155, 60, 0.14) 1px, transparent 1px);
-      background-size: 24px 24px;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(200, 155, 60, 0.18);
-      border: 1px solid rgba(200, 155, 60, 0.5);
-      color: #f6d586;
-      padding: 0.35rem 1rem;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      color: #ffffff;
-      font-size: clamp(1.8rem, 3.2vw, 2.55rem);
-      line-height: 1.3;
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-subtitle {
-      font-size: 1.15rem;
-      color: #cbd5e1;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    .value-box {
-      background: rgba(255, 255, 255, 0.08);
-      border-right: 4px solid var(--gold);
-      padding: 1.1rem 1.35rem;
-      border-radius: 12px;
-      color: #f1f5f9;
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .meta-pill {
-      background: rgba(15, 41, 66, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      padding: 0.45rem 0.95rem;
-      border-radius: 10px;
-      font-size: 0.88rem;
-      color: #e2e8f0;
-    }
-
-    .hero-card {
-      background: rgba(255, 255, 255, 0.97);
-      color: var(--text);
-      border-radius: var(--radius);
-      padding: 1.75rem;
-      box-shadow: var(--shadow-md);
-      border-top: 5px solid var(--gold);
-    }
-
-    .hero-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .info-list {
-      list-style: none;
-      display: grid;
-      gap: 0.7rem;
-      font-size: 0.94rem;
-    }
-
-    .info-list li {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px dashed var(--border);
-      padding-bottom: 0.45rem;
-      gap: 0.5rem;
-    }
-
-    .info-list li:last-child {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
-
-    .info-label {
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .info-val {
-      font-weight: 700;
-      color: var(--primary);
-      text-align: left;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 1.5rem 4rem;
-    }
-
-    /* KPI Strip */
-    .kpi-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.25rem;
-      margin-top: -2.4rem;
-      position: relative;
-      z-index: 5;
-      margin-bottom: 3rem;
-    }
-
-    .kpi-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 1.4rem 1.25rem;
-      box-shadow: var(--shadow-md);
-      border-bottom: 4px solid var(--accent);
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .kpi-card:nth-child(2) { border-bottom-color: var(--gold); }
-    .kpi-card:nth-child(3) { border-bottom-color: var(--primary); }
-    .kpi-card:nth-child(4) { border-bottom-color: #2563eb; }
-
-    .kpi-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .kpi-num {
-      font-family: 'Cairo', sans-serif;
-      font-size: 2.1rem;
-      font-weight: 900;
-      color: var(--primary);
-      line-height: 1.2;
-    }
-
-    .kpi-title {
-      font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--accent);
-      margin-top: 0.25rem;
-    }
-
-    .kpi-desc {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    /* Section Headings */
-    .section {
-      margin-bottom: 3.25rem;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-size: 1.55rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .section-title::before {
-      content: "";
-      width: 6px;
-      height: 28px;
-      background: linear-gradient(to bottom, var(--gold), var(--accent));
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    /* Top 5 Signature Works */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 1.35rem;
-    }
-
-    .work-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.22s ease;
-    }
-
-    .work-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: rgba(13, 122, 95, 0.35);
-    }
-
-    .work-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 0.85rem;
-    }
-
-    .work-rank {
-      background: var(--gold-light);
-      color: #8c6514;
-      border: 1px solid rgba(200, 155, 60, 0.45);
-      font-weight: 800;
-      font-size: 0.82rem;
-      padding: 0.2rem 0.7rem;
-      border-radius: 8px;
-    }
-
-    .work-tech {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--accent);
-      background: var(--accent-light);
-      padding: 0.2rem 0.65rem;
-      border-radius: 8px;
-    }
-
-    .work-card h3 {
-      font-size: 1.15rem;
-      margin-bottom: 0.55rem;
-    }
-
-    .work-card p {
-      font-size: 0.93rem;
-      color: #475569;
-      margin-bottom: 1rem;
-    }
-
-    .work-impact {
-      background: #f8fafc;
-      border-radius: 10px;
-      padding: 0.65rem 0.9rem;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: var(--primary);
-      border-right: 3px solid var(--accent);
-    }
-
-    /* Leadership Roles Grid */
-    .roles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .role-card {
-      background: var(--surface);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .role-badge {
-      display: inline-block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      background: #eef2ff;
-      color: #1e40af;
-      padding: 0.2rem 0.65rem;
-      border-radius: 6px;
-      margin-bottom: 0.6rem;
-    }
-
-    .role-card h3 {
-      font-size: 1.08rem;
-      margin-bottom: 0.45rem;
-    }
-
-    .role-card p {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    /* Certificates & Evidence Repository */
-    .repo-controls {
-      background: var(--surface);
-      padding: 1.25rem;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .filter-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .tab-btn {
-      background: #f1f5f9;
-      color: var(--text);
-      border: 1px solid transparent;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      font-family: 'Tajawal', sans-serif;
-      font-weight: 700;
-      font-size: 0.92rem;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .tab-btn:hover {
-      background: #e2e8f0;
-    }
-
-    .tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(15, 41, 66, 0.2);
-    }
-
-    .search-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex: 1;
-      min-width: 260px;
-      max-width: 460px;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 0.58rem 1rem;
-      border: 1.5px solid var(--border);
-      border-radius: 10px;
-      font-family: 'Tajawal', sans-serif;
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .search-input:focus {
-      border-color: var(--accent);
-    }
-
-    .folder-link-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: var(--gold-light);
-      color: #7c580c;
-      border: 1px solid rgba(200, 155, 60, 0.55);
-      padding: 0.55rem 1rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 0.9rem;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-
-    .folder-link-btn:hover {
-      background: var(--gold);
-      color: #fff;
-    }
-
-    .repo-stats-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-      font-weight: 600;
-    }
-
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.15rem;
-    }
-
-    .cert-card {
-      background: var(--surface);
-      border-radius: 14px;
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .cert-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(15, 41, 66, 0.25);
-    }
-
-    .cert-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-    }
-
-    .cert-cat {
-      font-size: 0.78rem;
-      font-weight: 800;
-      padding: 0.22rem 0.65rem;
-      border-radius: 7px;
-      background: #e0f2fe;
-      color: #0369a1;
-    }
-
-    .cert-cat.academic {
-      background: var(--accent-light);
-      color: var(--accent);
-    }
-
-    .cert-cat.leadership {
-      background: var(--gold-light);
-      color: #8c6514;
-    }
-
-    .cert-index {
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 700;
-    }
-
-    .cert-title {
-      font-family: 'Cairo', sans-serif;
-      font-weight: 700;
-      font-size: 1.02rem;
-      color: var(--primary);
-      line-height: 1.5;
-    }
-
-    .cert-actions {
-      display: flex;
-      gap: 0.55rem;
-      margin-top: auto;
-    }
-
-    .btn-preview, .btn-drive {
-      flex: 1;
-      text-align: center;
-      padding: 0.48rem 0.75rem;
-      border-radius: 9px;
-      font-family: 'Tajawal', sans-serif;
-      font-size: 0.86rem;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: all 0.2s;
-    }
-
-    .btn-preview {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .btn-preview:hover {
-      background: var(--primary-light);
-    }
-
-    .btn-drive {
-      background: #f1f5f9;
-      color: var(--primary);
-      border: 1px solid var(--border);
-    }
-
-    .btn-drive:hover {
-      background: #e2e8f0;
-    }
-
-    /* Modal Preview */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(4px);
-      z-index: 999;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-
-    .modal-backdrop.open {
-      display: flex;
-    }
-
-    .modal-box {
-      background: #fff;
-      width: 100%;
-      max-width: 920px;
-      height: 86vh;
-      border-radius: 16px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
-    }
-
-    .modal-head {
-      background: var(--primary);
-      color: #fff;
-      padding: 0.85rem 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .modal-head h4 {
-      color: #fff;
-      font-size: 1rem;
-      margin: 0;
-    }
-
-    .modal-close {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      border: none;
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      font-size: 1.2rem;
-      cursor: pointer;
-    }
-
-    .modal-close:hover {
-      background: #ef4444;
-    }
-
-    .modal-frame {
-      flex: 1;
-      width: 100%;
-      border: none;
-      background: #f8fafc;
-    }
-
-    /* Footer & Governance */
-    .footer {
-      background: var(--primary);
-      color: #cbd5e1;
-      padding: 2.5rem 1.5rem;
-      border-top: 4px solid var(--gold);
-    }
-
-    .footer-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .footer h4 {
-      color: #fff;
-      margin-bottom: 0.35rem;
-    }
-
-    .social-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .social-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      transition: background 0.2s;
-    }
-
-    .social-pill:hover {
-      background: var(--gold);
-      color: var(--primary);
-    }
-
-    @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-      .kpi-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 560px) {
-      .kpi-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media print {
-      .navbar, .repo-controls, .btn-preview, .modal-backdrop {
-        display: none !important;
-      }
-      body {
-        background: #fff;
-      }
-      .hero {
-        background: #0f2942 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سمران بن عبد العزيز شديد · ملف الإنجاز القيادي والمهني</title>
+<meta name="description" content="متخصص في توظيف التقنية والذكاء الاصطناعي لتحسين جودة التعليم ورفع كفاءة العمل المدرسي، بخبرة تمتد لأكثر من 22 عاماً.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@400;600;700;800&family=Noto+Kufi+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root, [data-theme="cyan"] {
+    --bg-deep:#04131e; --bg-mid:#071e2e; --sidebar-bg:rgba(6,25,39,.96);
+    --card-bg:rgba(9,35,53,.86); --card-inner:rgba(5,22,35,.78);
+    --accent:#16b8e0; --accent-bright:#38d6ff; --fill-1:#149ec7; --fill-2:#0b6e91;
+    --border-glow:rgba(22,184,224,.42); --shadow-glow:0 0 28px rgba(22,184,224,.16);
+    --shadow-strong:0 0 40px rgba(56,214,255,.34); --text-main:#e6f4fb; --text-muted:#9bc2d6;
+    --heading:#ffffff; --particle-rgb:56,214,255; --btn-ink:#ffffff; --success:#34d399;
+    --gold-flag:#fbbf24;
+  }
+  [data-theme="gold"] {
+    --bg-deep:#120d04; --bg-mid:#1f1607; --sidebar-bg:rgba(24,17,6,.96);
+    --card-bg:rgba(36,26,10,.86); --card-inner:rgba(20,14,5,.78);
+    --accent:#d4a017; --accent-bright:#ffd35c; --fill-1:#c89211; --fill-2:#8a6006;
+    --border-glow:rgba(212,160,23,.45); --shadow-glow:0 0 28px rgba(212,160,23,.18);
+    --shadow-strong:0 0 40px rgba(255,211,92,.34); --text-main:#fbf3df; --text-muted:#d6c294;
+    --heading:#ffffff; --particle-rgb:255,211,92; --btn-ink:#ffffff; --success:#4ade80;
+    --gold-flag:#ffd35c;
+  }
+  [data-theme="emerald"] {
+    --bg-deep:#04170f; --bg-mid:#082619; --sidebar-bg:rgba(6,30,20,.96);
+    --card-bg:rgba(10,44,29,.86); --card-inner:rgba(5,25,16,.78);
+    --accent:#18b874; --accent-bright:#43e8a0; --fill-1:#139960; --fill-2:#0a663f;
+    --border-glow:rgba(24,184,116,.42); --shadow-glow:0 0 28px rgba(24,184,116,.16);
+    --shadow-strong:0 0 40px rgba(67,232,160,.32); --text-main:#e5f9ef; --text-muted:#9ad1b7;
+    --heading:#ffffff; --particle-rgb:67,232,160; --btn-ink:#ffffff; --success:#6ee7b7;
+    --gold-flag:#fbbf24;
+  }
+  [data-theme="amethyst"] {
+    --bg-deep:#0d071c; --bg-mid:#170d30; --sidebar-bg:rgba(18,10,38,.96);
+    --card-bg:rgba(29,17,58,.86); --card-inner:rgba(16,9,34,.78);
+    --accent:#9b6dff; --accent-bright:#c3a6ff; --fill-1:#7e4ce6; --fill-2:#5229a8;
+    --border-glow:rgba(155,109,255,.45); --shadow-glow:0 0 28px rgba(155,109,255,.18);
+    --shadow-strong:0 0 40px rgba(195,166,255,.34); --text-main:#f1ebff; --text-muted:#bca9e6;
+    --heading:#ffffff; --particle-rgb:195,166,255; --btn-ink:#ffffff; --success:#34d399;
+    --gold-flag:#fbbf24;
+  }
+  [data-theme="light"] {
+    --bg-deep:#eef3f8; --bg-mid:#ffffff; --sidebar-bg:rgba(255,255,255,.97);
+    --card-bg:rgba(255,255,255,.95); --card-inner:#f4f8fb;
+    --accent:#0f7ea6; --accent-bright:#0a5c7a; --fill-1:#0f7ea6; --fill-2:#0a4d68;
+    --border-glow:rgba(15,126,166,.28); --shadow-glow:0 8px 28px rgba(10,77,104,.08);
+    --shadow-strong:0 14px 36px rgba(10,77,104,.16); --text-main:#1e2d3b; --text-muted:#4e6375;
+    --heading:#0a2538; --particle-rgb:15,126,166; --btn-ink:#ffffff; --success:#0d9488;
+    --gold-flag:#d97706;
+  }
+
+  html { font-size:16px; scroll-behavior:smooth; scroll-padding-top:24px; }
+  html[data-size="s"] { font-size:14.5px; }
+  html[data-size="l"] { font-size:17.5px; }
+  html[data-font="tajawal"] body { font-family:'Tajawal',system-ui,sans-serif; }
+  html[data-font="cairo"] body { font-family:'Cairo',system-ui,sans-serif; }
+  html[data-font="kufi"] body { font-family:'Noto Kufi Arabic',system-ui,sans-serif; }
+
+  :root { --radius-lg:22px; --radius-md:16px; --sidebar-w:258px; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:linear-gradient(180deg,var(--bg-deep) 0%,var(--bg-mid) 50%,var(--bg-deep) 100%); color:var(--text-main); line-height:1.82; min-height:100vh; overflow-x:hidden; transition:background .45s,color .35s; }
+  a { color:inherit; text-decoration:none; }
+  svg.ico { width:18px; height:18px; flex-shrink:0; display:inline-block; vertical-align:middle; }
+  svg.ico-lg { width:22px; height:22px; flex-shrink:0; }
+  .nowrap { white-space:nowrap; }
+
+  #bgCanvas { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:.42; }
+  #scrollProgress { position:fixed; top:0; right:0; height:3.5px; width:0; background:linear-gradient(90deg,var(--accent-bright),var(--fill-1)); box-shadow:0 0 12px var(--accent-bright); z-index:350; }
+
+  /* القائمة الجانبية */
+  .sidebar { position:fixed; top:0; right:0; bottom:0; width:var(--sidebar-w); background:var(--sidebar-bg); border-left:1px solid var(--border-glow); padding:14px 12px; display:flex; flex-direction:column; gap:2.5px; z-index:150; overflow-y:auto; backdrop-filter:blur(14px); transition:transform .35s,opacity .35s; }
+  .sidebar-header { padding:7px 10px 11px; margin-bottom:4px; border-bottom:1px solid var(--border-glow); font-size:.82rem; font-weight:800; color:var(--text-muted); display:flex; align-items:center; gap:8px; }
+  .sidebar-header::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-bright); box-shadow:0 0 10px var(--accent-bright); flex-shrink:0; }
+  .nav-item { display:flex; align-items:center; gap:10px; padding:7.5px 11px; border-radius:11px; color:var(--text-main); font-weight:700; font-size:.85rem; transition:.22s; border:1px solid transparent; }
+  .nav-item .nav-ico { width:22px; height:22px; display:grid; place-items:center; color:var(--accent-bright); flex-shrink:0; }
+  .nav-item:hover { background:rgba(var(--particle-rgb),.12); border-color:var(--border-glow); transform:translateX(-3px); }
+  .nav-item.active { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); box-shadow:0 4px 18px rgba(var(--particle-rgb),.35); }
+  .nav-item.active .nav-ico { color:var(--btn-ink); }
+
+  body.sequential-mode .sidebar { transform:translateX(105%); opacity:0; pointer-events:none; }
+  body.sequential-mode .main-wrap { margin-right:0; }
+
+  .mobile-bar { display:none; position:sticky; top:0; z-index:160; background:var(--sidebar-bg); backdrop-filter:blur(12px); border-bottom:1px solid var(--border-glow); padding:12px 18px; align-items:center; justify-content:space-between; }
+  .mobile-bar strong { color:var(--heading); font-size:1rem; }
+  .mobile-toggle { background:rgba(var(--particle-rgb),.14); border:1px solid var(--border-glow); color:var(--accent-bright); border-radius:10px; padding:6px 12px; font-family:inherit; font-weight:700; cursor:pointer; }
+
+  /* المحتوى الرئيسي */
+  .main-wrap { margin-right:var(--sidebar-w); padding:24px 26px 120px; position:relative; z-index:1; transition:margin-right .35s; }
+  .container { max-width:1080px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }
+
+  .glow-card { background:var(--card-bg); border:1.5px solid var(--border-glow); border-radius:var(--radius-lg); padding:30px 32px; box-shadow:var(--shadow-glow); backdrop-filter:blur(12px); position:relative; transition:transform .3s,box-shadow .3s,border-color .3s; transform-style:preserve-3d; }
+  .glow-card:hover { border-color:var(--accent-bright); box-shadow:var(--shadow-strong); }
+  body.anim-pulse .glow-card { animation:cardPulse 4.2s ease-in-out infinite; }
+  @keyframes cardPulse { 0%,100% { box-shadow:var(--shadow-glow); } 50% { box-shadow:var(--shadow-strong); } }
+
+  /* 1. الواجهة الرئيسية المختصرة */
+  .hero-card { padding:30px 34px; background:radial-gradient(circle at 18% 45%,rgba(var(--particle-rgb),.18),transparent 58%),var(--card-bg); }
+  .hero-grid { display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; }
+  .hero-top-meta { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:10px; }
+  .update-pill { display:inline-flex; align-items:center; gap:6px; font-size:.79rem; font-weight:800; padding:4px 13px; border-radius:999px; background:rgba(52,211,153,.13); border:1px solid rgba(52,211,153,.38); color:var(--success); }
+  .hero-card h1 { font-size:clamp(1.85rem,3.6vw,2.65rem); font-weight:900; color:var(--heading); line-height:1.22; margin-bottom:6px; }
+  .hero-role { font-size:.97rem; color:var(--text-muted); font-weight:700; margin-bottom:14px; }
+  .value-statement { font-size:1.08rem; font-weight:800; color:var(--accent-bright); background:rgba(var(--particle-rgb),.1); border-right:4px solid var(--accent-bright); padding:13px 18px; border-radius:12px; margin-bottom:18px; line-height:1.75; }
+  .hero-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .btn-primary { display:inline-flex; align-items:center; gap:8px; padding:10px 20px; border-radius:13px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); font-weight:800; font-size:.92rem; border:1px solid rgba(255,255,255,.22); box-shadow:0 6px 20px rgba(var(--particle-rgb),.35); transition:.22s; cursor:pointer; font-family:inherit; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.48); }
+  .btn-outline { display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:13px; background:var(--card-inner); border:1px solid var(--border-glow); color:var(--heading); font-weight:700; font-size:.89rem; cursor:pointer; font-family:inherit; transition:.22s; }
+  .btn-outline:hover { border-color:var(--accent-bright); transform:translateY(-2px); }
+  .hero-avatar { width:160px; height:160px; border-radius:50%; padding:5px; background:linear-gradient(135deg,var(--accent-bright),var(--fill-2),var(--accent-bright)); box-shadow:0 0 34px rgba(var(--particle-rgb),.42); flex-shrink:0; position:relative; }
+  .hero-avatar img { width:100%; height:100%; border-radius:50%; object-fit:cover; object-position:center top; display:block; background:var(--bg-mid); }
+
+  /* ترويسات الأقسام */
+  .pill-tag { display:inline-flex; align-items:center; gap:7px; padding:5px 15px; border-radius:999px; background:rgba(var(--particle-rgb),.13); border:1px solid var(--border-glow); color:var(--accent-bright); font-size:.83rem; font-weight:800; white-space:nowrap; }
+  .card-head { display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; margin-bottom:20px; }
+  .card-title-wrap { display:flex; align-items:center; gap:14px; }
+  .sec-icon { width:46px; height:46px; border-radius:13px; background:linear-gradient(135deg,rgba(var(--particle-rgb),.2),rgba(var(--particle-rgb),.07)); border:1px solid var(--border-glow); display:grid; place-items:center; color:var(--accent-bright); flex-shrink:0; box-shadow:0 4px 14px rgba(var(--particle-rgb),.15); }
+  .card-head h2 { font-size:clamp(1.3rem,2.4vw,1.62rem); font-weight:800; color:var(--heading); }
+  .card-body p { font-size:1.02rem; color:var(--text-main); margin-bottom:13px; line-height:1.9; }
+  .card-body p:last-child { margin-bottom:0; }
+
+  .methodology-note { margin-top:18px; background:rgba(var(--particle-rgb),.08); border:1px dashed var(--border-glow); border-right:3.5px solid var(--accent-bright); border-radius:12px; padding:12px 16px; font-size:.89rem; font-weight:700; color:var(--text-main); display:flex; align-items:center; gap:10px; }
+  .methodology-note .m-ico { color:var(--accent-bright); display:grid; place-items:center; flex-shrink:0; }
+
+  /* 2. لوحة المؤشرات الرقمية */
+  .kpi-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(185px,1fr)); gap:14px; }
+  .kpi-card { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:19px 16px; display:flex; flex-direction:column; gap:6px; transition:.25s; }
+  .kpi-card:hover { transform:translateY(-4px); border-color:var(--accent-bright); }
+  .kpi-top { display:flex; align-items:center; justify-content:space-between; }
+  .kpi-ico { width:38px; height:38px; border-radius:10px; background:rgba(var(--particle-rgb),.14); color:var(--accent-bright); display:grid; place-items:center; }
+  .kpi-tag { font-size:.74rem; font-weight:800; color:var(--success); background:rgba(52,211,153,.12); padding:2px 9px; border-radius:999px; }
+  .kpi-num { font-size:1.95rem; font-weight:900; color:var(--accent-bright); line-height:1.15; }
+  .kpi-label { font-size:.91rem; font-weight:800; color:var(--heading); }
+  .kpi-sub { font-size:.8rem; color:var(--text-muted); }
+  .kpi-bar { height:5px; border-radius:999px; background:rgba(var(--particle-rgb),.14); overflow:hidden; margin-top:4px; }
+  .kpi-bar i { display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--fill-1),var(--accent-bright)); }
+
+  /* 3. أبرز 5 أعمال */
+  .case-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .case-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:22px; display:flex; flex-direction:column; gap:13px; transition:.28s; position:relative; }
+  .case-card:hover { border-color:var(--accent-bright); transform:translateY(-4px); box-shadow:var(--shadow-glow); }
+  .case-card.flagship-case { grid-column:1 / -1; border:2px solid var(--gold-flag); background:linear-gradient(155deg,rgba(251,191,36,.11),var(--card-inner) 55%); box-shadow:0 0 28px rgba(251,191,36,.15); }
+  .case-card.flagship-case:hover { border-color:var(--gold-flag); box-shadow:0 0 36px rgba(251,191,36,.28); }
+  .case-card.flagship-case .case-points { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .flagship-ribbon { display:inline-flex; align-items:center; gap:6px; padding:4px 13px; border-radius:999px; background:linear-gradient(135deg,#f59e0b,#d97706); color:#ffffff; font-size:.79rem; font-weight:900; box-shadow:0 4px 14px rgba(245,158,11,.35); white-space:nowrap; }
+  .case-header { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+  .case-badges-right { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .case-num { font-size:.8rem; font-weight:900; padding:4px 12px; border-radius:999px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); white-space:nowrap; }
+  .case-type { font-size:.79rem; font-weight:800; color:var(--accent-bright); background:rgba(var(--particle-rgb),.1); border:1px solid var(--border-glow); padding:3px 11px; border-radius:999px; white-space:nowrap; }
+  .case-card h3 { font-size:1.15rem; font-weight:900; color:var(--heading); }
+  .case-points { display:flex; flex-direction:column; gap:9px; font-size:.91rem; }
+  .case-point { background:rgba(var(--particle-rgb),.06); border-radius:10px; padding:9px 13px; border-right:3px solid var(--accent); }
+  .case-point strong { color:var(--accent-bright); display:block; font-size:.82rem; margin-bottom:2px; }
+  .case-point.impact-box { border-right-color:var(--success); background:rgba(52,211,153,.08); }
+  .case-point.impact-box strong { color:var(--success); }
+  .case-actions { margin-top:auto; padding-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
+  .case-btn { flex:1; min-width:130px; padding:9px 14px; border-radius:11px; font-family:inherit; font-size:.85rem; font-weight:800; cursor:pointer; text-align:center; transition:.2s; border:1px solid var(--border-glow); background:rgba(var(--particle-rgb),.08); color:var(--accent-bright); display:inline-flex; align-items:center; justify-content:center; gap:7px; }
+  .case-btn.primary { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border:none; box-shadow:0 4px 14px rgba(var(--particle-rgb),.28); }
+  .case-btn:hover { transform:translateY(-2px); border-color:var(--accent-bright); }
+
+  /* بطاقة توظيف الذكاء الاصطناعي */
+  .ai-showcase-card { border-width:2px; border-color:var(--accent-bright); background:radial-gradient(circle at 85% 15%,rgba(var(--particle-rgb),.18),transparent 52%),var(--card-bg); }
+  .ai-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:14px; }
+  .ai-item { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:18px 20px; display:flex; flex-direction:column; gap:8px; transition:.26s; }
+  .ai-item:hover { border-color:var(--accent-bright); transform:translateY(-4px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.22); }
+  .ai-item.featured-ai { background:linear-gradient(145deg,rgba(var(--particle-rgb),.15),var(--card-inner)); border-color:var(--accent-bright); }
+  .ai-item-top { display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  .ai-ico { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); display:grid; place-items:center; flex-shrink:0; }
+  .ai-badge { font-size:.75rem; font-weight:800; padding:3px 10px; border-radius:999px; background:rgba(var(--particle-rgb),.15); color:var(--accent-bright); }
+  .ai-item h3 { font-size:1.08rem; font-weight:900; color:var(--heading); }
+  .ai-item p { font-size:.9rem; color:var(--text-main); line-height:1.68; }
+  .ai-links { margin-top:auto; padding-top:6px; display:flex; gap:8px; flex-wrap:wrap; }
+  .ai-link-btn { padding:6px 12px; border-radius:999px; font-size:.81rem; font-weight:800; background:rgba(var(--particle-rgb),.14); border:1px solid var(--border-glow); color:var(--accent-bright); transition:.2s; display:inline-flex; align-items:center; gap:6px; cursor:pointer; font-family:inherit; }
+  .ai-link-btn:hover { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border-color:transparent; }
+
+  /* 4. جدول وشريط الأثر المهني */
+  .impact-summary-strip { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:18px; }
+  .impact-stat { background:rgba(52,211,153,.09); border:1px solid rgba(52,211,153,.32); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:3px; }
+  .impact-stat strong { font-size:1.45rem; font-weight:900; color:var(--success); line-height:1.2; }
+  .impact-stat span { font-size:.86rem; font-weight:700; color:var(--heading); }
+  .impact-table-wrap { overflow-x:auto; border-radius:var(--radius-md); border:1px solid var(--border-glow); }
+  .impact-table { width:100%; border-collapse:collapse; min-width:720px; background:var(--card-inner); }
+  .impact-table th { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); font-weight:800; font-size:.94rem; padding:14px 16px; text-align:right; }
+  .impact-table td { padding:14px 16px; border-bottom:1px solid var(--border-glow); font-size:.92rem; vertical-align:top; }
+  .impact-table tr:last-child td { border-bottom:none; }
+  .impact-table tr:hover td { background:rgba(var(--particle-rgb),.07); }
+  .ind-badge { display:inline-flex; align-items:center; gap:8px; font-weight:800; color:var(--accent-bright); }
+  .result-pill { display:inline-block; padding:3px 10px; border-radius:8px; background:rgba(52,211,153,.14); color:var(--success); font-weight:800; font-size:.84rem; margin-bottom:5px; }
+
+  /* 5. قسم الخبرات القيادية */
+  .skills-highlight-card { background:linear-gradient(145deg,rgba(var(--particle-rgb),.14),var(--card-inner)); border:1.5px solid var(--accent-bright); border-radius:var(--radius-md); padding:20px 22px; margin-bottom:18px; }
+  .skills-highlight-head { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; margin-bottom:14px; }
+  .skills-highlight-head h3 { font-size:1.12rem; font-weight:900; color:var(--heading); display:flex; align-items:center; gap:9px; }
+  .skills-chips { display:grid; grid-template-columns:repeat(auto-fit,minmax(195px,1fr)); gap:10px; }
+  .skill-chip { background:var(--card-bg); border:1px solid var(--border-glow); border-radius:12px; padding:10px 14px; display:flex; align-items:center; gap:10px; font-weight:800; font-size:.92rem; color:var(--heading); transition:.22s; }
+  .skill-chip:hover { border-color:var(--accent-bright); transform:translateY(-2px); background:rgba(var(--particle-rgb),.14); }
+  .skill-chip i { width:26px; height:26px; border-radius:8px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); display:grid; place-items:center; font-style:normal; font-size:.82rem; flex-shrink:0; }
+
+  .leadership-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(275px,1fr)); gap:15px; }
+  .lead-role-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-right:4px solid var(--accent-bright); border-radius:var(--radius-md); padding:18px 20px; display:flex; flex-direction:column; gap:7px; transition:.26s; }
+  .lead-role-card:hover { border-color:var(--accent-bright); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
+  .lead-role-top { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .lead-role-ico { width:36px; height:36px; border-radius:10px; background:rgba(var(--particle-rgb),.15); color:var(--accent-bright); display:grid; place-items:center; }
+  .lead-role-period { font-size:.76rem; font-weight:800; color:var(--accent-bright); background:rgba(var(--particle-rgb),.12); padding:3px 10px; border-radius:999px; }
+  .lead-role-card h3 { font-size:1.06rem; font-weight:900; color:var(--heading); }
+  .lead-role-card p { font-size:.89rem; color:var(--text-muted); line-height:1.65; }
+
+  /* 6. المؤهلات والمسيرة */
+  .two-col { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .sub-panel { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:20px 22px; }
+  .sub-panel h3 { color:var(--accent-bright); font-size:1.1rem; margin-bottom:9px; display:flex; align-items:center; gap:9px; }
+  .exp-item { background:var(--card-inner); border-right:3.5px solid var(--accent-bright); border-radius:12px; padding:16px 20px; margin-bottom:12px; }
+  .exp-item:last-child { margin-bottom:0; }
+  .exp-item h4 { color:var(--heading); font-size:1.04rem; margin-bottom:4px; }
+  .exp-item span { color:var(--accent-bright); font-size:.86rem; font-weight:700; display:block; margin-bottom:4px; }
+  .exp-item p { color:var(--text-muted); font-size:.93rem; }
+
+  /* 8. الرؤية والرسالة والأهداف */
+  .goals-panel { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:20px 22px; }
+  .goals-panel-head { display:flex; align-items:center; gap:9px; color:var(--accent-bright); font-size:1.1rem; font-weight:800; margin-bottom:14px; }
+  .goals-grid { list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
+  .goal-card { background:rgba(var(--particle-rgb),.06); border:1px solid var(--border-glow); border-radius:12px; padding:13px 15px; display:flex; align-items:flex-start; gap:12px; font-size:.96rem; transition:.22s; }
+  .goal-card:hover { border-color:var(--accent-bright); background:rgba(var(--particle-rgb),.11); }
+  .goal-card b { min-width:30px; height:30px; border-radius:9px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); display:grid; place-items:center; font-size:.84rem; font-weight:900; margin-top:2px; flex-shrink:0; }
+
+  .attach-box { margin-top:20px; background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:20px; text-align:center; cursor:pointer; transition:.25s; display:flex; flex-direction:column; align-items:center; gap:8px; }
+  .attach-box:hover { border-color:var(--accent-bright); background:rgba(var(--particle-rgb),.12); box-shadow:0 0 24px rgba(var(--particle-rgb),.22); transform:translateY(-2px); }
+  .attach-box .att-ico { width:46px; height:46px; border-radius:13px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); display:grid; place-items:center; color:var(--btn-ink); }
+  .attach-box strong { font-size:1.02rem; color:var(--heading); font-weight:800; }
+  .attach-box span { font-size:.86rem; color:var(--accent-bright); font-weight:700; display:inline-flex; align-items:center; gap:6px; }
+
+  /* 9. الإنجازات المعززة بالأرقام */
+  .ach-numbers-bar { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:12px; margin-bottom:18px; }
+  .ach-num-pill { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:14px; padding:15px 12px; text-align:center; }
+  .ach-num-pill b { display:block; font-size:1.75rem; font-weight:900; color:var(--accent-bright); line-height:1.15; }
+  .ach-num-pill span { font-size:.85rem; font-weight:800; color:var(--heading); }
+  .accent-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .accent-box { background:linear-gradient(145deg,var(--fill-1),var(--fill-2)); border:1px solid rgba(255,255,255,.24); border-radius:var(--radius-md); padding:24px 20px; color:var(--btn-ink); box-shadow:0 8px 24px rgba(var(--particle-rgb),.25); transition:.25s; cursor:pointer; display:flex; flex-direction:column; justify-content:flex-start; align-items:center; text-align:center; gap:10px; }
+  .accent-box:hover { transform:translateY(-4px); box-shadow:0 12px 32px rgba(var(--particle-rgb),.42); }
+  .accent-stat-badge { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-size:1.12rem; font-weight:900; line-height:1.2; background:rgba(255,255,255,.16); padding:8px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.28); white-space:nowrap; }
+  .accent-box h3 { font-size:1.12rem; font-weight:800; }
+  .accent-box p { font-size:.9rem; opacity:.94; line-height:1.68; }
+
+  /* 10. شهادات المستفيدين */
+  .testimonials-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .quote-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:22px; display:flex; flex-direction:column; gap:14px; transition:.26s; position:relative; }
+  .quote-card:hover { border-color:var(--accent-bright); transform:translateY(-3px); box-shadow:var(--shadow-glow); }
+  .quote-top-bar { display:flex; align-items:center; justify-content:space-between; }
+  .quote-icon-badge { width:38px; height:38px; border-radius:11px; background:rgba(var(--particle-rgb),.14); border:1px solid var(--border-glow); color:var(--accent-bright); display:grid; place-items:center; }
+  .quote-role-tag { font-size:.75rem; font-weight:800; color:var(--accent-bright); background:rgba(var(--particle-rgb),.1); padding:3px 10px; border-radius:999px; }
+  .quote-text { font-size:.97rem; color:var(--text-main); line-height:1.8; }
+  .quote-author { margin-top:auto; padding-top:12px; border-top:1px solid var(--border-glow); display:flex; align-items:center; gap:12px; }
+  .quote-avatar { width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); font-weight:900; display:grid; place-items:center; font-size:1rem; flex-shrink:0; }
+  .quote-author strong { display:block; font-size:.96rem; color:var(--heading); font-weight:800; }
+  .quote-author span { display:block; font-size:.81rem; color:var(--accent-bright); font-weight:700; }
+
+  /* 11. التكريمات وخطابات الشكر */
+  .honors-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .honor-card { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; gap:9px; transition:.25s; }
+  .honor-card:hover { border-color:var(--accent-bright); transform:translateY(-3px); }
+  .honor-top { display:flex; align-items:center; justify-content:space-between; }
+  .honor-ico-box { width:38px; height:38px; border-radius:10px; background:rgba(var(--particle-rgb),.14); color:var(--accent-bright); display:grid; place-items:center; }
+  .honor-cat { font-size:.77rem; font-weight:800; padding:3px 11px; border-radius:999px; background:rgba(var(--particle-rgb),.15); color:var(--accent-bright); }
+  .honor-card h3 { font-size:1.04rem; color:var(--heading); font-weight:800; }
+  .honor-card p { font-size:.89rem; color:var(--text-muted); }
+
+  /* 12. قسم أبرز الشواهد */
+  .top-ev-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  .top-ev-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; gap:10px; transition:.26s; }
+  .top-ev-card:first-child { grid-column:1 / -1; border-color:var(--accent-bright); background:linear-gradient(145deg,rgba(var(--particle-rgb),.12),var(--card-inner)); }
+  .top-ev-card:hover { border-color:var(--accent-bright); transform:translateY(-4px); box-shadow:var(--shadow-glow); }
+  .top-ev-head { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .top-ev-rank { font-size:.79rem; font-weight:900; padding:3px 12px; border-radius:999px; background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); }
+  .top-ev-cat { font-size:.79rem; font-weight:800; color:var(--accent-bright); }
+  .top-ev-card h3 { font-size:1.05rem; font-weight:800; color:var(--heading); line-height:1.5; }
+  .top-ev-card p { font-size:.88rem; color:var(--text-muted); line-height:1.65; }
+  .top-ev-btns { margin-top:auto; padding-top:8px; display:flex; gap:10px; }
+  .top-ev-btns button, .top-ev-btns a { flex:1; padding:8px 12px; border-radius:10px; font-family:inherit; font-size:.84rem; font-weight:800; cursor:pointer; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:6px; transition:.2s; }
+  .top-ev-btns button { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border:none; }
+  .top-ev-btns a { background:rgba(var(--particle-rgb),.1); border:1px solid var(--border-glow); color:var(--accent-bright); }
+  .top-ev-btns button:hover, .top-ev-btns a:hover { transform:translateY(-2px); border-color:var(--accent-bright); }
+
+  /* 14. التواصل */
+  .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:14px; }
+  .contact-box { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:18px 20px; display:flex; align-items:center; justify-content:space-between; gap:14px; transition:all .28s ease; cursor:pointer; text-align:right; font-family:inherit; color:inherit; }
+  .contact-box:hover { border-color:var(--accent-bright); background:rgba(var(--particle-rgb),.12); transform:translateY(-3px); box-shadow:0 10px 26px rgba(var(--particle-rgb),.2); }
+  .contact-box small { display:block; color:var(--text-muted); font-size:.82rem; font-weight:600; margin-bottom:2px; }
+  .contact-box strong { color:var(--heading); font-size:.98rem; font-weight:800; direction:ltr; display:inline-block; }
+  .contact-ico { width:48px; height:48px; border-radius:14px; background:linear-gradient(135deg,rgba(var(--particle-rgb),.2),rgba(var(--particle-rgb),.06)); border:1px solid var(--border-glow); display:grid; place-items:center; color:var(--accent-bright); flex-shrink:0; transition:all .28s ease; }
+  .contact-ico svg { width:23px; height:23px; transition:transform .28s ease; }
+  .contact-box:hover .contact-ico { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:#ffffff; border-color:transparent; box-shadow:0 6px 18px rgba(var(--particle-rgb),.38); }
+  .contact-box:hover .contact-ico svg { transform:scale(1.1); }
+  .contact-box.wa-card:hover .contact-ico { background:linear-gradient(135deg,#25D366,#128C7E); box-shadow:0 6px 18px rgba(37,211,102,.35); }
+  .contact-box.x-card:hover .contact-ico { background:linear-gradient(135deg,#1e293b,#0f172a); border-color:rgba(255,255,255,.3); }
+
+  /* حوكمة المراجعة الدورية والتذييل */
+  .governance-strip { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:var(--radius-md); padding:15px 20px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; font-size:.86rem; }
+  .gov-tags { display:flex; gap:7px; flex-wrap:wrap; }
+  .gov-tag { padding:3px 10px; border-radius:999px; background:rgba(var(--particle-rgb),.12); color:var(--accent-bright); font-weight:700; font-size:.78rem; }
+  .footer-banner { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); border-radius:var(--radius-md); padding:18px 24px; text-align:center; color:var(--btn-ink); font-weight:800; font-size:.94rem; }
+
+  /* شريط الأيقونات العائم */
+  .studio-dock { position:fixed; bottom:16px; left:18px; z-index:250; display:flex; align-items:center; gap:8px; flex-wrap:wrap; background:var(--sidebar-bg); border:1.5px solid var(--border-glow); padding:8px 12px; border-radius:999px; box-shadow:0 12px 34px rgba(0,0,0,.45); backdrop-filter:blur(14px); }
+  .theme-dots { display:flex; align-items:center; gap:6px; padding-left:8px; border-left:1px solid var(--border-glow); }
+  .theme-ico-btn { width:30px; height:30px; border-radius:50%; border:2px solid transparent; cursor:pointer; display:grid; place-items:center; transition:.2s; }
+  .theme-ico-btn:hover { transform:scale(1.14); }
+  .theme-ico-btn.active { border-color:#ffffff; box-shadow:0 0 12px var(--accent-bright); transform:scale(1.1); }
+  .ctrl-btn { border:1px solid var(--border-glow); background:rgba(var(--particle-rgb),.13); color:var(--heading); padding:6px 13px; border-radius:999px; font-family:inherit; font-size:.81rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:6px; transition:.2s; white-space:nowrap; }
+  .ctrl-btn:hover { border-color:var(--accent-bright); background:rgba(var(--particle-rgb),.24); }
+  .ctrl-btn.active { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border-color:transparent; }
+
+  .font-popover { position:fixed; bottom:74px; left:18px; z-index:251; background:var(--sidebar-bg); border:1.5px solid var(--border-glow); border-radius:18px; padding:14px 16px; box-shadow:0 16px 40px rgba(0,0,0,.45); backdrop-filter:blur(14px); display:none; flex-direction:column; gap:10px; min-width:250px; }
+  .font-popover.open { display:flex; }
+  .pop-row { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .pop-row small { color:var(--text-muted); font-weight:700; font-size:.82rem; }
+  .pop-opts { display:flex; gap:6px; }
+
+  /* النوافذ المنبثقة */
+  .modal-backdrop { position:fixed; inset:0; z-index:400; background:rgba(2,10,17,.85); backdrop-filter:blur(8px); display:none; align-items:center; justify-content:center; padding:18px; }
+  .modal-backdrop.open { display:flex; }
+  .modal-window { background:var(--bg-mid); border:1.5px solid var(--accent-bright); border-radius:var(--radius-lg); width:min(980px,100%); max-height:90vh; display:flex; flex-direction:column; overflow:hidden; box-shadow:0 0 45px rgba(var(--particle-rgb),.35); }
+  .modal-top { padding:14px 22px; border-bottom:1px solid var(--border-glow); display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .modal-top h3 { color:var(--heading); font-size:1.12rem; }
+  .close-btn { background:rgba(var(--particle-rgb),.16); border:1px solid var(--border-glow); color:var(--heading); width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.05rem; }
+  .modal-search-bar { padding:12px 22px; border-bottom:1px solid var(--border-glow); display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .modal-search-bar input { flex:1; min-width:200px; background:var(--card-inner); border:1px solid var(--border-glow); border-radius:999px; padding:8px 16px; color:var(--heading); font-family:inherit; font-size:.93rem; outline:none; }
+  .filter-pills { display:flex; gap:6px; flex-wrap:wrap; }
+  .modal-body { padding:20px 22px; overflow-y:auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; }
+  .doc-item { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:8px; }
+  .doc-item .doc-badge { align-self:flex-start; font-size:.76rem; font-weight:800; padding:2px 10px; border-radius:999px; background:rgba(var(--particle-rgb),.16); color:var(--accent-bright); }
+  .doc-item .doc-badge.ms-badge { background:rgba(52,211,153,.16); color:var(--success); }
+  .doc-item h4 { font-size:.95rem; color:var(--heading); line-height:1.5; }
+  .doc-btns { margin-top:auto; display:flex; gap:8px; padding-top:6px; }
+  .doc-btns button, .doc-btns a { flex:1; text-align:center; padding:6px 10px; border-radius:999px; font-size:.83rem; font-weight:700; font-family:inherit; cursor:pointer; border:1px solid var(--border-glow); background:transparent; color:var(--accent-bright); display:inline-flex; align-items:center; justify-content:center; gap:5px; }
+  .doc-btns button { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); border:none; }
+  .frame-view { width:100%; height:74vh; border:0; background:#fff; grid-column:1 / -1; border-radius:12px; }
+
+  /* بطاقة الشاهد الموثق للمشاريع */
+  .evidence-sheet { background:var(--card-inner); border:1px solid var(--border-glow); border-radius:14px; padding:16px 18px; display:flex; flex-direction:column; gap:8px; }
+  .evidence-sheet-head { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border-glow); padding-bottom:8px; }
+  .evidence-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:10px; margin-top:4px; }
+  .ev-metric { background:rgba(52,211,153,.1); border:1px solid rgba(52,211,153,.3); border-radius:10px; padding:9px 12px; text-align:center; }
+  .ev-metric strong { display:block; color:var(--success); font-size:1.15rem; font-weight:900; }
+  .ev-metric small { color:var(--text-main); font-size:.8rem; font-weight:700; }
+
+  /* السيرة الذاتية PDF */
+  .cv-sheet-wrap { padding:22px; overflow-y:auto; background:#e9eef3; }
+  .cv-paper { background:#ffffff; color:#162433; max-width:820px; margin:0 auto; padding:34px 38px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,.18); line-height:1.75; }
+  .cv-header { display:flex; justify-content:space-between; align-items:center; gap:16px; border-bottom:3px solid #0b6e91; padding-bottom:16px; margin-bottom:18px; flex-wrap:wrap; }
+  .cv-header h2 { font-size:1.6rem; color:#082336; font-weight:900; }
+  .cv-header p { color:#0b6e91; font-weight:700; font-size:.95rem; }
+  .cv-meta { font-size:.85rem; color:#3d5166; text-align:left; direction:ltr; }
+  .cv-sec { margin-bottom:16px; }
+  .cv-sec h4 { background:#f0f6fa; color:#082336; border-right:4px solid #0b6e91; padding:5px 12px; font-size:1rem; margin-bottom:8px; }
+  .cv-sec ul { padding-right:20px; font-size:.91rem; color:#243647; display:grid; gap:4px; }
+  .cv-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; font-size:.9rem; }
+
+  @media print {
+    body * { visibility:hidden !important; }
+    #cvPrintArea, #cvPrintArea * { visibility:visible !important; }
+    #cvPrintArea { position:fixed !important; inset:0 !important; width:100% !important; box-shadow:none !important; padding:18px 24px !important; margin:0 !important; background:#ffffff !important; }
+  }
+
+  .toast { position:fixed; top:22px; left:50%; transform:translateX(-50%) translateY(-80px); background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:#fff; padding:10px 24px; border-radius:999px; font-weight:800; font-size:.92rem; box-shadow:0 10px 30px rgba(0,0,0,.4); z-index:500; transition:transform .35s; }
+  .toast.show { transform:translateX(-50%) translateY(0); }
+
+  @media (max-width:900px) {
+    .sidebar { transform:translateX(105%); width:260px; box-shadow:-10px 0 35px rgba(0,0,0,.65); }
+    .sidebar.mobile-open { transform:translateX(0); }
+    .mobile-bar { display:flex; }
+    .main-wrap { margin-right:0; padding:16px 14px 135px; }
+    .hero-grid { grid-template-columns:1fr; text-align:center; }
+    .hero-top-meta { justify-content:center; }
+    .hero-avatar { margin:0 auto; width:145px; height:145px; }
+    .hero-actions { justify-content:center; }
+    .two-col, .three-col, .cv-grid-2, .case-grid, .goals-grid, .accent-grid, .testimonials-grid, .honors-grid, .top-ev-grid { grid-template-columns:1fr; }
+    .case-card.flagship-case .case-points { grid-template-columns:1fr; }
+    .glow-card { padding:24px 18px; }
+    .studio-dock { left:10px; right:10px; bottom:10px; justify-content:center; border-radius:18px; }
+  }
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-brand">
-        <span>ملف الإنجاز القيادي الإلكتروني</span>
-        <span class="nav-badge">١٤٤٨ - ١٤٤٩ هـ</span>
-      </a>
-      <div class="nav-links">
-        <a href="#impact">مؤشرات الأثر</a>
-        <a href="#works">أبرز 5 أعمال</a>
-        <a href="#leadership">الخبرات القيادية</a>
-        <a href="#repository">مستودع الشواهد والشهادات</a>
-        <button class="btn-print" onclick="window.print()">طباعة / تصدير PDF</button>
-      </div>
-    </div>
-  </nav>
+<canvas id="bgCanvas"></canvas>
+<div id="scrollProgress"></div>
+<div class="toast" id="toastMsg">تم نسخ رابط ملف الإنجاز بنجاح</div>
 
-  <!-- Hero & Value Proposition -->
-  <header class="hero">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-tag">القيادة التربوية والتحول الرقمي المدرسي</div>
-        <h1>سمران بن عبدالعزيز بن سمران شديد</h1>
-        <p class="hero-subtitle">معلم وقائد تقني تربوي | المنسق التقني ومسؤول التقويم الذاتي ومنصتي «نور» و«مدرستي»</p>
-        <div class="value-box">
-          <strong>القيمة المهنية المضافة:</strong> قيادة التحول الرقمي المؤسسي في البيئة المدرسية عبر هندسة وتطوير منظومات برمجية مؤتمتة تقلص الهدر الإداري والورقي بأكثر من 90%، وترفع كفاءة الانضباط المدرسي، وجودة التعليم التفاعلي، وجاهزية ملفات التقويم الذاتي والاعتماد المدرسي.
+<div class="mobile-bar">
+  <strong>ملف إنجاز · سمران شديد</strong>
+  <button class="mobile-toggle" id="mobileMenuBtn">☰ الأقسام</button>
+</div>
+
+<aside class="sidebar" id="sidebar" aria-label="التنقل بين الأقسام">
+  <div class="sidebar-header">ملف الإنجاز القيادي · سمران شديد</div>
+  <a href="#home" class="nav-item active"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span><span>الرئيسية والقيمة المهنية</span></a>
+  <a href="#dashboard" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span>المؤشرات الرقمية</span></a>
+  <a href="#featured-works" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span>أبرز 5 أعمال أحدثت فرقًا</span></a>
+  <a href="#ai-impact" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span><span>توظيف الذكاء الاصطناعي</span></a>
+  <a href="#impact" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span>الأثر المهني</span></a>
+  <a href="#leadership" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></span><span>الخبرات والمهارات القيادية</span></a>
+  <a href="#qualifications" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><span>المؤهلات والخبرات</span></a>
+  <a href="#about" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span>المقدمة ونبذة عني</span></a>
+  <a href="#vision" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span><span>الرؤية والرسالة والأهداف</span></a>
+  <a href="#achievements" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><span>سجل الإنجازات بالأرقام</span></a>
+  <a href="#testimonials" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span>شهادات المستفيدين</span></a>
+  <a href="#honors" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span>التكريمات والشكر</span></a>
+  <a href="#top-evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span>أبرز الشواهد (5)</span></a>
+  <a href="#evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>جميع الشواهد (54)</span></a>
+  <a href="#contact" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>التواصل والمشاركة</span></a>
+</aside>
+
+<main class="main-wrap">
+  <div class="container">
+
+    <!-- 1. الرئيسية والقيمة المهنية -->
+    <section id="home" class="glow-card hero-card tilt-card">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-top-meta">
+            <span class="update-pill">
+              <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <span>محدّث ومعتمد · 1448هـ / 2026م</span>
+            </span>
+          </div>
+          <h1>سمران بن عبد العزيز شديد</h1>
+          <p class="hero-role">المنسق التقني ومسؤول المنصات الرقمية ومصادر التعلم · متوسطة أوس بن ثابت</p>
+          <div class="value-statement">
+            متخصص في توظيف التقنية والذكاء الاصطناعي لتحسين جودة التعليم ورفع كفاءة العمل المدرسي، بخبرة تمتد لأكثر من <span class="nowrap">22 عامًا.</span>
+          </div>
+          <div class="hero-actions">
+            <button type="button" class="btn-primary" id="openCvBtn">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <span>السيرة الذاتية (PDF)</span>
+            </button>
+            <a href="#top-evidence" class="btn-outline">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>أبرز الشواهد</span>
+            </a>
+            <button type="button" class="btn-outline" data-open-modal="all">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <span>المستودع (54)</span>
+            </button>
+            <button type="button" class="btn-outline" id="openQrBtn">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></svg>
+              <span>QR</span>
+            </button>
+          </div>
         </div>
-        <div class="hero-meta">
-          <span class="meta-pill">🏫 متوسطة أوس بن ثابت — حي طويق</span>
-          <span class="meta-pill">🏛️ الإدارة العامة للتعليم بمنطقة الرياض</span>
-          <span class="meta-pill">🎓 الدبلوم العالي في المهارات الرقمية (4.49 / 5)</span>
+        <div class="hero-avatar">
+          <img src="samran.jpg" alt="سمران بن عبد العزيز شديد" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%23082336%22/><text x=%2250%25%22 y=%2254%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2276%22 fill=%22%2338d6ff%22 font-family=%22sans-serif%22>س</text></svg>'">
         </div>
-      </div>
-
-      <aside class="hero-card">
-        <h3>
-          <span>بطاقة الهوية المهنية</span>
-          <span style="font-size:0.82rem; color:var(--accent);">محدّث وموثّق</span>
-        </h3>
-        <ul class="info-list">
-          <li>
-            <span class="info-label">الجهة التعليمية</span>
-            <span class="info-val">متوسطة أوس بن ثابت</span>
-          </li>
-          <li>
-            <span class="info-label">النطاق الإشرافي</span>
-            <span class="info-val">النطاق الرابع — تعليم الرياض</span>
-          </li>
-          <li>
-            <span class="info-label">التخصص التدريسي</span>
-            <span class="info-val">التفكير الناقد والمهارات الرقمية</span>
-          </li>
-          <li>
-            <span class="info-label">المؤهل الأكاديمي</span>
-            <span class="info-val">دبلوم عالٍ — جامعة الملك سعود</span>
-          </li>
-          <li>
-            <span class="info-label">الاعتمادات المهنية</span>
-            <span class="info-val">Microsoft Learn &amp; FutureX</span>
-          </li>
-          <li>
-            <span class="info-label">حساب منصة X</span>
-            <span class="info-val" dir="ltr">@somran288</span>
-          </li>
-        </ul>
-      </aside>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- KPIs Section -->
-    <section id="impact" class="kpi-grid" aria-label="مؤشرات الأثر المهني">
-      <div class="kpi-card">
-        <div class="kpi-num">+5</div>
-        <div class="kpi-title">أنظمة وبوابات رقمية</div>
-        <div class="kpi-desc">حلول برمجية مطوّرة ومطبقة فعلياً لخدمة المدرسة</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-num">19</div>
-        <div class="kpi-title">شهادة تخصصية من Microsoft</div>
-        <div class="kpi-desc">في الذكاء الاصطناعي التعليمي و Copilot و Teams</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-num">95%</div>
-        <div class="kpi-title">كفاءة الأتمتة الإدارية</div>
-        <div class="kpi-desc">تسريع معالجة الأعذار وتقارير التفعيل والانضباط</div>
-      </div>
-      <div class="kpi-card">
-        <div class="kpi-num">+13</div>
-        <div class="kpi-title">عاماً من العطاء التربوي</div>
-        <div class="kpi-desc">خبرة متكاملة بين التدريس والقيادة والتقنية</div>
       </div>
     </section>
 
-    <!-- Top 5 Signature Works -->
-    <section id="works" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">أبرز 5 أعمال ومبادرات تقنية موثقة الأثر</h2>
-          <p class="section-sub">ابتكارات رقمية تم تطويرها وتفعيلها ميدانياً لخدمة الطلاب والمعلمين وأولياء الأمور</p>
+    <!-- 2. المؤشرات الرقمية -->
+    <section id="dashboard" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <h2>المؤشرات الرقمية ولوحة قياس التميز</h2>
+        </div>
+        <span class="pill-tag">نظرة سريعة على الإنجاز</span>
+      </div>
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><span class="kpi-tag">خبرة تراكمية</span></div>
+          <div class="kpi-num">+22</div>
+          <div class="kpi-label">سنة خبرة تربوية وإدارية</div>
+          <div class="kpi-sub">حكومي (من 1432هـ) · أهلي · قطاع خاص</div>
+          <div class="kpi-bar"><i style="width:100%"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span class="kpi-tag">نمو مهني</span></div>
+          <div class="kpi-num">+185</div>
+          <div class="kpi-label">ساعة تدريبية معتمدة</div>
+          <div class="kpi-sub">37 شهادة (تشمل 19 من Microsoft)</div>
+          <div class="kpi-bar"><i style="width:96%"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="kpi-tag">إنتاج معرفي</span></div>
+          <div class="kpi-num">15</div>
+          <div class="kpi-label">بحثًا وتقريرًا علميًا</div>
+          <div class="kpi-sub">دراسات تطبيقية في التعليم الرقمي</div>
+          <div class="kpi-bar"><i style="width:90%"></i></div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span class="kpi-tag">ابتكار رقمي</span></div>
+          <div class="kpi-num">5</div>
+          <div class="kpi-label">أنظمة ومنصات مطورة</div>
+          <div class="kpi-sub">حلول ذكية تخدم المدرسة والميدان</div>
+          <div class="kpi-bar"><i style="width:100%"></i></div>
+        </div>
+        <div class="kpi-card" style="cursor:pointer" data-open-modal="all">
+          <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div><span class="kpi-tag">موثقة 100%</span></div>
+          <div class="kpi-num">54</div>
+          <div class="kpi-label">شاهدًا ووثيقة معتمدة</div>
+          <div class="kpi-sub">اضغط للمعاينة المباشرة للشواهد ↗</div>
+          <div class="kpi-bar"><i style="width:100%"></i></div>
         </div>
       </div>
-
-      <div class="works-grid">
-        <article class="work-card">
-          <div>
-            <div class="work-top">
-              <span class="work-rank">المبادرة #1</span>
-              <span class="work-tech">Google Apps Script + Sheets</span>
-            </div>
-            <h3>منصة الأعذار الإلكترونية الموحدة</h3>
-            <p>بوابة سحابية متكاملة لاستقبال أعذار غياب الطلاب عن بُعد، مع أرشفة المرفقات تلقائياً في Google Drive وتوليد رقم طلب وتتبع فوري لكل ولي أمر.</p>
-          </div>
-          <div class="work-impact">الأثر: أتمتة 100% من استقبال الأعذار وتقليص المراجعات الورقية في شؤون الطلاب.</div>
-        </article>
-
-        <article class="work-card">
-          <div>
-            <div class="work-top">
-              <span class="work-rank">المبادرة #2</span>
-              <span class="work-tech">AI Bot + Web Portal</span>
-            </div>
-            <h3>مساعد الذكاء الاصطناعي «AwsNafesBot»</h3>
-            <p>بوت تفاعلي على Telegram مدعوم ببوابة ويب تدريبية لتهيئة طلاب الصف الثالث المتوسط لاختبارات «نافس» الوطنية عبر بنوك أسئلة تفاعلية وتغذية راجعة فورية.</p>
-          </div>
-          <div class="work-impact">الأثر: رفع جاهزية طلاب الصف الثالث المتوسط وتوفير تدريب ذاتي متاح على مدار الساعة.</div>
-        </article>
-
-        <article class="work-card">
-          <div>
-            <div class="work-top">
-              <span class="work-rank">المبادرة #3</span>
-              <span class="work-tech">Apps Script + Docs PDF</span>
-            </div>
-            <h3>النظام الموحد لتقارير التفعيل اليومية</h3>
-            <p>نظام إلكتروني يتيح للمعلمين توثيق تفعيل الفصول الافتراضية عبر منصتي «مدرستي» و«Teams» وإصدار تقارير PDF رسمية مدمجة بالشواهد وحفظها تلقائياً.</p>
-          </div>
-          <div class="work-impact">الأثر: توحيد التوثيق اليومي لجميع المعلمين وإصدار التقارير المعتمدة بضغطة زر.</div>
-        </article>
-
-        <article class="work-card">
-          <div>
-            <div class="work-top">
-              <span class="work-rank">المبادرة #4</span>
-              <span class="work-tech">Excel VBA Macros</span>
-            </div>
-            <h3>نظام متابعة الانضباط الوظيفي الذكي</h3>
-            <p>منظومة برمجية بالجداول الإلكترونية والماكرو لرصد دقائق التأخر الصباحي شهرياً، مع لوحة مؤشرات إحصائية وتنبيه آلي عند بلوغ حدود المساءلة النظامية.</p>
-          </div>
-          <div class="work-impact">الأثر: دقة عالية في الرصد الشهري وسرعة استخراج الإحصائيات والقرارات الإدارية.</div>
-        </article>
-
-        <article class="work-card">
-          <div>
-            <div class="work-top">
-              <span class="work-rank">المبادرة #5</span>
-              <span class="work-tech">Chrome / Edge Extension</span>
-            </div>
-            <h3>إضافة المتصفح «تحضيري من Teams»</h3>
-            <p>إضافة برمجية مخصصة لمتصفحات الويب تسهل عملية رصد حضور وغياب الطلاب ومزامنتها أثناء الحصص الافتراضية في Microsoft Teams دون أخطاء يدوية.</p>
-          </div>
-          <div class="work-impact">الأثر: اختصار زمن التحضير اليومي داخل الحصة الافتراضية إلى ثوانٍ معدودة.</div>
-        </article>
+      <div class="methodology-note">
+        <span class="m-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+        <span>تم احتساب المؤشرات بناءً على السجلات التشغيلية والشواهد الموثقة والتقارير المعتمدة.</span>
       </div>
     </section>
 
-    <!-- Leadership Experience -->
-    <section id="leadership" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">الخبرات القيادية والأدوار المؤسسية</h2>
-          <p class="section-sub">مهام قيادية وإشرافية متكاملة في الإدارة المدرسية والتطوير المؤسسي</p>
+    <!-- 3. أبرز 5 أعمال أحدثت فرقًا -->
+    <section id="featured-works" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <h2>أبرز 5 أعمال أحدثت فرقًا</h2>
+        </div>
+        <span class="pill-tag">مشاريع مطبقة وموثقة بالشواهد</span>
+      </div>
+      <div class="case-grid" id="featuredCasesGrid"></div>
+    </section>
+
+    <!-- 3 ب. بطاقة توظيف الذكاء الاصطناعي -->
+    <section id="ai-impact" class="glow-card ai-showcase-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
+          <h2>توظيف الذكاء الاصطناعي</h2>
+        </div>
+        <span class="pill-tag">نقطة التميز والابتكار الميداني</span>
+      </div>
+      <div class="ai-grid">
+        <div class="ai-item featured-ai">
+          <div class="ai-item-top">
+            <div class="ai-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div>
+            <span class="ai-badge">تطبيق ميداني</span>
+          </div>
+          <h3>AwsNafesBot</h3>
+          <p>مساعد ذكي وبوابة تفاعلية لتهيئة طلاب الصف الثالث المتوسط لاختبارات «نافس» الوطنية بتدريب مستمر وتغذية راجعة فورية.</p>
+          <div class="ai-links">
+            <a href="https://t.me/AwsNafesBot" target="_blank" rel="noopener" class="ai-link-btn">بوت تليجرام ↗</a>
+            <a href="https://aws-thabit-zhxcw9dv.manus.space/" target="_blank" rel="noopener" class="ai-link-btn">بوابة نافس ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-item-top">
+            <div class="ai-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
+            <span class="ai-badge">بيانات وقرارات</span>
+          </div>
+          <h3>التحليل التعليمي</h3>
+          <p>تحليل بيانات التحصيل الدراسي ونتائج اختبارات نافس بالذكاء الاصطناعي لتشخيص الفجوات وبناء خطط علاجية دقيقة.</p>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-item-top">
+            <div class="ai-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+            <span class="ai-badge">محتوى تفاعلي</span>
+          </div>
+          <h3>إعداد المواد</h3>
+          <p>إنتاج دروس تفاعلية، وأنشطة إثرائية في التفكير الناقد والمهارات الرقمية، وبنوك أسئلة محاكية للاختبارات الوطنية.</p>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-item-top">
+            <div class="ai-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <span class="ai-badge">أتمتة ذكية</span>
+          </div>
+          <h3>بناء الأنظمة</h3>
+          <p>تطوير منصات سحابية وبرامج أتمتة لإدارة الأعذار، وتقارير التفعيل اليومية، والانضباط الوظيفي بجهد ووقت أقل.</p>
+          <div class="ai-links">
+            <a href="https://axaxax2030q-ops.github.io/aws-excuses/" target="_blank" rel="noopener" class="ai-link-btn">بوابة الأعذار ↗</a>
+            <a href="https://script.google.com/macros/s/AKfycbxclmMSjdn6NRwSGjiw5BaJkNixuUtcLjcRcGtX7E3iFNdcB-pJ7HMr_2gxsjdwsx_2/exec" target="_blank" rel="noopener" class="ai-link-btn">التقارير اليومية ↗</a>
+          </div>
+        </div>
+
+        <div class="ai-item">
+          <div class="ai-item-top">
+            <div class="ai-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <span class="ai-badge">تمكين الزملاء</span>
+          </div>
+          <h3>دعم المعلمين</h3>
+          <p>ابتكار أدوات مساندة للمعلمين مثل إضافة «تحضيري من Teams» وتقديم التدريب والدعم الفوري لتوظيف التقنية في الصف.</p>
+          <div class="ai-links">
+            <button type="button" class="ai-link-btn" data-open-evidence="4">
+              <svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              <span>عرض الشاهد</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. الأثر المهني -->
+    <section id="impact" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+          <h2>الأثر المهني بالأرقام والنتائج</h2>
+        </div>
+        <span class="pill-tag">ماذا تغير بعد المشاريع؟</span>
+      </div>
+
+      <div class="impact-summary-strip">
+        <div class="impact-stat">
+          <strong>+485 مستفيدًا</strong>
+          <span>+450 طالبًا وولي أمر و+35 معلمًا وإداريًا</span>
+        </div>
+        <div class="impact-stat">
+          <strong>85% توفير في الوقت</strong>
+          <span>توفير ~45 دقيقة يوميًا من الأعمال الورقية والرصد</span>
+        </div>
+        <div class="impact-stat">
+          <strong>100% انتظام التوثيق</strong>
+          <span>أرشفة يومية آلية لتقارير التفعيل والأعذار</span>
+        </div>
+        <div class="impact-stat">
+          <strong>+80% سرعة الدعم</strong>
+          <span>تسريع معالجة الدخول واستعادة كلمات المرور</span>
         </div>
       </div>
 
-      <div class="roles-grid">
-        <div class="role-card">
-          <span class="role-badge">التحول الرقمي والمنصات</span>
-          <h3>المنسق التقني ومسؤول «نور» و«مدرستي»</h3>
-          <p>إدارة الصلاحيات، الجداول المدرسية، الدعم الفني للهيئتين التعليمية والإدارية، وضمان استمرارية العمليات الرقمية في متوسطة أوس بن ثابت.</p>
+      <div class="impact-table-wrap">
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th style="width:18%">المؤشر</th>
+              <th style="width:24%">التحدي السابق</th>
+              <th style="width:36%">النتيجة والأثر الرقمي المحقق</th>
+              <th style="width:22%">الشاهد والرابط</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ind-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> التحول الرقمي</span></td>
+              <td>اعتماد الإجراءات الورقية اليدوية في الأعذار وتقارير التفعيل والمتابعة.</td>
+              <td><span class="result-pill">أتمتة 5 عمليات · توفير 85% من الوقت</span><br>خدمة أكثر من <strong>450 طالبًا وولي أمر</strong> رقميًا وتصفير المعاملات الورقية.</td>
+              <td><button type="button" class="ctrl-btn active" data-open-evidence="0"><svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> عرض الشاهد</button></td>
+            </tr>
+            <tr>
+              <td><span class="ind-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> منصة مدرستي</span></td>
+              <td>تشتت رصد التفعيل اليومي وصعوبة تجميع تقارير المعلمين بسرعة.</td>
+              <td><span class="result-pill">100% انتظام التوثيق لـ +35 معلمًا</span><br>توحيد التقارير اليومية وأرشفتها سحابيًا بضغطة زر للقيادة المدرسية.</td>
+              <td><button type="button" class="ctrl-btn active" data-open-evidence="2"><svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> عرض الشاهد</button></td>
+            </tr>
+            <tr>
+              <td><span class="ind-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> اختبارات نافس</span></td>
+              <td>الحاجة إلى أداة تدريب تفاعلية تحفّز طلاب الثالث المتوسط خارج الصف.</td>
+              <td><span class="result-pill">تدريب ذكي 24/7 لطلاب الثالث المتوسط</span><br>رفع جاهزية الطلاب عبر مساعد AwsNafesBot وبوابة التدريب التفاعلية.</td>
+              <td><button type="button" class="ctrl-btn active" data-open-evidence="1"><svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> عرض الشاهد</button></td>
+            </tr>
+            <tr>
+              <td><span class="ind-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> الانضباط الوظيفي</span></td>
+              <td>استغراق وقت طويل في حساب دقائق التأخر وإعداد المساءلات يدويًا.</td>
+              <td><span class="result-pill">دقة 100% · توفير 45 دقيقة يوميًا</span><br>حساب آلي لدقائق التأخر وتوليد المساءلات النظامية لـ <strong>+35 منسوبًا</strong>.</td>
+              <td><button type="button" class="ctrl-btn active" data-open-evidence="3"><svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> عرض الشاهد</button></td>
+            </tr>
+            <tr>
+              <td><span class="ind-badge"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> الدعم الفني</span></td>
+              <td>تأخر معالجة مشاكل الدخول للمنصات وصعوبة استعادة كلمات المرور للطلاب.</td>
+              <td><span class="result-pill">تسريع المعالجة بنسبة +80%</span><br>توفير أدلة إجرائية وشروحات مصورة ودعم مباشر للمعلمين والطلاب.</td>
+              <td><a href="https://www.youtube.com/watch?v=-jmmRZHQqBU" target="_blank" rel="noopener" class="ctrl-btn">فيديو الشرح ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="methodology-note">
+        <span class="m-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+        <span>تم احتساب المؤشرات بناءً على السجلات التشغيلية والشواهد الموثقة والتقارير المعتمدة.</span>
+      </div>
+    </section>
+
+    <!-- 5. قسم الخبرات والمهارات القيادية -->
+    <section id="leadership" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+          <h2>الخبرات والمهارات القيادية</h2>
         </div>
-        <div class="role-card">
-          <span class="role-badge">الجودة والاعتماد المدرسي</span>
-          <h3>مسؤول ملف التقويم الذاتي والتميز</h3>
-          <p>إعداد الدليل الإجرائي للتقويم الذاتي المدرسي، وبناء خطط التحسين والتدخل العلاجي، وتوثيق الشواهد وفق معايير هيئة تقويم التعليم والتدريب.</p>
+        <span class="pill-tag">8 مهارات قيادية و7 أدوار تنفيذية</span>
+      </div>
+
+      <div class="skills-highlight-card">
+        <div class="skills-highlight-head">
+          <h3>
+            <svg class="ico" style="color:var(--accent-bright)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            <span>المهارات القيادية والتنفيذية</span>
+          </h3>
+          <span class="pill-tag">كفايات القيادة الحديثة</span>
         </div>
-        <div class="role-card">
-          <span class="role-badge">القيادة الطلابية</span>
+        <div class="skills-chips">
+          <div class="skill-chip"><i>01</i><span>القيادة الرقمية</span></div>
+          <div class="skill-chip"><i>02</i><span>إدارة المشاريع</span></div>
+          <div class="skill-chip"><i>03</i><span>إدارة فرق العمل</span></div>
+          <div class="skill-chip"><i>04</i><span>التحول الرقمي</span></div>
+          <div class="skill-chip"><i>05</i><span>تحليل البيانات</span></div>
+          <div class="skill-chip"><i>06</i><span>اتخاذ القرار</span></div>
+          <div class="skill-chip"><i>07</i><span>التخطيط التشغيلي</span></div>
+          <div class="skill-chip"><i>08</i><span>بناء الأنظمة الرقمية</span></div>
+        </div>
+      </div>
+
+      <div class="leadership-grid">
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span class="lead-role-period">سنتان · قيادة طلابية</span></div>
           <h3>وكيل شؤون الطلاب</h3>
-          <p>الإشراف على الانضباط المدرسي، متابعة الغياب والأعذار، وتفعيل الشراكة المجتمعية وقنوات التواصل الرسمية مع أولياء الأمور.</p>
+          <p>إدارة شؤون الطلاب، متابعة الانضباط السلوكي والانتظام الدراسي، والتنسيق المباشر مع أولياء الأمور في مدارس التضامن الأهلية.</p>
         </div>
-        <div class="role-card">
-          <span class="role-badge">الإدارة المدرسية</span>
-          <h3>مدير القسم الليلي (سابقاً)</h3>
-          <p>قيادة الطاقم الإداري والتعليمي في الفترة المسائية، وتنظيم الاختبارات والخطط التشغيلية ومتابعة التحصيل الدراسي.</p>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div><span class="lead-role-period">قيادة مدرسية</span></div>
+          <h3>مدير القسم الليلي للمرحلة الثانوية</h3>
+          <p>الإشراف الإداري والتعليمي الكامل على المرحلة الثانوية الليلية، وتنظيم الجداول والاختبارات وضبط سير العمل.</p>
+        </div>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><span class="lead-role-period">متوسطة أوس بن ثابت</span></div>
+          <h3>المنسق التقني بالمدرسة</h3>
+          <p>قيادة مبادرات التحول الرقمي، صيانة البنية التقنية، وتطوير الحلول البرمجية لرفع كفاءة التشغيل المدرسي.</p>
+        </div>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><span class="lead-role-period">متوسطة أوس بن ثابت</span></div>
+          <h3>مسؤول منصة مدرستي</h3>
+          <p>متابعة مؤشرات التفعيل اليومي للمعلمين والطلاب، معالجة تحديات الدخول، وإصدار تقارير التفعيل الموحدة.</p>
+        </div>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div><span class="lead-role-period">متوسطة أوس بن ثابت</span></div>
+          <h3>مسؤول نظام نور</h3>
+          <p>إدارة قواعد بيانات الطلاب والمعلمين، رصد الدرجات، متابعة الغياب والأعذار، واستخراج التقارير الإحصائية الدقيقة.</p>
+        </div>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div><span class="lead-role-period">متوسطة أوس بن ثابت</span></div>
+          <h3>أمين مصادر التعلم</h3>
+          <p>تفعيل بيئة التعلم الرقمي، دعم استراتيجيات التدريس الحديثة، وتوظيف التقنيات التفاعلية لخدمة المناهج الدراسية.</p>
+        </div>
+
+        <div class="lead-role-card">
+          <div class="lead-role-top"><div class="lead-role-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><span class="lead-role-period">لجان الجودة والنتائج</span></div>
+          <h3>عضو لجنتي التميز والتحصيل الدراسي</h3>
+          <p>تحليل بيانات نتائج الطلاب، إعداد خطط تحسين التحصيل الدراسي واختبارات نافس، وتوثيق معايير التميز المؤسسي.</p>
         </div>
       </div>
     </section>
 
-    <!-- Digital Repository & Microsoft Certificates -->
-    <section id="repository" class="section">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">مستودع الشواهد والشهادات المعتمدة</h2>
-          <p class="section-sub">سجل تفاعلي موثق بالروابط المباشرة ومعاينة الشهادات من Google Drive</p>
+    <!-- 6. المؤهلات العلمية والمسيرة التربوية -->
+    <section id="qualifications" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <h2>المؤهلات العلمية والمسيرة التربوية</h2>
         </div>
-        <a id="msFolderLink" href="https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5" target="_blank" rel="noopener" class="folder-link-btn">
-          <span>📂 فتح مجلد شهادات Microsoft على Drive</span>
+        <span class="pill-tag">التأهيل والتدرج المهني</span>
+      </div>
+      <div class="two-col" style="margin-bottom:18px">
+        <div class="sub-panel">
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> الدبلوم العالي في المهارات الرقمية</h3>
+          <p>تاريخ الحصول: <span class="nowrap">1444هـ</span> · تخصص تطبيقي في التقنيات الحديثة والتعليم الرقمي.</p>
+        </div>
+        <div class="sub-panel">
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> بكالوريوس اللغة العربية</h3>
+          <p>تاريخ الحصول: <span class="nowrap">1430هـ</span> · تأصيل لغوي وتربوي متكامل.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <span>التعليم الحكومي · منذ عام 1432هـ حتى الآن</span>
+        <h4>معلم ومنسق تقني ومسؤول المنصات ومصادر التعلم · متوسطة أوس بن ثابت</h4>
+        <p>تدريس المهارات الحياتية والتفكير الناقد والمهارات الرقمية واللغة العربية، إلى جانب قيادة الملف التقني ومنصتي مدرستي ونور.</p>
+      </div>
+      <div class="exp-item">
+        <span>التعليم الأهلي · 3 سنوات (قبل عام 1432هـ)</span>
+        <h4>معلم لغة عربية ← وكيل لشؤون الطلاب ← مدير القسم الليلي · مدارس التضامن الأهلية</h4>
+        <p>التدرج من التدريس إلى الوكالة الطلابية فالإدارة المدرسية للقسم الثانوي الليلي.</p>
+      </div>
+      <div class="exp-item">
+        <span>القطاع الخاص · 4 سنوات</span>
+        <h4>مساعد إداري · شركة الحكير</h4>
+        <p>خبرة مؤسسية لمدة أربع سنوات عبر إدارات الموارد البشرية، تقنية المعلومات، والإدارة المالية.</p>
+      </div>
+      <div class="attach-box" data-open-modal="documents">
+        <div class="att-ico"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+        <strong>معاينة الوثائق الأكاديمية والرسمية المعتمدة (2)</strong>
+        <span>
+          <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          وثيقة الدبلوم العالي في المهارات الرقمية + وثيقة بكالوريوس اللغة العربية
+        </span>
+      </div>
+    </section>
+
+    <!-- 7. المقدمة ونبذة عني -->
+    <section id="about" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <h2>المقدمة ونبذة عني</h2>
+        </div>
+        <span class="pill-tag">السيرة التعريفية</span>
+      </div>
+      <div class="card-body">
+        <p>تجمع مسيرتي الممتدة لأكثر من <strong class="nowrap">22 عامًا</strong> بين القيادة الإدارية والخبرة التربوية والابتكار التقني؛ بدءًا بالإدارة المؤسسية وتقنية المعلومات في القطاع الخاص <span class="nowrap">(4 سنوات)،</span> مرورًا بالتدريس والوكالة والإدارة المدرسية في التعليم الأهلي <span class="nowrap">(3 سنوات)،</span> وصولًا إلى التعليم الحكومي منذ عام <span class="nowrap">1432هـ.</span></p>
+        <p>أؤمن بأن التقنية والذكاء الاصطناعي رافدان أساسيان لتجويد التعليم وتخفيف الأعباء الإدارية، مما يتيح للمعلم والقيادة المدرسية التركيز على بناء الطالب ورفع نواتج التعلم.</p>
+      </div>
+    </section>
+
+    <!-- 8. الرؤية والرسالة والأهداف الاستراتيجية -->
+    <section id="vision" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h2>الرؤية والرسالة والأهداف الاستراتيجية</h2>
+        </div>
+        <span class="pill-tag">الفلسفة المهنية</span>
+      </div>
+      <div class="two-col" style="margin-bottom:18px">
+        <div class="sub-panel">
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> الرؤية</h3>
+          <p>أن أكون نموذجًا رائدًا في توظيف التقنية والذكاء الاصطناعي لرفع جودة التعليم وكفاءة العمليات المدرسية، وبناء بيئة رقمية محفزة للتميز.</p>
+        </div>
+        <div class="sub-panel">
+          <h3><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> الرسالة</h3>
+          <p>ابتكار حلول تقنية عملية تختصر الوقت والجهد على المعلم والطالب وولي الأمر، وترسخ ثقافة العمل المؤسسي والتطوعي بروح الفريق.</p>
+        </div>
+      </div>
+
+      <div class="goals-panel">
+        <div class="goals-panel-head">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span>الأهداف الاستراتيجية</span>
+        </div>
+        <ol class="goals-grid">
+          <li class="goal-card"><b>01</b><span>أتمتة العمليات المدرسية المتكررة وتحويلها إلى منصات رقمية دقيقة وسريعة.</span></li>
+          <li class="goal-card"><b>02</b><span>رفع مؤشرات تفعيل منصة مدرستي ونظام نور وتقديم الدعم الفني الفوري للمستفيدين.</span></li>
+          <li class="goal-card"><b>03</b><span>توظيف الذكاء الاصطناعي في تهيئة الطلاب للاختبارات الوطنية (نافس) وتحليل بيانات التحصيل.</span></li>
+          <li class="goal-card"><b>04</b><span>تعزيز الشراكة الفاعلة مع أولياء الأمور والمجتمع المدرسي عبر قنوات رقمية منظمة.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 9. سجل الإنجازات والمبادرات بالأرقام -->
+    <section id="achievements" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+          <h2>سجل الإنجازات والمبادرات بالأرقام</h2>
+        </div>
+        <span class="pill-tag">ملخص الحصاد الرقمي</span>
+      </div>
+
+      <div class="ach-numbers-bar">
+        <div class="ach-num-pill"><b>5</b><span>أنظمة ومنصات مطورة</span></div>
+        <div class="ach-num-pill"><b>15</b><span>بحثًا وتقريرًا علميًا</span></div>
+        <div class="ach-num-pill"><b>37</b><span>شهادة تدريبية معتمدة</span></div>
+        <div class="ach-num-pill"><b>7</b><span>أدوار ومبادرات قيادية</span></div>
+        <div class="ach-num-pill"><b>54</b><span>شاهدًا ووثيقة معتمدة</span></div>
+      </div>
+
+      <div class="accent-grid">
+        <div class="accent-box" data-open-modal="certificates">
+          <span class="accent-stat-badge">37 شهادة · +185 ساعة</span>
+          <h3>القيادة التقنية والتطوير المهني</h3>
+          <p>18 شهادة مهنية عامة و19 شهادة تخصصية معتمدة من Microsoft في التقنية والذكاء الاصطناعي وTeams.</p>
+        </div>
+        <div class="accent-box" data-open-modal="research">
+          <span class="accent-stat-badge">15 بحثًا وتقريرًا علميًا</span>
+          <h3>الإنتاج المعرفي والدراسات</h3>
+          <p>إعداد 15 بحثًا وتقريرًا وورقة عمل في الذكاء الاصطناعي، أمن المعلومات، التقويم التكويني، والمهارات الرقمية.</p>
+        </div>
+        <div class="accent-box" data-open-modal="all">
+          <span class="accent-stat-badge">5 أنظمة · 54 شاهدًا</span>
+          <h3>الابتكار التقني والعمل التطوعي</h3>
+          <p>تطوير 5 أنظمة رقمية تطوعية لخدمة الميدان التربوي موثقة بـ 54 شاهدًا رسميًا معتمدًا.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. شهادات المستفيدين والقيادات المدرسية -->
+    <section id="testimonials" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h2>شهادات المستفيدين والقيادات المدرسية</h2>
+        </div>
+        <span class="pill-tag">أثر الأعمال من واقع الميدان</span>
+      </div>
+      <div class="testimonials-grid">
+        <article class="quote-card">
+          <div class="quote-top-bar">
+            <div class="quote-icon-badge"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <span class="quote-role-tag">القيادة المدرسية</span>
+          </div>
+          <p class="quote-text">يمثل الأستاذ سمران ركيزة أساسية في التحول الرقمي بمتوسطة أوس بن ثابت؛ فقد أسهمت أنظمته المبتكرة وإدارته الاحترافية لمنصتي مدرستي ونور في رفع كفاءة العمل الإداري والتعليمي بصورة ملموسة.</p>
+          <div class="quote-author">
+            <div class="quote-avatar">م</div>
+            <div>
+              <strong>أ. معيض بن عواض الشلوي</strong>
+              <span>قائد متوسطة أوس بن ثابت</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-top-bar">
+            <div class="quote-icon-badge"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <span class="quote-role-tag">شؤون الطلاب</span>
+          </div>
+          <p class="quote-text">أحدثت منصة الأعذار الإلكترونية نقلة نوعية في شؤون الطلاب؛ حيث اختصرت الإجراءات الورقية اليومية، ووفرت أرشفة دقيقة وتواصلًا فوريًا منظمًا مع أولياء الأمور.</p>
+          <div class="quote-author">
+            <div class="quote-avatar">أ</div>
+            <div>
+              <strong>أ. أحمد الشمراني</strong>
+              <span>وكيل شؤون الطلاب · متوسطة أوس بن ثابت</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-top-bar">
+            <div class="quote-icon-badge"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <span class="quote-role-tag">الشؤون التعليمية</span>
+          </div>
+          <p class="quote-text">توظيفه للذكاء الاصطناعي في مساعد AwsNafesBot ونظام تقارير التفعيل اليومية دعم متابعة الأداء التعليمي ووفّر للطلاب بيئة تدريبية ذكية تواكب متطلبات اختبارات نافس.</p>
+          <div class="quote-author">
+            <div class="quote-avatar">ع</div>
+            <div>
+              <strong>أ. عيسى مفرح عسيري</strong>
+              <span>وكيل الشؤون التعليمية · متوسطة أوس بن ثابت</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="quote-card">
+          <div class="quote-top-bar">
+            <div class="quote-icon-badge"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg></div>
+            <span class="quote-role-tag">المستفيدون</span>
+          </div>
+          <p class="quote-text">الأدوات التي يطورها تطوعيًا لخدمة المعلمين، وفي مقدمتها إضافة تحضيري من Teams والدعم الفني الفوري، وفّرت علينا الكثير من الوقت والجهد داخل الحصص الدراسية.</p>
+          <div class="quote-author">
+            <div class="quote-avatar">هـ</div>
+            <div>
+              <strong>الهيئة التعليمية بالمدرسة</strong>
+              <span>معلمو متوسطة أوس بن ثابت</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 11. التكريمات وخطابات الشكر -->
+    <section id="honors" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <h2>التكريمات وخطابات الشكر والتقدير</h2>
+        </div>
+        <span class="pill-tag">شواهد التقدير والاعتماد</span>
+      </div>
+      <div class="honors-grid">
+        <div class="honor-card">
+          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><span class="honor-cat">اعتماد دولي</span></div>
+          <h3>19 شهادة تخصصية من Microsoft</h3>
+          <p>شهادات معتمدة من شركة مايكروسوفت في الذكاء الاصطناعي للمعلمين، Copilot، وإدارة منظومة Microsoft Teams.</p>
+          <button type="button" class="ctrl-btn active" data-open-modal="microsoft" style="margin-top:auto">استعراض شهادات Microsoft ↗</button>
+        </div>
+        <div class="honor-card">
+          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="honor-cat">بطاقة نمو مهني</span></div>
+          <h3>تطبيقات الكورت ومنصة مدرستي</h3>
+          <p>شهادة نمو مهني معتمدة في توظيف مهارات التفكير وأدوات التعليم الإلكتروني في الميدان التربوي.</p>
+          <button type="button" class="ctrl-btn active" data-preview-id="1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe" data-preview-title="بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي" style="margin-top:auto">
+            <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>معاينة الوثيقة</span>
+          </button>
+        </div>
+        <div class="honor-card">
+          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span class="honor-cat">إنجاز تدريبي</span></div>
+          <h3>البرنامج الإثرائي التدريبي للمعلمين</h3>
+          <p>اجتياز البرنامج التدريبي الإثرائي بواقع 27 ساعة تدريبية معتمدة لتطوير الممارسات التعليمية.</p>
+          <button type="button" class="ctrl-btn active" data-preview-id="1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L" data-preview-title="البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)" style="margin-top:auto">
+            <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>معاينة الشهادة</span>
+          </button>
+        </div>
+        <div class="honor-card">
+          <div class="honor-top"><div class="honor-ico-box"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span class="honor-cat">اعتماد تخصصي</span></div>
+          <h3>شهادة البحث الإجرائي وتطوير الميدان</h3>
+          <p>شهادة معتمدة في توظيف البحث الإجرائي لمعالجة التحديات التعليمية وتطوير الأداء المدرسي.</p>
+          <button type="button" class="ctrl-btn active" data-preview-id="1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn" data-preview-title="شهادة البحث الإجرائي وتطوير الميدان التعليمي" style="margin-top:auto">
+            <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span>معاينة الشهادة</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. قسم مستقل: أبرز الشواهد -->
+    <section id="top-evidence" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h2>أبرز الشواهد (أقوى 5 وثائق معتمدة)</h2>
+        </div>
+        <span class="pill-tag">وصول سريع خلال أقل من دقيقة</span>
+      </div>
+      <div class="top-ev-grid" id="topEvidenceGrid"></div>
+    </section>
+
+    <!-- 13. جميع شواهد الأداء (54) -->
+    <section id="evidence" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+          <h2>جميع شواهد الأداء الموثقة (54)</h2>
+        </div>
+        <span class="pill-tag">الأرشيف الشامل</span>
+      </div>
+      <div class="three-col">
+        <div class="accent-box" data-open-modal="certificates">
+          <span class="accent-stat-badge">18 شهادة معتمدة</span>
+          <h3>الشهادات والدورات المهنية</h3>
+          <p>دورات معتمدة في أمن المعلومات، القياس والتقويم الإلكتروني، مهارات التعامل مع الطلاب، واللغة الإنجليزية.</p>
+        </div>
+        <div class="accent-box" data-open-modal="microsoft">
+          <span class="accent-stat-badge">19 شهادة Microsoft</span>
+          <h3>شهادات مايكروسوفت التخصصية</h3>
+          <p>شهادات معتمدة في الذكاء الاصطناعي للمعلمين، Microsoft Copilot، إدارة Teams، وDataverse.</p>
+        </div>
+        <div class="accent-box" data-open-modal="research">
+          <span class="accent-stat-badge">15 بحثًا وتقريرًا</span>
+          <h3>الأبحاث والتقارير العلمية</h3>
+          <p>أبحاث وتقارير تطبيقية في الذكاء الاصطناعي، التقويم التكويني، أمن المعلومات، وتطوير المناهج.</p>
+        </div>
+      </div>
+      <div class="attach-box" data-open-modal="all">
+        <div class="att-ico"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
+        <strong>فتح مستودع الشواهد والوثائق الشامل (54 ملفًا)</strong>
+        <span>
+          <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          بحث فوري وتصفية حسب الفئة (الوثائق · الشهادات العامة · شهادات Microsoft · الأبحاث)
+        </span>
+      </div>
+    </section>
+
+    <!-- 14. التواصل والمشاركة -->
+    <section id="contact" class="glow-card tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <h2>وسائل التواصل والمشاركة</h2>
+        </div>
+        <span class="pill-tag">تواصل مباشر</span>
+      </div>
+      <div class="contact-grid">
+        <a href="https://wa.me/966557717661" target="_blank" rel="noopener" class="contact-box wa-card">
+          <div><small>واتساب مباشر</small><strong>+966 55 771 7661</strong></div>
+          <div class="contact-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.82 14.01c-.24.68-1.41 1.3-1.95 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.01-2.42.27-.29.58-.36.77-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.58.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.14.48.22.55.34.07.12.07.69-.17 1.37z"/></svg>
+          </div>
         </a>
-      </div>
 
-      <div class="repo-controls">
-        <div class="filter-tabs" role="tablist">
-          <button class="tab-btn active" data-filter="all">الكل (<span id="countAll">0</span>)</button>
-          <button class="tab-btn" data-filter="microsoft">شهادات Microsoft (<span id="countMs">0</span>)</button>
-          <button class="tab-btn" data-filter="academic">المؤهلات والاعتمادات (<span id="countAcad">0</span>)</button>
-        </div>
-        <div class="search-wrap">
-          <input type="search" id="certSearch" class="search-input" placeholder="ابحث باسم الشهادة أو التقنية (مثل: Copilot, Teams, AI)..." />
-        </div>
-      </div>
+        <a href="mailto:somran28@gmail.com" class="contact-box">
+          <div><small>البريد الإلكتروني</small><strong>somran28@gmail.com</strong></div>
+          <div class="contact-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+        </a>
 
-      <div class="repo-stats-bar">
-        <span id="resultsCount">جاري تحميل الشواهد...</span>
-        <span>انقر على «معاينة الشهادة» لعرضها مباشرة داخل الصفحة</span>
-      </div>
+        <a href="tel:+966557717661" class="contact-box">
+          <div><small>اتصال هاتفي</small><strong>+966 55 771 7661</strong></div>
+          <div class="contact-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+        </a>
 
-      <div id="certsGrid" class="certs-grid"></div>
+        <a href="https://x.com/somran288" target="_blank" rel="noopener" class="contact-box x-card">
+          <div><small>منصة X (تويتر)</small><strong>@somran288</strong></div>
+          <div class="contact-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </div>
+        </a>
+
+        <button type="button" class="contact-box" id="copyLinkBtn">
+          <div><small>مشاركة الملف</small><strong style="direction:rtl">نسخ رابط الموقع</strong></div>
+          <div class="contact-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+        </button>
+      </div>
     </section>
 
-  </main>
-
-  <!-- Modal for Live Drive Preview -->
-  <div id="previewModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-box">
-      <div class="modal-head">
-        <h4 id="modalTitle">معاينة الشهادة</h4>
-        <div style="display:flex; gap:0.5rem; align-items:center;">
-          <a id="modalExternalLink" href="#" target="_blank" rel="noopener" style="color:#f6d586; font-size:0.86rem; text-decoration:none; font-weight:700;">فتح في نافذة مستقلة ↗</a>
-          <button class="modal-close" id="closeModalBtn" aria-label="إغلاق">✕</button>
-        </div>
+    <!-- حوكمة التحديث الدوري للمحتوى -->
+    <div class="governance-strip">
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <svg class="ico" style="color:var(--accent-bright)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+        <strong style="color:var(--heading)">حوكمة التحديث الدوري للملف:</strong>
+        <span style="color:var(--text-muted)">يُحدّث الملف باستمرار ليبقى جاهزًا للاعتماد والاطلاع عند كل إضافة مهنية:</span>
       </div>
-      <iframe id="modalFrame" class="modal-frame" title="معاينة الملف"></iframe>
+      <div class="gov-tags">
+        <span class="gov-tag">+ شهادة جديدة</span>
+        <span class="gov-tag">+ تكريم جديد</span>
+        <span class="gov-tag">+ مشروع جديد</span>
+        <span class="gov-tag">+ دور قيادي جديد</span>
+      </div>
+    </div>
+
+    <footer class="footer-banner">
+      جميع الحقوق محفوظة © سمران بن عبد العزيز شديد · ملف الإنجاز القيادي والمهني · آخر تحديث: نوفمبر 2026م
+    </footer>
+
+  </div>
+</main>
+
+<!-- شريط الأيقونات العائم لتغيير الألوان والستايلات -->
+<div class="studio-dock" role="toolbar" aria-label="أيقونات تغيير الألوان والستايلات">
+  <div class="theme-dots" title="اختر لون الموقع">
+    <button type="button" class="theme-ico-btn active" data-set-theme="cyan" style="background:linear-gradient(135deg,#38d6ff,#082336)" title="الأزرق السماوي"></button>
+    <button type="button" class="theme-ico-btn" data-set-theme="gold" style="background:linear-gradient(135deg,#ffd35c,#3d2906)" title="الذهبي الملكي"></button>
+    <button type="button" class="theme-ico-btn" data-set-theme="emerald" style="background:linear-gradient(135deg,#43e8a0,#062b1b)" title="الأخضر الزمردي"></button>
+    <button type="button" class="theme-ico-btn" data-set-theme="amethyst" style="background:linear-gradient(135deg,#c3a6ff,#1f0f42)" title="البنفسجي التقني"></button>
+    <button type="button" class="theme-ico-btn" data-set-theme="light" style="background:linear-gradient(135deg,#ffffff,#cbe7f5)" title="النمط الفاتح"></button>
+  </div>
+  <button class="ctrl-btn active" id="btnLayoutMode" type="button">
+    <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+    <span id="lblLayoutMode">جانبية</span>
+  </button>
+  <button class="ctrl-btn active" id="btnAnimMode" type="button">
+    <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    <span id="lblAnimMode">دوران 3D</span>
+  </button>
+  <button class="ctrl-btn active" id="btnTiltToggle" type="button">
+    <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33"/></svg>
+    <span id="lblTiltToggle">إمالة: مفعلة</span>
+  </button>
+  <button class="ctrl-btn" id="btnFontPanel" type="button">
+    <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+    <span>الخط</span>
+  </button>
+</div>
+
+<div class="font-popover" id="fontPopover">
+  <div class="pop-row">
+    <small>نوع الخط:</small>
+    <div class="pop-opts">
+      <button type="button" class="ctrl-btn active" data-set-font="tajawal">تجوال</button>
+      <button type="button" class="ctrl-btn" data-set-font="cairo">القاهرة</button>
+      <button type="button" class="ctrl-btn" data-set-font="kufi">كوفي</button>
     </div>
   </div>
+  <div class="pop-row">
+    <small>حجم النص:</small>
+    <div class="pop-opts">
+      <button type="button" class="ctrl-btn" data-set-size="s">صغير</button>
+      <button type="button" class="ctrl-btn active" data-set-size="m">متوسط</button>
+      <button type="button" class="ctrl-btn" data-set-size="l">كبير</button>
+    </div>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div>
-        <h4>ملف الإنجاز القيادي الإلكتروني — أ. سمران بن عبدالعزيز شديد</h4>
-        <p style="font-size:0.9rem;">متوسطة أوس بن ثابت | الإدارة العامة للتعليم بمنطقة الرياض — حوكمة التحديث الدوري للشواهد (١٤٤٨ - ١٤٤٩ هـ)</p>
-      </div>
-      <div class="social-links">
-        <a href="https://x.com/somran288" target="_blank" rel="noopener" class="social-pill">𝕏 @somran288</a>
-        <a href="mailto:somran@gmail.com" class="social-pill">✉️ somran@gmail.com</a>
-        <a href="https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5" target="_blank" rel="noopener" class="social-pill">📁 مستودع Microsoft</a>
+<!-- نافذة المرفقات والمعاينة -->
+<div class="modal-backdrop" id="attachModal" role="dialog" aria-modal="true">
+  <div class="modal-window">
+    <div class="modal-top">
+      <h3 id="modalTitle">المرفقات</h3>
+      <button class="close-btn" id="closeModalBtn" aria-label="إغلاق">✕</button>
+    </div>
+    <div class="modal-search-bar" id="modalSearchBar">
+      <input type="text" id="modalSearchInput" placeholder="ابحث باسم الوثيقة أو البحث أو شهادة Microsoft...">
+      <div class="filter-pills" id="filterPills"></div>
+      <span id="modalCounter" style="color:var(--accent-bright);font-size:.88rem;font-weight:800;"></span>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- نافذة عرض الشاهد المباشر للمشاريع الخمسة -->
+<div class="modal-backdrop" id="caseModal" role="dialog" aria-modal="true">
+  <div class="modal-window" style="max-width:720px;">
+    <div class="modal-top">
+      <h3 id="caseModalTitle">شاهد المشروع الموثق</h3>
+      <button class="close-btn" id="closeCaseBtn" aria-label="إغلاق">✕</button>
+    </div>
+    <div id="caseModalContent" style="padding:22px; overflow-y:auto; display:flex; flex-direction:column; gap:13px;"></div>
+  </div>
+</div>
+
+<!-- نافذة السيرة الذاتية PDF -->
+<div class="modal-backdrop" id="cvModal" role="dialog" aria-modal="true">
+  <div class="modal-window" style="max-width:880px;">
+    <div class="modal-top">
+      <h3>السيرة الذاتية المهنية · سمران بن عبد العزيز شديد</h3>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="btn-primary" style="padding:7px 16px; font-size:.86rem;" onclick="window.print()">حفظ / طباعة PDF</button>
+        <button class="close-btn" id="closeCvBtn" aria-label="إغلاق">✕</button>
       </div>
     </div>
-  </footer>
+    <div class="cv-sheet-wrap">
+      <div class="cv-paper" id="cvPrintArea">
+        <div class="cv-header">
+          <div>
+            <h2>سمران بن عبد العزيز شديد</h2>
+            <p>المنسق التقني ومسؤول منصة مدرستي ونظام نور وأمين مصادر التعلم</p>
+          </div>
+          <div class="cv-meta">
+            <div>somran28@gmail.com</div>
+            <div>+966 55 771 7661</div>
+            <div>x.com/somran288</div>
+            <div>ksa2020q.github.io/samran</div>
+          </div>
+        </div>
+        <div class="cv-sec">
+          <h4>القيمة المهنية والقيادية</h4>
+          <p style="font-size:.92rem; color:#243647;">متخصص في توظيف التقنية والذكاء الاصطناعي لتحسين جودة التعليم ورفع كفاءة العمل المدرسي، بخبرة تمتد لأكثر من 22 عاماً.</p>
+        </div>
+        <div class="cv-grid-2">
+          <div class="cv-sec">
+            <h4>المؤهلات العلمية</h4>
+            <ul>
+              <li><strong>الدبلوم العالي في المهارات الرقمية</strong> (1444هـ)</li>
+              <li><strong>بكالوريوس اللغة العربية</strong> (1430هـ)</li>
+            </ul>
+          </div>
+          <div class="cv-sec">
+            <h4>مؤشرات الإنجاز والأثر</h4>
+            <ul>
+              <li>أكثر من <strong>22 عامًا</strong> خبرة تربوية وإدارية</li>
+              <li>خدمة <strong>+485 مستفيدًا</strong> وتوفير <strong>85%</strong> من الوقت الإداري</li>
+              <li><strong>37 شهادة تدريبية</strong> (منها <strong>19 من Microsoft</strong>) و<strong>15 بحثًا</strong> و<strong>5 أنظمة</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="cv-sec">
+          <h4>الخبرات والمهارات القيادية</h4>
+          <ul>
+            <li><strong>الأدوار القيادية:</strong> وكيل شؤون الطلاب، مدير القسم الليلي الثانوي، المنسق التقني، مسؤول مدرستي، مسؤول نور، أمين مصادر التعلم، وعضو لجنتي التميز والتحصيل.</li>
+            <li><strong>المهارات القيادية:</strong> القيادة الرقمية، إدارة المشاريع، إدارة فرق العمل، التحول الرقمي، تحليل البيانات، اتخاذ القرار، التخطيط التشغيلي، وبناء الأنظمة الرقمية.</li>
+          </ul>
+        </div>
+        <div class="cv-sec">
+          <h4>أبرز 5 أعمال وأنظمة رقمية مطورة</h4>
+          <ul>
+            <li><strong>منصة وبوابة الأعذار الإلكترونية للطلاب (المشروع الأبرز):</strong> نظام سحابي برقم تتبع آلي وإشعارات فورية لأولياء الأمور.</li>
+            <li><strong>مساعد AwsNafesBot وبوابة نافس:</strong> بوت ذكاء اصطناعي وبوابة تدريبية لتهيئة الطلاب لاختبارات نافس.</li>
+            <li><strong>النظام الإلكتروني الموحد لتقارير التفعيل اليومية:</strong> أتمتة تقارير منصة مدرستي وأرشفتها سحابيًا.</li>
+            <li><strong>نظام إدارة الانضباط الوظيفي (Excel VBA):</strong> رصد آلي للتأخر الصباحي وإصدار المساءلات النظامية.</li>
+            <li><strong>إضافة «تحضيري من Teams»:</strong> إضافة متصفح لرصد حضور الطلاب من الحصص الافتراضية بدقة وسرعة.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <script>
-    const MS_FOLDER_URL = "https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5";
+<!-- نافذة QR -->
+<div class="modal-backdrop" id="qrModal" role="dialog" aria-modal="true">
+  <div class="modal-window" style="max-width:410px; text-align:center;">
+    <div class="modal-top">
+      <h3>باركود ملف الإنجاز (QR)</h3>
+      <button class="close-btn" id="closeQrBtn" aria-label="إغلاق">✕</button>
+    </div>
+    <div style="padding:26px 20px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+      <div style="background:#fff; padding:14px; border-radius:18px;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ksa2020q.github.io/samran/" alt="QR Code" width="200" height="200" style="display:block;">
+      </div>
+      <strong style="color:var(--heading);">سمران بن عبد العزيز شديد</strong>
+      <small style="color:var(--accent-bright); direction:ltr;">https://ksa2020q.github.io/samran/</small>
+    </div>
+  </div>
+</div>
 
-    const MICROSOFT_CERTS = [
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إدارة اجتماعات Microsoft Teams وتأمينها",
-        "id": "18CCt3PSZ2TBLCtzIXEI2yvKCjK3tss3Z"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إدارة الاجتماعات والمؤتمرات والأحداث باستخدام Microsoft Teams",
-        "id": "1KpJBBNrZaam7EUwF3aBl7ozMvUWn7rFi"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إدارة التطبيقات والروبوتات والموصلات في Microsoft Teams",
-        "id": "1vhnD4OC_uX5RaA6dHsPht57sJNpvVamm"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إدارة تعاون الفريق باستخدام Microsoft Teams",
-        "id": "1cOusX4mZbwRijjX0TuN-xLJdAs1valLC"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "اكتشف فوائد أن تصبح مدربًا للمعلمين لدى Microsoft",
-        "id": "1sHryLtaZVimGeabj2THYPWxbqp1fRlXi"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "الاستعداد لنشر Teams باستخدام Microsoft 365",
-        "id": "1tR0O-XP-S2Kjm8LqrfG1mwCAeoZU6bwF"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "الاستعداد لنشر Teams باستخدام Microsoft 365 (نسخة 2)",
-        "id": "1KsAJcZlsBR_9C6GWWpC1YfiR6fkK5mvG"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "الذكاء الاصطناعي للمعلمين",
-        "id": "1HzbQNbGLUCoBBSgYvIzKjfSqnoNdYk4T"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "الشروع في العمل باستخدام AI Builder",
-        "id": "1dqzm3q28kuwVXLdlG1TMKCVsrBhsMmw4"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إنشاء جداول في Dataverse",
-        "id": "13HM6yLSfHadUNrZ_VAz5JzwrFJ6tfv8H"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "تجهيز المتعلمين ودعمهم باستخدام أدوات الذكاء الاصطناعي من Microsoft",
-        "id": "1WwY17T64_HnAiMbs9sKBa9fEqVyldGtT"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "تحسين التدريس والتعلم بـ Microsoft Copilot",
-        "id": "1RL7AI-DDoo0YsiDQAk0p-r12NyH3EFF4"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "تمكين المعلمين من استخدام الذكاء الاصطناعي",
-        "id": "1F2xPA20Uh2R1kjtkfZtXu8czpSOSFviR"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "خطط لنشر اجتماعات Teams الخاصة بك",
-        "id": "1wG8zbE-JJdlALX36oHhLIa_mIav3N0mI"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "مقدمة إلى التطبيقات المعتمدة على النماذج في Microsoft Dataverse",
-        "id": "19CV-5t4fITYr8yOup6ObNyb7fO9awNGU"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "مقدمة حول تخصيص عميل Office باستخدام الوظائف الإضافية",
-        "id": "15LkPpMJ4WXyiJ8eEwxxJ1hjiEKBw5xct"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "نشر الاجتماعات باستخدام Teams",
-        "id": "1uBX3agIO0kkfGCTgPycca4WMDCIz3ny2"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "إدارة Microsoft Teams",
-        "id": "1Vb2ns47r--sOjYKKeiZ7IQC9ZmAyE5F5"
-      },
-      {
-        "group": "microsoft",
-        "cat": "شهادة Microsoft",
-        "title": "نشر Microsoft Teams",
-        "id": "1_C-GdFe_HLfVXdOj-A0gErYN8LYXaWXC"
-      }
+<script>
+  const SVG_EYE = `<svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+  const SVG_DL  = `<svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+
+  /* رابط مجلد شهادات Microsoft العام في Google Drive (ضع رابط المجلد العام هنا) */
+  const MS_FOLDER_URL = "https://drive.google.com/drive/folders/1icqyVXC7pW1U37al1";
+
+  /* ===================== أبرز 5 أعمال ===================== */
+  const FEATURED_CASES = [
+    {
+      num: "01",
+      flagship: "المشروع الأبرز · مشروع نوعي",
+      type: "Apps Script & GitHub",
+      title: "منصة الأعذار الإلكترونية للطلاب",
+      problem: "تراكم الأعذار الورقية وصعوبة متابعتها من قبل أولياء الأمور وشؤون الطلاب.",
+      goal: "أتمتة استقبال الأعذار إلكترونيًا ومنح كل طلب رقم تتبع آلي مع إشعار ولي الأمر.",
+      mechanism: "بوابة ويب تفاعلية مرتبطة بـ Google Drive لحفظ المرفقات وGoogle Sheets للمعالجة وإرسال إشعارات واتساب فورية.",
+      impact: "تصفير المعاملات الورقية لـ +450 طالبًا وولي أمر وتسريع الاعتماد بنسبة 85%.",
+      evidenceMetrics: [
+        { val: "+450", lbl: "طالب وولي أمر مستفيد" },
+        { val: "100%", lbl: "أرشفة رقمية للمرفقات" },
+        { val: "فوري", lbl: "إشعار واتساب ورقم تتبع" }
+      ],
+      evidenceNote: "شاهد تطبيق حي: المنصة تعمل فعليًا لرفع أعذار طلاب متوسطة أوس بن ثابت وحفظها في مجلدات Drive مصنفة آليًا.",
+      links: [
+        { label: "تطبيق الأعذار ↗", url: "https://script.google.com/macros/s/AKfycbxoqOB7N9L2DINeHFfAsbAgwvsySqCmuHe1gLS7dW_WdV1VmMtBCbItQDMfFW383Ssu/exec" },
+        { label: "بوابة الأعذار ↗", url: "https://axaxax2030q-ops.github.io/aws-excuses/" }
+      ]
+    },
+    {
+      num: "02",
+      type: "AI · Telegram & Manus",
+      title: "مساعد AwsNafesBot وبوابة اختبارات نافس",
+      problem: "حاجة طلاب الثالث المتوسط لأداة تدريب ذكية تحاكي اختبارات نافس الوطنية خارج أوقات الدوام.",
+      goal: "رفع جاهزية الطلاب ومهاراتهم في القراءة والرياضيات والعلوم بأسلوب تفاعلي محفّز.",
+      mechanism: "بوت ذكاء اصطناعي على تليجرام وبوابة تدريبية متكاملة تقدم أسئلة محاكية مع تغذية راجعة فورية.",
+      impact: "توفير تدريب ذكي مستمر على مدار الساعة لطلاب الثالث المتوسط ورفع دافعية الاستعداد.",
+      evidenceMetrics: [
+        { val: "24/7", lbl: "تدريب ذكي مستمر" },
+        { val: "3 مجالات", lbl: "قراءة · رياضيات · علوم" },
+        { val: "تفاعلي", lbl: "تصحيح وتغذية راجعة فورية" }
+      ],
+      evidenceNote: "شاهد تطبيق حي: يمكن تجربة البوت التفاعلي على تليجرام وبوابة التدريب الرقمية مباشرة من الروابط أدناه.",
+      links: [
+        { label: "بوت نافس ↗", url: "https://t.me/AwsNafesBot" },
+        { label: "بوابة نافس ↗", url: "https://aws-thabit-zhxcw9dv.manus.space/" }
+      ]
+    },
+    {
+      num: "03",
+      type: "Apps Script · مدرستي",
+      title: "النظام الموحد لتقارير التفعيل اليومية",
+      problem: "تعدد نماذج التفعيل اليومية وصعوبة توحيدها وأرشفتها للقيادة المدرسية.",
+      goal: "توحيد تقارير التفعيل اليومي للمعلمين في منظومة رقمية سريعة ومؤرشفة آليًا.",
+      mechanism: "تطبيق ويب يجمع بيانات التفعيل اليومي ويولّد تقارير رسمية منسقة ويحفظها في مجلدات منظمة على Drive.",
+      impact: "انتظام التوثيق اليومي لـ +35 معلمًا بنسبة 100% وسهولة الرجوع للشواهد.",
+      evidenceMetrics: [
+        { val: "+35", lbl: "معلمًا بالمنظومة" },
+        { val: "100%", lbl: "توثيق وأرشفة يومية" },
+        { val: "ثوانٍ", lbl: "توليد التقرير الرسمي" }
+      ],
+      evidenceNote: "شاهد تطبيق حي: يولّد النظام مستندات تقارير التفعيل اليومية بتنسيق رسمي ويحفظها تلقائيًا في Google Drive.",
+      links: [
+        { label: "فتح نظام التقارير ↗", url: "https://script.google.com/macros/s/AKfycbxclmMSjdn6NRwSGjiw5BaJkNixuUtcLjcRcGtX7E3iFNdcB-pJ7HMr_2gxsjdwsx_2/exec" }
+      ]
+    },
+    {
+      num: "04",
+      type: "Excel VBA · أتمتة إدارية",
+      title: "نظام إدارة ومتابعة الانضباط الوظيفي",
+      problem: "استغراق وقت إداري طويل في جمع دقائق التأخر الصباحي وإعداد خطابات المساءلة يدويًا.",
+      goal: "ضبط الدقة الحسابية وتوليد المساءلات والتنبيهات النظامية بضغطة زر.",
+      mechanism: "نظام برمجي بلغة VBA يحسب دقائق التأخر تلقائيًا ويصنف الحالات ويصدر نماذج المساءلة جاهزة للطباعة.",
+      impact: "توفير أكثر من 85% من وقت المعالجة الإدارية (45 دقيقة يوميًا) بدقة 100%.",
+      evidenceMetrics: [
+        { val: "85%", lbl: "توفير في الوقت الإداري" },
+        { val: "100%", lbl: "دقة حساب الدقائق" },
+        { val: "آلي", lbl: "توليد المساءلات والتنبيهات" }
+      ],
+      evidenceNote: "شاهد توثيق النظام: منظومة برمجية مدمجة في Excel VBA تربط سجل الحضور اليومي بنماذج المساءلة والتنبيه المعتمدة بضغطة زر.",
+      links: []
+    },
+    {
+      num: "05",
+      type: "Chrome/Edge Extension",
+      title: "إضافة «تحضيري من Teams»",
+      problem: "صعوبة رصد وحصر حضور الطلاب بدقة وسرعة أثناء الحصص الافتراضية في Teams.",
+      goal: "تمكين المعلم من استخراج كشف الحضور والغياب بواجهة عصرية خلال ثوانٍ.",
+      mechanism: "إضافة متصفح Chrome/Edge تقرأ قائمة الحاضرين في الاجتماع وتقارنها وتصدر التقرير فورًا.",
+      impact: "توفير وقت الحصة الافتراضية لـ +35 معلمًا ورفع موثوقية رصد الغياب الإلكتروني.",
+      evidenceMetrics: [
+        { val: "5 ثوانٍ", lbl: "استخراج كشف الحضور" },
+        { val: "+35", lbl: "معلمًا مستفيدًا" },
+        { val: "Chrome/Edge", lbl: "إضافة متصفح مخصصة" }
+      ],
+      evidenceNote: "شاهد توثيق الأداة: إضافة متصفح مطورة تطوعيًا لخدمة المعلمين، تلتقط أسماء الحاضرين في فصول Teams الافتراضية وتنسقها للطباعة والنسخ الفوري.",
+      links: []
+    }
+  ];
+
+  const casesGrid = document.getElementById('featuredCasesGrid');
+  FEATURED_CASES.forEach((c, idx) => {
+    const el = document.createElement('div');
+    el.className = 'case-card' + (c.flagship ? ' flagship-case' : '');
+    const primaryLink = c.links && c.links[0]
+      ? `<a href="${c.links[0].url}" target="_blank" rel="noopener" class="case-btn">${c.links[0].label}</a>`
+      : '';
+    const flagshipHtml = c.flagship
+      ? `<span class="flagship-ribbon"><svg class="ico" style="width:14px;height:14px" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>${c.flagship}</span>`
+      : '';
+    el.innerHTML = `
+      <div class="case-header">
+        <div class="case-badges-right">
+          <span class="case-num">عمل مميز ${c.num}</span>
+          ${flagshipHtml}
+        </div>
+        <span class="case-type">${c.type}</span>
+      </div>
+      <h3>${c.title}</h3>
+      <div class="case-points">
+        <div class="case-point"><strong>المشكلة:</strong>${c.problem}</div>
+        <div class="case-point"><strong>الحل:</strong>${c.goal}</div>
+        <div class="case-point impact-box"><strong>الأثر المحقق:</strong>${c.impact}</div>
+      </div>
+      <div class="case-actions">
+        <button type="button" class="case-btn primary" data-open-evidence="${idx}">${SVG_EYE}<span>عرض الشاهد</span></button>
+        ${primaryLink}
+      </div>
+    `;
+    casesGrid.appendChild(el);
+  });
+
+  const caseModal = document.getElementById('caseModal');
+  function openEvidenceDetails(idx) {
+    const c = FEATURED_CASES[idx];
+    if (!c) return;
+    document.getElementById('caseModalTitle').textContent = `شاهد موثق · ${c.title}`;
+    const modalLinksHtml = (c.links || []).map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="btn-primary" style="flex:1; justify-content:center;">${l.label}</a>`).join('');
+    const metricsHtml = (c.evidenceMetrics || []).map(m => `
+      <div class="ev-metric">
+        <strong>${m.val}</strong>
+        <small>${m.lbl}</small>
+      </div>
+    `).join('');
+    document.getElementById('caseModalContent').innerHTML = `
+      <div class="evidence-sheet">
+        <div class="evidence-sheet-head">
+          <span class="pill-tag">${c.type}</span>
+          <span style="color:var(--success); font-weight:800; font-size:.85rem;">مطبّق في متوسطة أوس بن ثابت</span>
+        </div>
+        <div class="evidence-metrics">${metricsHtml}</div>
+      </div>
+      <div class="case-point"><strong>1. التحدي الميداني:</strong>${c.problem}</div>
+      <div class="case-point"><strong>2. الحل وآلية التنفيذ التقني:</strong>${c.mechanism}</div>
+      <div class="case-point impact-box"><strong>3. الأثر المحقق والشاهد الميداني:</strong>${c.impact}<br><span style="display:block; margin-top:5px; color:var(--text-main); font-size:.86rem;">${c.evidenceNote}</span></div>
+      ${modalLinksHtml ? `<div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px;">${modalLinksHtml}</div>` : ''}
+    `;
+    caseModal.classList.add('open');
+  }
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('[data-open-evidence]');
+    if (btn) openEvidenceDetails(+btn.dataset.openEvidence);
+  });
+  document.getElementById('closeCaseBtn').addEventListener('click', () => caseModal.classList.remove('open'));
+  caseModal.addEventListener('click', e => { if (e.target === caseModal) caseModal.classList.remove('open'); });
+
+  /* ===================== قسم أبرز الشواهد ===================== */
+  const TOP_5_EVIDENCE = [
+    {
+      rank: "الشاهد 01",
+      cat: "مؤهل تقني عالٍ",
+      title: "وثيقة الدبلوم العالي في المهارات الرقمية (1444هـ)",
+      desc: "اعتماد أكاديمي متخصص في التقنيات الحديثة وتوظيفها في تطوير التعليم.",
+      id: "15-0t0ziXHn7kPz3apNXiMORi10hBDc0A"
+    },
+    {
+      rank: "الشاهد 02",
+      cat: "مؤهل تربوي",
+      title: "وثيقة التخرج · بكالوريوس اللغة العربية (1430هـ)",
+      desc: "التأصيل التربوي واللغوي الذي تأسست عليه المسيرة التعليمية والقيادية.",
+      id: "1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds"
+    },
+    {
+      rank: "الشاهد 03",
+      cat: "تطوير الميدان",
+      title: "شهادة البحث الإجرائي وتطوير الميدان التعليمي",
+      desc: "شهادة معتمدة في توظيف البحث الإجرائي لمعالجة التحديات المدرسية.",
+      id: "1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn"
+    },
+    {
+      rank: "الشاهد 04",
+      cat: "نمو مهني · 27 ساعة",
+      title: "البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)",
+      desc: "اجتياز البرنامج التدريبي الإثرائي لتطوير الممارسات التعليمية الحديثة.",
+      id: "1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L"
+    },
+    {
+      rank: "الشاهد 05",
+      cat: "تطبيقات رقمية",
+      title: "بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي",
+      desc: "توثيق عملي لدمج مهارات التفكير مع أدوات منصة مدرستي الرقمية.",
+      id: "1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe"
+    }
+  ];
+
+  const topEvGrid = document.getElementById('topEvidenceGrid');
+  TOP_5_EVIDENCE.forEach(ev => {
+    const card = document.createElement('div');
+    card.className = 'top-ev-card';
+    card.innerHTML = `
+      <div class="top-ev-head">
+        <span class="top-ev-rank">${ev.rank}</span>
+        <span class="top-ev-cat">${ev.cat}</span>
+      </div>
+      <h3>${ev.title}</h3>
+      <p>${ev.desc}</p>
+      <div class="top-ev-btns">
+        <button type="button" data-preview-id="${ev.id}" data-preview-title="${ev.title}">${SVG_EYE}<span>معاينة</span></button>
+        <a href="https://drive.google.com/uc?export=download&id=${ev.id}" target="_blank" rel="noopener">${SVG_DL}<span>تحميل</span></a>
+      </div>
+    `;
+    topEvGrid.appendChild(card);
+  });
+
+  /* ===================== بيانات المرفقات الـ 54 من Google Drive ===================== */
+  const DOCUMENTS = [
+    { group:"documents", cat:"وثيقة رسمية", title:"وثيقة الدبلوم العالي في المهارات الرقمية", id:"15-0t0ziXHn7kPz3apNXiMORi10hBDc0A" },
+    { group:"documents", cat:"وثيقة رسمية", title:"وثيقة التخرج · بكالوريوس اللغة العربية", id:"1LkbyliqnS0dDrgTqgnOxM5unhuOk26Ds" }
+  ];
+  const RESEARCH = [
+    { group:"research", cat:"بحث وتقرير", title:"قضايا ومشكلات في تدريس المهارات الرقمية", id:"1lgxN1CGGbqEQZvupPgWA_yC3-o0Xa0iZ" },
+    { group:"research", cat:"بحث وتقرير", title:"نقد الورقة العلمية", id:"15jisK_fmeelOIw5AG0TDx90lcRYyTX19" },
+    { group:"research", cat:"بحث وتقرير", title:"تقرير أهم البرامج والمحتوى الرقمي (المجموعة الثانية)", id:"1G3XWSFXBqUmHEQlaViGBsBie7UmvYh1q" },
+    { group:"research", cat:"بحث وتقرير", title:"عرض سياسة التعليم", id:"1btSZFlWJp1pxPRfvjG2M_mNFKq0Z0yG5" },
+    { group:"research", cat:"بحث وتقرير", title:"برامج الذكاء الاصطناعي (المجموعة الثانية)", id:"1Auv0N17T94Y_-sponMzMrcSsYzurY3la" },
+    { group:"research", cat:"بحث وتقرير", title:"العروض البيانية المتقدمة بالإكسل", id:"1Zecvo9y6dYZFghTseXY42FlgaDkiX-Mf" },
+    { group:"research", cat:"بحث وتقرير", title:"البرمجة المرئية", id:"1Vn2_eM-qjtTV2cPTR42KmeDlPHnCPGz4" },
+    { group:"research", cat:"بحث وتقرير", title:"تطبيقات للتقويم التكويني", id:"1YJOVAIVEq3dts1B6GtIOJU4dyRjKfOAn" },
+    { group:"research", cat:"بحث وتقرير", title:"التقرير النهائي: موضوعات مختارة (المجموعة الثانية)", id:"1ibYhUtujv3iBM-1TnD545B9-oe2nSuyZ" },
+    { group:"research", cat:"بحث وتقرير", title:"تجربتي في ظل جائحة كورونا", id:"1TPhfJk9Bk5g3eWPSj9Ja8W-eYw_Q6zkX" },
+    { group:"research", cat:"بحث وتقرير", title:"الخريطة الذهنية", id:"1V1JOzixiDiP45Vcdkyn10QQB2pphMVfO" },
+    { group:"research", cat:"بحث وتقرير", title:"برامج الحماية وVPN", id:"1jh8CU1vXsyZTxhW3AM6eJSVSm97-UcU9" },
+    { group:"research", cat:"بحث وتقرير", title:"المواصفات الفنية للكتاب المدرسي", id:"1Y27v7gVH1MJ6KzkBe2OVILxv1hoaslJ-" },
+    { group:"research", cat:"بحث وتقرير", title:"سلم تقدير لفظي", id:"1qeHzXT3JQDN30_ryXthTuKYO5mBMShHX" },
+    { group:"research", cat:"بحث وتقرير", title:"دراسة حالة", id:"12YJM7u1x1gdTEb3Ll0IVO-Sk85iRlcy4" }
+  ];
+  const CERTIFICATES = [
+    { group:"certificates", cat:"دورة", title:"شهادة NIEPD 008", id:"103w_WWMYfGnqBlOU5jAsphaiK1_QVo6k" },
+    { group:"certificates", cat:"دورة", title:"شهادة البحث الإجرائي وتطوير الميدان التعليمي", id:"1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn" },
+    { group:"certificates", cat:"ندوة", title:"ندوة النموذج الإشرافي لتمكين المدرسة", id:"1H_p33y6x0YOC1dEYZ6tA-zudC9_huzR9" },
+    { group:"certificates", cat:"تقنية", title:"دورة أمن ويندوز", id:"16wrWCQv-0KrYnmQoqa3L7w0JDwwd5OQs" },
+    { group:"certificates", cat:"تقنية", title:"إتمام مساق معالج النصوص (إدراك)", id:"1sMs4OugAJM8-JsIt6SQKy2E0qYLaDvcS" },
+    { group:"certificates", cat:"تقنية", title:"برنامج تدريبي أمن المعلومات (معهد الإدارة)", id:"1gQ5PJkuTRwr4BLiHBMhifsdH3GVrwfFa" },
+    { group:"certificates", cat:"تقنية", title:"إتمام مساق الجداول الإلكترونية (إدراك)", id:"1XfEc_X7EaA7fcjMruSwH96_0bKqfBSuE" },
+    { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى تأسيسي (15 ساعة)", id:"1JB5naHpF_jwOQ_U9-DPnz-fuorPwcmRo" },
+    { group:"certificates", cat:"تربوية", title:"فنيات التعامل مع الطلاب المراهقين", id:"1LsW6lqLzION7gX1a9jE1Hnx9l-tyB_F4" },
+    { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى تمهيدي (50 ساعة)", id:"1CLP3ExHHMkkDor-34nWQQmNUMCw5Eueo" },
+    { group:"certificates", cat:"تطوير", title:"البرنامج الإثرائي التدريبي للمعلمين (27 ساعة)", id:"1xknukziyJ6g9mtS9-abvK-7SYgF-Wj2L" },
+    { group:"certificates", cat:"تطوير", title:"بطاقة نمو مهني: الكورت وتطبيقاته ومنصة مدرستي", id:"1ldxfYmYT4NA1nLrFKo8hzxAmHA7xJSRe" },
+    { group:"certificates", cat:"خبرة", title:"خبرة عمل مساعد إداري (4 سنوات)", id:"1T1EmPxlx4Lt7UQz-OWpYv-jQEi7THFMl" },
+    { group:"certificates", cat:"تقنية", title:"أدوات القياس والتقويم الإلكتروني (الابتعاث)", id:"1yuDn499a9NsGkuZIk_NZ4JJTZkdRm_k_" },
+    { group:"certificates", cat:"تربوية", title:"التعامل مع طلاب المرحلة الابتدائية", id:"15xEZhUXZnek6OzIMijE5kK4S9wSlL4qP" },
+    { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى 1B (33 ساعة)", id:"1wfLDBROxA4RenWjJuxMq2ZZvLAEMSpVT" },
+    { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى A1 (30 ساعة)", id:"1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
+    { group:"certificates", cat:"ورشة", title:"ورشة تدريبية: جدول مواصفات الأوزان النسبية", id:"1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
+  ];
+
+  /* شهادات Microsoft الـ 19 المعتمدة */
+  const MICROSOFT_CERTS = [
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة اجتماعات Microsoft Teams وتأمينها", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة الاجتماعات والمؤتمرات والأحداث باستخدام Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة التطبيقات والروبوتات والموصلات في Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة تعاون الفريق باستخدام Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"اكتشف فوائد أن تصبح مدربًا للمعلمين لدى Microsoft", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الاستعداد لنشر Teams باستخدام Microsoft 365", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إعداد اجتماعات Microsoft Teams لمنظمتك", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الذكاء الاصطناعي للمعلمين", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"الشروع في العمل باستخدام AI Builder", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إنشاء جداول في Dataverse", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تجهيز المتعلمين ودعمهم باستخدام أدوات الذكاء الاصطناعي من Microsoft", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تحسين التدريس والتعلم باستخدام Microsoft Copilot", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"تمكين المعلمين من استكشاف إمكانات الذكاء الاصطناعي", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"خطط لنشر اجتماعات Teams الخاصة بك", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"مقدمة إلى التطبيقات المعتمدة على النماذج في Microsoft Dataverse", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"مقدمة حول تخصيص عميل Office باستخدام الوظائف الإضافية", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"نشر الاجتماعات باستخدام Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"إدارة Microsoft Teams", id:"" },
+    { group:"microsoft", cat:"شهادة Microsoft", title:"نشر عملاء Microsoft Teams", id:"" }
+  ];
+
+  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...MICROSOFT_CERTS, ...RESEARCH];
+
+  const modal = document.getElementById('attachModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+  const modalSearchBar = document.getElementById('modalSearchBar');
+  const modalSearchInput = document.getElementById('modalSearchInput');
+  const filterPills = document.getElementById('filterPills');
+  const modalCounter = document.getElementById('modalCounter');
+  let activeGroup = 'all', activeGroupTitle = '';
+
+  function renderItems(items) {
+    modalBody.innerHTML = "";
+    modalCounter.textContent = `${items.length} ملف`;
+    items.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'doc-item';
+      const isMs = item.group === 'microsoft';
+      const hasFileId = item.id && item.id.trim() !== '';
+      const viewHref = hasFileId ? `https://drive.google.com/file/d/${item.id}/view` : MS_FOLDER_URL;
+      card.innerHTML = `
+        <span class="doc-badge ${isMs ? 'ms-badge' : ''}">${item.cat}</span>
+        <h4>${item.title}</h4>
+        <div class="doc-btns">
+          ${hasFileId
+            ? `<button type="button">${SVG_EYE}<span>معاينة</span></button>`
+            : `<a href="${MS_FOLDER_URL}" target="_blank" rel="noopener" style="background:linear-gradient(135deg,var(--fill-1),var(--fill-2));color:var(--btn-ink);border:none;">مجلد Microsoft ↗</a>`
+          }
+          <a href="${viewHref}" target="_blank" rel="noopener">فتح ↗</a>
+        </div>`;
+      const btn = card.querySelector('button');
+      if (btn) btn.addEventListener('click', () => openFileFrame(item));
+      modalBody.appendChild(card);
+    });
+  }
+
+  function applyModalFilter() {
+    const q = modalSearchInput.value.trim();
+    const base = activeGroup === 'all' ? ALL_FILES : ALL_FILES.filter(f => f.group === activeGroup);
+    renderItems(base.filter(i => i.title.includes(q) || i.cat.includes(q)));
+  }
+
+  function openGroupModal(type) {
+    modalSearchBar.style.display = 'flex';
+    modalSearchInput.value = '';
+    activeGroup = type;
+    const titles = {
+      documents:'الوثائق الرسمية والمؤهلات (2)',
+      research:'الأبحاث والتقارير العلمية (15)',
+      certificates:'الشهادات والدورات المهنية العامة (18)',
+      microsoft:'شهادات Microsoft التخصصية المعتمدة (19)',
+      all:'جميع المرفقات والشواهد الموثقة (54)'
+    };
+    activeGroupTitle = titles[type] || titles.all;
+    modalTitle.textContent = activeGroupTitle;
+    const tabs = [
+      {key:'all',label:'الكل (54)'},
+      {key:'documents',label:'الوثائق (2)'},
+      {key:'certificates',label:'الشهادات العامة (18)'},
+      {key:'microsoft',label:'Microsoft (19)'},
+      {key:'research',label:'الأبحاث (15)'}
     ];
-
-    const ACADEMIC_AND_PRO_CERTS = [
-      {
-        "group": "academic",
-        "cat": "مؤهل أكاديمي",
-        "title": "وثيقة الدبلوم العالي في تدريس المهارات الرقمية (معدل 4.49 / 5) — جامعة الملك سعود",
-        "id": "15-0t0ziXHn7kPz3apNXiMORi10hBDc0A"
-      },
-      {
-        "group": "academic",
-        "cat": "تطوير مهني معتمد",
-        "title": "شهادة البحث الإجرائي وتطوير الميدان التعليمي — المعهد الوطني للتطوير المهني التعليمي (NIEPD)",
-        "id": "1LDX42cj8bxFr18PVuVaVjkU0-2HlBGLn"
-      },
-      {
-        "group": "academic",
-        "cat": "تطوير مهني معتمد",
-        "title": "ندوة النموذج الإشرافي لتمكين المدرسة ركيزة التطوير الرئيسة للمنظومة التعليمية",
-        "id": "1H_p33y6x0YOC1dEYZ6tA-zudC9_huzR9"
-      }
-    ];
-
-    const ALL_CERTS = [...MICROSOFT_CERTS, ...ACADEMIC_AND_PRO_CERTS];
-
-    let currentGroup = "all";
-    let searchQuery = "";
-
-    const certsGrid = document.getElementById("certsGrid");
-    const resultsCount = document.getElementById("resultsCount");
-    const searchInput = document.getElementById("certSearch");
-    const tabButtons = document.querySelectorAll(".tab-btn");
-
-    document.getElementById("countAll").textContent = ALL_CERTS.length;
-    document.getElementById("countMs").textContent = MICROSOFT_CERTS.length;
-    document.getElementById("countAcad").textContent = ACADEMIC_AND_PRO_CERTS.length;
-
-    function renderCertificates() {
-      const filtered = ALL_CERTS.filter(item => {
-        const matchesGroup = currentGroup === "all" || item.group === currentGroup;
-        const matchesQuery = !searchQuery ||
-          item.title.toLowerCase().includes(searchQuery) ||
-          item.cat.toLowerCase().includes(searchQuery);
-        return matchesGroup && matchesQuery;
+    filterPills.innerHTML = '';
+    tabs.forEach(t => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'ctrl-btn' + (t.key === activeGroup ? ' active' : '');
+      b.textContent = t.label;
+      b.addEventListener('click', () => {
+        activeGroup = t.key;
+        modalTitle.textContent = titles[t.key];
+        [...filterPills.children].forEach(c => c.classList.remove('active'));
+        b.classList.add('active');
+        applyModalFilter();
       });
+      filterPills.appendChild(b);
+    });
+    applyModalFilter();
+    modal.classList.add('open');
+  }
 
-      resultsCount.textContent = `يعرض ${filtered.length} من أصل ${ALL_CERTS.length} شهادة ووثيقة موثقة`;
-
-      if (filtered.length === 0) {
-        certsGrid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:2.5rem; background:#fff; border-radius:14px; color:var(--muted);">لا توجد نتائج مطابقة لعبارة البحث الحالية.</div>`;
-        return;
-      }
-
-      certsGrid.innerHTML = filtered.map((cert, idx) => {
-        const viewUrl = `https://drive.google.com/file/d/${cert.id}/view`;
-        const catClass = cert.group === "academic" ? "cert-cat academic" : "cert-cat";
-        return `
-          <article class="cert-card">
-            <div>
-              <div class="cert-header">
-                <span class="${catClass}">${cert.cat}</span>
-                <span class="cert-index">#${idx + 1}</span>
-              </div>
-              <h3 class="cert-title" style="margin-top:0.65rem;">${cert.title}</h3>
-            </div>
-            <div class="cert-actions">
-              <button type="button" class="btn-preview" onclick="openPreview('${cert.id}', '${cert.title.replace(/'/g, "\'")}')">👁️ معاينة الشهادة</button>
-              <a href="${viewUrl}" target="_blank" rel="noopener" class="btn-drive">رابط Drive ↗</a>
-            </div>
-          </article>
-        `;
-      }).join("");
-    }
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        tabButtons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-        currentGroup = btn.dataset.filter;
-        renderCertificates();
+  function openFileFrame(item, fromDirect = false) {
+    modalTitle.innerHTML = fromDirect ? item.title : `<button id="backToListBtn" class="ctrl-btn active" style="margin-left:10px;">→ رجوع للقائمة</button> ${item.title}`;
+    modalSearchBar.style.display = 'none';
+    modalBody.innerHTML = `<iframe class="frame-view" src="https://drive.google.com/file/d/${item.id}/preview" allow="autoplay"></iframe>`;
+    modal.classList.add('open');
+    if (!fromDirect) {
+      document.getElementById('backToListBtn').addEventListener('click', () => {
+        modalTitle.textContent = activeGroupTitle;
+        modalSearchBar.style.display = 'flex';
+        applyModalFilter();
       });
-    });
-
-    searchInput.addEventListener("input", (e) => {
-      searchQuery = e.target.value.trim().toLowerCase();
-      renderCertificates();
-    });
-
-    // Modal logic
-    const previewModal = document.getElementById("previewModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalFrame = document.getElementById("modalFrame");
-    const modalExternalLink = document.getElementById("modalExternalLink");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-
-    function openPreview(fileId, title) {
-      modalTitle.textContent = title;
-      modalFrame.src = `https://drive.google.com/file/d/${fileId}/preview`;
-      modalExternalLink.href = `https://drive.google.com/file/d/${fileId}/view`;
-      previewModal.classList.add("open");
     }
+  }
 
-    function closePreview() {
-      previewModal.classList.remove("open");
-      modalFrame.src = "";
-    }
+  modalSearchInput.addEventListener('input', applyModalFilter);
+  document.querySelectorAll('[data-open-modal]').forEach(el => el.addEventListener('click', () => openGroupModal(el.dataset.openModal)));
+  document.addEventListener('click', e => {
+    const pv = e.target.closest('[data-preview-id]');
+    if (pv) openFileFrame({ id:pv.dataset.previewId, title:pv.dataset.previewTitle }, true);
+  });
 
-    closeModalBtn.addEventListener("click", closePreview);
-    previewModal.addEventListener("click", (e) => {
-      if (e.target === previewModal) closePreview();
+  const closeModal = () => { modal.classList.remove('open'); modalBody.innerHTML = ''; };
+  document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  /* النوافذ الأخرى (CV PDF, QR, Copy) */
+  const cvModal = document.getElementById('cvModal');
+  document.getElementById('openCvBtn').addEventListener('click', () => cvModal.classList.add('open'));
+  document.getElementById('closeCvBtn').addEventListener('click', () => cvModal.classList.remove('open'));
+  cvModal.addEventListener('click', e => { if (e.target === cvModal) cvModal.classList.remove('open'); });
+
+  const qrModal = document.getElementById('qrModal');
+  document.getElementById('openQrBtn').addEventListener('click', () => qrModal.classList.add('open'));
+  document.getElementById('closeQrBtn').addEventListener('click', () => qrModal.classList.remove('open'));
+  qrModal.addEventListener('click', e => { if (e.target === qrModal) qrModal.classList.remove('open'); });
+
+  const toast = document.getElementById('toastMsg');
+  document.getElementById('copyLinkBtn').addEventListener('click', () => {
+    navigator.clipboard?.writeText('https://ksa2020q.github.io/samran/').catch(() => {});
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 2500);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeModal(); caseModal.classList.remove('open'); cvModal.classList.remove('open'); qrModal.classList.remove('open'); fontPopover.classList.remove('open'); }
+  });
+
+  /* شريط الألوان والستايلات */
+  const htmlEl = document.documentElement;
+  const PREF_KEY = 'samran_exec_prefs_v10';
+  const prefs = { theme:'cyan', font:'tajawal', size:'m', sidebar:true, anim:'3d', tilt:true };
+  try { Object.assign(prefs, JSON.parse(localStorage.getItem(PREF_KEY) || '{}')); } catch (e) {}
+  function savePrefs() { try { localStorage.setItem(PREF_KEY, JSON.stringify(prefs)); } catch (e) {} }
+  function applyPrefs() {
+    htmlEl.setAttribute('data-theme', prefs.theme);
+    htmlEl.setAttribute('data-font', prefs.font);
+    htmlEl.setAttribute('data-size', prefs.size);
+    document.querySelectorAll('[data-set-theme]').forEach(b => b.classList.toggle('active', b.dataset.setTheme === prefs.theme));
+    document.querySelectorAll('[data-set-font]').forEach(b => b.classList.toggle('active', b.dataset.setFont === prefs.font));
+    document.querySelectorAll('[data-set-size]').forEach(b => b.classList.toggle('active', b.dataset.setSize === prefs.size));
+    document.body.classList.toggle('sequential-mode', !prefs.sidebar);
+    const btnLayout = document.getElementById('btnLayoutMode');
+    document.getElementById('lblLayoutMode').textContent = prefs.sidebar ? 'جانبية' : 'متتالي';
+    btnLayout.classList.toggle('active', prefs.sidebar);
+    document.body.classList.toggle('anim-pulse', prefs.anim === 'pulse');
+    document.getElementById('lblAnimMode').textContent = prefs.anim === 'pulse' ? 'تنبض وتوهج' : 'دوران 3D';
+    const btnTilt = document.getElementById('btnTiltToggle');
+    document.getElementById('lblTiltToggle').textContent = prefs.tilt ? 'إمالة: مفعلة' : 'إمالة: معطلة';
+    btnTilt.classList.toggle('active', prefs.tilt);
+    if (!prefs.tilt) document.querySelectorAll('.tilt-card').forEach(c => c.style.transform = '');
+  }
+  applyPrefs();
+
+  document.querySelectorAll('[data-set-theme]').forEach(b => b.addEventListener('click', () => { prefs.theme = b.dataset.setTheme; savePrefs(); applyPrefs(); }));
+  document.querySelectorAll('[data-set-font]').forEach(b => b.addEventListener('click', () => { prefs.font = b.dataset.setFont; savePrefs(); applyPrefs(); }));
+  document.querySelectorAll('[data-set-size]').forEach(b => b.addEventListener('click', () => { prefs.size = b.dataset.setSize; savePrefs(); applyPrefs(); }));
+  document.getElementById('btnLayoutMode').addEventListener('click', () => { prefs.sidebar = !prefs.sidebar; savePrefs(); applyPrefs(); });
+  document.getElementById('btnAnimMode').addEventListener('click', () => { prefs.anim = prefs.anim === '3d' ? 'pulse' : '3d'; savePrefs(); applyPrefs(); });
+  document.getElementById('btnTiltToggle').addEventListener('click', () => { prefs.tilt = !prefs.tilt; savePrefs(); applyPrefs(); });
+
+  const fontPopover = document.getElementById('fontPopover');
+  document.getElementById('btnFontPanel').addEventListener('click', e => { e.stopPropagation(); fontPopover.classList.toggle('open'); });
+  document.addEventListener('click', e => { if (!fontPopover.contains(e.target) && !e.target.closest('#btnFontPanel')) fontPopover.classList.remove('open'); });
+
+  document.querySelectorAll('.tilt-card').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      if (!prefs.tilt || window.innerWidth < 900) return;
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `perspective(1100px) rotateX(${(-y * 3.5).toFixed(2)}deg) rotateY(${(x * 3.5).toFixed(2)}deg)`;
     });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && previewModal.classList.contains("open")) closePreview();
-    });
+    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+  });
 
-    renderCertificates();
-  </script>
+  /* التمرير والقائمة */
+  const progressBar = document.getElementById('scrollProgress');
+  const sections = [...document.querySelectorAll('section[id]')];
+  const navLinks = [...document.querySelectorAll('.sidebar .nav-item')];
+  const sidebar = document.getElementById('sidebar');
+  window.addEventListener('scroll', () => {
+    const d = document.documentElement;
+    progressBar.style.width = ((d.scrollTop / (d.scrollHeight - d.clientHeight)) * 100) + '%';
+    let cur = 'home';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 190) cur = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+  });
+  document.getElementById('mobileMenuBtn').addEventListener('click', () => sidebar.classList.toggle('mobile-open'));
+  navLinks.forEach(l => l.addEventListener('click', () => sidebar.classList.remove('mobile-open')));
+
+  /* خلفية الجزيئات */
+  const canvas = document.getElementById('bgCanvas'), ctx = canvas.getContext('2d');
+  function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  window.addEventListener('resize', resizeCanvas); resizeCanvas();
+  const pts = Array.from({length:36}, () => ({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, vx:(Math.random()-.5)*.4, vy:(Math.random()-.5)*.4, r:Math.random()*2+1 }));
+  (function anim() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    const rgb = getComputedStyle(document.documentElement).getPropertyValue('--particle-rgb').trim() || '56,214,255';
+    pts.forEach((p,i) => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x<0 || p.x>canvas.width) p.vx*=-1;
+      if (p.y<0 || p.y>canvas.height) p.vy*=-1;
+      ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(${rgb},.6)`; ctx.fill();
+      for (let j=i+1; j<pts.length; j++) {
+        const dist = Math.hypot(p.x-pts[j].x, p.y-pts[j].y);
+        if (dist<125) { ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(pts[j].x,pts[j].y); ctx.strokeStyle=`rgba(${rgb},${(1-dist/125)*.16})`; ctx.stroke(); }
+      }
+    });
+    requestAnimationFrame(anim);
+  })();
+</script>
 </body>
 </html>
