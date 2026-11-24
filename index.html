@@ -77,11 +77,46 @@
   .sidebar { position:fixed; top:0; right:0; bottom:0; width:var(--sidebar-w); background:var(--sidebar-bg); border-left:1px solid var(--border-glow); padding:14px 12px; display:flex; flex-direction:column; gap:2.5px; z-index:150; overflow-y:auto; backdrop-filter:blur(14px); transition:transform .35s,opacity .35s; }
   .sidebar-header { padding:7px 10px 11px; margin-bottom:4px; border-bottom:1px solid var(--border-glow); font-size:.82rem; font-weight:800; color:var(--text-muted); display:flex; align-items:center; gap:8px; }
   .sidebar-header::before { content:""; width:8px; height:8px; border-radius:50%; background:var(--accent-bright); box-shadow:0 0 10px var(--accent-bright); flex-shrink:0; }
-  .nav-item { display:flex; align-items:center; gap:10px; padding:7.5px 11px; border-radius:11px; color:var(--text-main); font-weight:700; font-size:.85rem; transition:.22s; border:1px solid transparent; }
-  .nav-item .nav-ico { width:22px; height:22px; display:grid; place-items:center; color:var(--accent-bright); flex-shrink:0; }
+  .nav-item { display:flex; align-items:center; gap:10px; padding:7px 10px; border-radius:12px; color:var(--text-main); font-weight:700; font-size:.84rem; transition:.22s; border:1px solid transparent; }
+  .nav-item .nav-ico { width:30px; height:30px; border-radius:9px; display:grid; place-items:center; flex-shrink:0; background:var(--ico-bg, rgba(var(--particle-rgb),.18)); color:var(--ico-fg, var(--accent-bright)); border:1px solid var(--ico-bd, rgba(var(--particle-rgb),.42)); box-shadow:0 2px 8px rgba(0,0,0,.18); transition:transform .22s, background .22s, color .22s; }
+  .nav-item:hover .nav-ico { transform:scale(1.08); }
+  .nav-item:nth-of-type(1)  .nav-ico { --ico-bg:rgba(56,189,248,.20); --ico-fg:#38bdf8; --ico-bd:rgba(56,189,248,.48); }
+  .nav-item:nth-of-type(2)  .nav-ico { --ico-bg:rgba(52,211,153,.20); --ico-fg:#34d399; --ico-bd:rgba(52,211,153,.48); }
+  .nav-item:nth-of-type(3)  .nav-ico { --ico-bg:rgba(251,191,36,.22); --ico-fg:#fbbf24; --ico-bd:rgba(251,191,36,.52); }
+  .nav-item:nth-of-type(4)  .nav-ico { --ico-bg:rgba(167,139,250,.22); --ico-fg:#a78bfa; --ico-bd:rgba(167,139,250,.50); }
+  .nav-item:nth-of-type(5)  .nav-ico { --ico-bg:rgba(251,113,133,.20); --ico-fg:#fb7185; --ico-bd:rgba(251,113,133,.48); }
+  .nav-item:nth-of-type(6)  .nav-ico { --ico-bg:rgba(251,146,60,.20); --ico-fg:#fb923c; --ico-bd:rgba(251,146,60,.48); }
+  .nav-item:nth-of-type(7)  .nav-ico { --ico-bg:rgba(45,212,191,.20); --ico-fg:#2dd4bf; --ico-bd:rgba(45,212,191,.48); }
+  .nav-item:nth-of-type(8)  .nav-ico { --ico-bg:rgba(129,140,248,.20); --ico-fg:#818cf8; --ico-bd:rgba(129,140,248,.48); }
+  .nav-item:nth-of-type(9)  .nav-ico { --ico-bg:rgba(232,121,249,.20); --ico-fg:#e879f9; --ico-bd:rgba(232,121,249,.48); }
+  .nav-item:nth-of-type(10) .nav-ico { --ico-bg:rgba(250,204,21,.22); --ico-fg:#facc15; --ico-bd:rgba(250,204,21,.50); }
+  .nav-item:nth-of-type(11) .nav-ico { --ico-bg:rgba(74,222,128,.20); --ico-fg:#4ade80; --ico-bd:rgba(74,222,128,.48); }
+  .nav-item:nth-of-type(12) .nav-ico { --ico-bg:rgba(248,113,113,.20); --ico-fg:#f87171; --ico-bd:rgba(248,113,113,.48); }
+  .nav-item:nth-of-type(13) .nav-ico { --ico-bg:rgba(0,164,239,.24);  --ico-fg:#00a4ef; --ico-bd:rgba(0,164,239,.55); }
+  .nav-item:nth-of-type(14) .nav-ico { --ico-bg:rgba(34,211,238,.20); --ico-fg:#22d3ee; --ico-bd:rgba(34,211,238,.48); }
+  .nav-item:nth-of-type(15) .nav-ico { --ico-bg:rgba(192,132,252,.20); --ico-fg:#c084fc; --ico-bd:rgba(192,132,252,.48); }
+  .nav-item:nth-of-type(16) .nav-ico { --ico-bg:rgba(163,230,53,.20); --ico-fg:#a3e635; --ico-bd:rgba(163,230,53,.48); }
+
+  [data-theme="light"] .nav-item:nth-of-type(1)  .nav-ico { --ico-bg:rgba(2,132,199,.14);  --ico-fg:#0284c7; --ico-bd:rgba(2,132,199,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(2)  .nav-ico { --ico-bg:rgba(5,150,105,.14);  --ico-fg:#059669; --ico-bd:rgba(5,150,105,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(3)  .nav-ico { --ico-bg:rgba(217,119,6,.15);  --ico-fg:#b45309; --ico-bd:rgba(217,119,6,.38); }
+  [data-theme="light"] .nav-item:nth-of-type(4)  .nav-ico { --ico-bg:rgba(124,58,237,.14); --ico-fg:#7c3aed; --ico-bd:rgba(124,58,237,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(5)  .nav-ico { --ico-bg:rgba(225,29,72,.14);  --ico-fg:#e11d48; --ico-bd:rgba(225,29,72,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(6)  .nav-ico { --ico-bg:rgba(234,88,12,.14);  --ico-fg:#ea580c; --ico-bd:rgba(234,88,12,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(7)  .nav-ico { --ico-bg:rgba(13,148,136,.14); --ico-fg:#0d9488; --ico-bd:rgba(13,148,136,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(8)  .nav-ico { --ico-bg:rgba(79,70,229,.14);  --ico-fg:#4f46e5; --ico-bd:rgba(79,70,229,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(9)  .nav-ico { --ico-bg:rgba(192,38,211,.14); --ico-fg:#c026d3; --ico-bd:rgba(192,38,211,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(10) .nav-ico { --ico-bg:rgba(202,138,4,.15);  --ico-fg:#a16207; --ico-bd:rgba(202,138,4,.38); }
+  [data-theme="light"] .nav-item:nth-of-type(11) .nav-ico { --ico-bg:rgba(22,163,74,.14);  --ico-fg:#16a34a; --ico-bd:rgba(22,163,74,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(12) .nav-ico { --ico-bg:rgba(220,38,38,.14);  --ico-fg:#dc2626; --ico-bd:rgba(220,38,38,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(13) .nav-ico { --ico-bg:rgba(0,103,184,.15);  --ico-fg:#0067b8; --ico-bd:rgba(0,103,184,.38); }
+  [data-theme="light"] .nav-item:nth-of-type(14) .nav-ico { --ico-bg:rgba(8,145,178,.14);  --ico-fg:#0891b2; --ico-bd:rgba(8,145,178,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(15) .nav-ico { --ico-bg:rgba(147,51,234,.14); --ico-fg:#9333ea; --ico-bd:rgba(147,51,234,.35); }
+  [data-theme="light"] .nav-item:nth-of-type(16) .nav-ico { --ico-bg:rgba(101,163,13,.14); --ico-fg:#4d7c0f; --ico-bd:rgba(101,163,13,.35); }
+
   .nav-item:hover { background:rgba(var(--particle-rgb),.12); border-color:var(--border-glow); transform:translateX(-3px); }
   .nav-item.active { background:linear-gradient(135deg,var(--fill-1),var(--fill-2)); color:var(--btn-ink); box-shadow:0 4px 18px rgba(var(--particle-rgb),.35); }
-  .nav-item.active .nav-ico { color:var(--btn-ink); }
+  .nav-item.active .nav-ico { background:rgba(255,255,255,.22); border-color:rgba(255,255,255,.45); color:#ffffff; box-shadow:none; }
 
   body.sequential-mode .sidebar { transform:translateX(105%); opacity:0; pointer-events:none; }
   body.sequential-mode .main-wrap { margin-right:0; }
@@ -270,6 +305,153 @@
   .honor-card h3 { font-size:1.04rem; color:var(--heading); font-weight:800; }
   .honor-card p { font-size:.89rem; color:var(--text-muted); }
 
+
+  /* قسم شهادات Microsoft المتكامل بألوان منفردة */
+  .ms-standalone-section {
+    --ms-blue: #00a4ef;
+    --ms-deep: #0067b8;
+    --ms-green: #7fba00;
+    --ms-red: #f25022;
+    --ms-gold: #ffb900;
+    background:
+      radial-gradient(circle at 12% 16%, rgba(0,164,239,.26), transparent 48%),
+      radial-gradient(circle at 88% 85%, rgba(127,186,0,.15), transparent 44%),
+      linear-gradient(155deg, rgba(6,29,56,.96) 0%, rgba(10,42,78,.94) 55%, rgba(6,26,50,.96) 100%) !important;
+    border: 2px solid rgba(0,164,239,.55) !important;
+    box-shadow: 0 0 38px rgba(0,164,239,.24) !important;
+    overflow: hidden;
+  }
+  .ms-standalone-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f25022 0%, #7fba00 33%, #00a4ef 66%, #ffb900 100%);
+  }
+  .ms-standalone-section:hover {
+    border-color: #00a4ef !important;
+    box-shadow: 0 0 46px rgba(0,164,239,.38) !important;
+  }
+  [data-theme="light"] .ms-standalone-section {
+    background:
+      radial-gradient(circle at 12% 16%, rgba(0,164,239,.14), transparent 48%),
+      radial-gradient(circle at 88% 85%, rgba(127,186,0,.10), transparent 44%),
+      linear-gradient(155deg, #eef6ff 0%, #f7fbff 55%, #e5f1ff 100%) !important;
+    border: 2px solid rgba(0,103,184,.42) !important;
+    box-shadow: 0 12px 34px rgba(0,103,184,.14) !important;
+  }
+  .ms-logo-box {
+    width: 48px; height: 48px; border-radius: 13px;
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(0,164,239,.45);
+    display: grid; place-items: center; flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,164,239,.22);
+  }
+  [data-theme="light"] .ms-logo-box { background: #ffffff; border-color: rgba(0,103,184,.28); }
+  .ms-pill-tag {
+    display: inline-flex; align-items: center; gap: 7px; padding: 5px 15px;
+    border-radius: 999px; background: rgba(0,164,239,.16);
+    border: 1px solid rgba(0,164,239,.48); color: #38bdf8;
+    font-size: .83rem; font-weight: 800; white-space: nowrap;
+  }
+  [data-theme="light"] .ms-pill-tag { background: rgba(0,103,184,.12); color: #0067b8; border-color: rgba(0,103,184,.35); }
+  .ms-drive-btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px;
+    border-radius: 12px; background: linear-gradient(135deg, #0078d4, #005a9e);
+    color: #ffffff !important; font-weight: 800; font-size: .88rem;
+    border: 1px solid rgba(255,255,255,.25);
+    box-shadow: 0 6px 20px rgba(0,120,212,.38); transition: .22s;
+  }
+  .ms-drive-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,164,239,.52); }
+
+  .ms-tracks-bar {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 18px;
+  }
+  .ms-track-stat {
+    background: rgba(4,18,36,.68);
+    border: 1px solid rgba(0,164,239,.35);
+    border-right: 4px solid var(--trk-color, #00a4ef);
+    border-radius: 14px; padding: 13px 15px;
+    display: flex; flex-direction: column; gap: 3px;
+  }
+  [data-theme="light"] .ms-track-stat { background: rgba(255,255,255,.92); border-color: rgba(0,103,184,.22); }
+  .ms-track-stat strong { font-size: 1.35rem; font-weight: 900; color: var(--trk-color, #00a4ef); line-height: 1.2; }
+  .ms-track-stat span { font-size: .84rem; font-weight: 700; color: var(--heading); }
+
+  .ms-controls-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 18px;
+    padding: 12px 14px; border-radius: 14px;
+    background: rgba(4,18,36,.55); border: 1px solid rgba(0,164,239,.32);
+  }
+  [data-theme="light"] .ms-controls-bar { background: rgba(255,255,255,.85); border-color: rgba(0,103,184,.22); }
+  .ms-filter-tabs { display: flex; gap: 7px; flex-wrap: wrap; }
+  .ms-tab-btn {
+    padding: 6px 13px; border-radius: 999px; font-family: inherit;
+    font-size: .82rem; font-weight: 800; cursor: pointer;
+    border: 1px solid rgba(0,164,239,.38);
+    background: rgba(0,164,239,.10); color: #7dd3fc; transition: .2s;
+  }
+  [data-theme="light"] .ms-tab-btn { color: #0067b8; background: rgba(0,103,184,.08); border-color: rgba(0,103,184,.28); }
+  .ms-tab-btn:hover { border-color: #00a4ef; transform: translateY(-1px); }
+  .ms-tab-btn.active {
+    background: linear-gradient(135deg, #0078d4, #005a9e);
+    color: #ffffff; border-color: transparent;
+    box-shadow: 0 4px 14px rgba(0,120,212,.38);
+  }
+  .ms-search-input {
+    min-width: 220px; flex: 1; max-width: 300px;
+    background: rgba(4,18,36,.78); border: 1px solid rgba(0,164,239,.4);
+    border-radius: 999px; padding: 7px 15px;
+    color: var(--heading); font-family: inherit; font-size: .86rem; outline: none;
+  }
+  [data-theme="light"] .ms-search-input { background: #ffffff; border-color: rgba(0,103,184,.32); }
+
+  .ms-certs-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); gap: 14px;
+  }
+  .ms-cert-card {
+    background: rgba(5,22,44,.82);
+    border: 1.5px solid rgba(0,164,239,.34);
+    border-radius: 15px; padding: 17px 18px;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: .26s; position: relative;
+  }
+  [data-theme="light"] .ms-cert-card { background: #ffffff; border-color: rgba(0,103,184,.24); box-shadow: 0 4px 16px rgba(0,103,184,.06); }
+  .ms-cert-card:hover {
+    border-color: #00a4ef; transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0,164,239,.25);
+  }
+  .ms-cert-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .ms-cert-badge {
+    font-size: .76rem; font-weight: 800; padding: 3px 11px; border-radius: 999px;
+    background: var(--ms-tag-bg, rgba(0,164,239,.18));
+    color: var(--ms-tag-fg, #38bdf8);
+    border: 1px solid var(--ms-tag-bd, rgba(0,164,239,.38));
+  }
+  .ms-cert-num {
+    font-size: .76rem; font-weight: 900; color: #93c5fd;
+    background: rgba(0,120,212,.22); padding: 2px 9px; border-radius: 8px;
+  }
+  [data-theme="light"] .ms-cert-num { color: #005a9e; background: rgba(0,120,212,.12); }
+  .ms-cert-card h3 { font-size: .96rem; font-weight: 800; color: var(--heading); line-height: 1.55; }
+  .ms-cert-actions { margin-top: auto; padding-top: 6px; display: flex; gap: 8px; }
+  .ms-cert-actions button, .ms-cert-actions a {
+    flex: 1; padding: 7px 10px; border-radius: 10px; font-family: inherit;
+    font-size: .82rem; font-weight: 800; cursor: pointer; text-align: center;
+    display: inline-flex; align-items: center; justify-content: center; gap: 5px; transition: .2s;
+  }
+  .ms-cert-actions button {
+    background: linear-gradient(135deg, #0078d4, #005a9e);
+    color: #ffffff; border: none; box-shadow: 0 3px 12px rgba(0,120,212,.3);
+  }
+  .ms-cert-actions a {
+    background: rgba(0,164,239,.12); border: 1px solid rgba(0,164,239,.38); color: #38bdf8;
+  }
+  [data-theme="light"] .ms-cert-actions a { color: #0067b8; background: rgba(0,103,184,.08); border-color: rgba(0,103,184,.28); }
+  .ms-cert-actions button:hover, .ms-cert-actions a:hover { transform: translateY(-2px); border-color: #00a4ef; }
+
   /* 12. قسم أبرز الشواهد (بدون علامة # + تخطيط متوازن 1 مميز + 2x2) */
   .top-ev-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
   .top-ev-card { background:var(--card-inner); border:1.5px solid var(--border-glow); border-radius:var(--radius-md); padding:20px; display:flex; flex-direction:column; gap:10px; transition:.26s; }
@@ -410,8 +592,9 @@
   <a href="#achievements" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span><span>سجل الإنجازات بالأرقام</span></a>
   <a href="#testimonials" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><span>شهادات المستفيدين</span></a>
   <a href="#honors" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span><span>التكريمات والشكر</span></a>
+  <a href="#microsoft-certs" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></span><span>شهادات Microsoft (19)</span></a>
   <a href="#top-evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span><span>أبرز الشواهد (5)</span></a>
-  <a href="#evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>جميع الشواهد (35)</span></a>
+  <a href="#evidence" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span><span>جميع الشواهد (54)</span></a>
   <a href="#contact" class="nav-item"><span class="nav-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><span>التواصل والمشاركة</span></a>
 </aside>
 
@@ -444,7 +627,7 @@
             </a>
             <button type="button" class="btn-outline" data-open-modal="all">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-              <span>المستودع (35)</span>
+              <span>المستودع (54)</span>
             </button>
             <button type="button" class="btn-outline" id="openQrBtn">
               <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM18 14h3M14 18v3"/></svg>
@@ -498,7 +681,7 @@
         </div>
         <div class="kpi-card" style="cursor:pointer" data-open-modal="all">
           <div class="kpi-top"><div class="kpi-ico"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div><span class="kpi-tag">موثقة 100%</span></div>
-          <div class="kpi-num">35</div>
+          <div class="kpi-num">54</div>
           <div class="kpi-label">شاهدًا ووثيقة معتمدة</div>
           <div class="kpi-sub">اضغط للمعاينة المباشرة للشواهد ↗</div>
           <div class="kpi-bar"><i style="width:100%"></i></div>
@@ -856,7 +1039,7 @@
         <div class="ach-num-pill"><b>15</b><span>بحثًا وتقريرًا علميًا</span></div>
         <div class="ach-num-pill"><b>18</b><span>شهادة ودورة تدريبية</span></div>
         <div class="ach-num-pill"><b>7</b><span>أدوار ومبادرات قيادية</span></div>
-        <div class="ach-num-pill"><b>35</b><span>شاهدًا ووثيقة معتمدة</span></div>
+        <div class="ach-num-pill"><b>54</b><span>شاهدًا ووثيقة معتمدة</span></div>
       </div>
 
       <div class="accent-grid">
@@ -871,9 +1054,9 @@
           <p>إعداد 15 بحثًا وتقريرًا وورقة عمل في الذكاء الاصطناعي، أمن المعلومات، التقويم التكويني، والمهارات الرقمية.</p>
         </div>
         <div class="accent-box" data-open-modal="all">
-          <span class="accent-stat-badge">5 أنظمة · 35 شاهدًا</span>
+          <span class="accent-stat-badge">5 أنظمة · 54 شاهدًا</span>
           <h3>الابتكار التقني والعمل التطوعي</h3>
-          <p>تطوير 5 أنظمة رقمية تطوعية لخدمة الميدان التربوي موثقة بـ 35 شاهدًا رسميًا معتمدًا.</p>
+          <p>تطوير 5 أنظمة رقمية تطوعية لخدمة الميدان التربوي موثقة بـ 54 شاهدًا رسميًا معتمدًا.</p>
         </div>
       </div>
     </section>
@@ -996,6 +1179,64 @@
       </div>
     </section>
 
+    <!-- قسم مستقل: شهادات التدريب والاعتماد من Microsoft (19) -->
+    <section id="microsoft-certs" class="glow-card ms-standalone-section tilt-card">
+      <div class="card-head">
+        <div class="card-title-wrap">
+          <div class="ms-logo-box" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="9" height="9" fill="#f25022"/>
+              <rect x="13" y="2" width="9" height="9" fill="#7fba00"/>
+              <rect x="2" y="13" width="9" height="9" fill="#00a4ef"/>
+              <rect x="13" y="13" width="9" height="9" fill="#ffb900"/>
+            </svg>
+          </div>
+          <div>
+            <h2>شهادات التدريب والاعتماد من Microsoft (19 شهادة معتمدة)</h2>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <span class="ms-pill-tag">Microsoft Learn · اعتمادات دولية</span>
+          <a href="https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5" target="_blank" rel="noopener" class="ms-drive-btn">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            <span>فتح مجلد Drive الرسمي (19) ↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="ms-tracks-bar">
+        <div class="ms-track-stat" style="--trk-color:#00a4ef;">
+          <strong>5 شهادات</strong>
+          <span>الذكاء الاصطناعي و Copilot و AI Builder</span>
+        </div>
+        <div class="ms-track-stat" style="--trk-color:#60a5fa;">
+          <strong>10 شهادات</strong>
+          <span>إدارة ونشر Microsoft Teams و Microsoft 365</span>
+        </div>
+        <div class="ms-track-stat" style="--trk-color:#7fba00;">
+          <strong>3 شهادات</strong>
+          <span>قواعد بيانات Dataverse وتخصيص Office</span>
+        </div>
+        <div class="ms-track-stat" style="--trk-color:#ffb900;">
+          <strong>1 شهادة</strong>
+          <span>مدرب معتمد للمعلمين لدى Microsoft</span>
+        </div>
+      </div>
+
+      <div class="ms-controls-bar">
+        <div class="ms-filter-tabs" id="msFilterTabs">
+          <button type="button" class="ms-tab-btn active" data-ms-track="all">الكل (19)</button>
+          <button type="button" class="ms-tab-btn" data-ms-track="ai">الذكاء الاصطناعي و Copilot (5)</button>
+          <button type="button" class="ms-tab-btn" data-ms-track="teams">Microsoft Teams و 365 (10)</button>
+          <button type="button" class="ms-tab-btn" data-ms-track="data">Dataverse و Office (3)</button>
+          <button type="button" class="ms-tab-btn" data-ms-track="trainer">التدريب المهني (1)</button>
+        </div>
+        <input type="text" id="msSearchInput" class="ms-search-input" placeholder="ابحث في شهادات Microsoft الـ 19...">
+      </div>
+
+      <div class="ms-certs-grid" id="msStandaloneGrid"></div>
+    </section>
+
     <!-- 12. قسم مستقل: أبرز الشواهد (بدون علامة #) -->
     <section id="top-evidence" class="glow-card tilt-card">
       <div class="card-head">
@@ -1008,12 +1249,12 @@
       <div class="top-ev-grid" id="topEvidenceGrid"></div>
     </section>
 
-    <!-- 13. جميع شواهد الأداء (35) -->
+    <!-- 13. جميع شواهد الأداء (54) -->
     <section id="evidence" class="glow-card tilt-card">
       <div class="card-head">
         <div class="card-title-wrap">
           <div class="sec-icon"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
-          <h2>جميع شواهد الأداء الموثقة (35)</h2>
+          <h2>جميع شواهد الأداء الموثقة (54)</h2>
         </div>
         <span class="pill-tag">الأرشيف الشامل</span>
       </div>
@@ -1029,9 +1270,17 @@
           <p>أبحاث وتقارير تطبيقية في الذكاء الاصطناعي، التقويم التكويني، أمن المعلومات، وتطوير المناهج.</p>
         </div>
       </div>
+      <div class="attach-box" data-open-modal="microsoft">
+        <div class="att-ico"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/></svg></div>
+        <strong>شهادات التدريب والاعتماد من Microsoft (19 شهادة معتمدة)</strong>
+        <span>
+          <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          معاينة الشهادات التخصصية في الذكاء الاصطناعي و Copilot و Microsoft Teams و Dataverse · <a href="https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5" target="_blank" rel="noopener" onclick="event.stopPropagation()" style="text-decoration:underline;">فتح مجلد Drive الرسمي ↗</a>
+        </span>
+      </div>
       <div class="attach-box" data-open-modal="all">
         <div class="att-ico"><svg class="ico-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-        <strong>فتح مستودع الشواهد والوثائق الشامل (35 ملفًا)</strong>
+        <strong>فتح مستودع الشواهد والوثائق الشامل (54 ملفًا)</strong>
         <span>
           <svg class="ico" style="width:15px;height:15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           بحث فوري وتصفية حسب الفئة مع معاينة مباشرة للملفات
@@ -1070,8 +1319,8 @@
           </div>
         </a>
 
-        <a href="https://x.com/Somran88" target="_blank" rel="noopener" class="contact-box x-card">
-          <div><small>منصة X (تويتر)</small><strong>@Somran88</strong></div>
+        <a href="https://x.com/somran288" target="_blank" rel="noopener" class="contact-box x-card">
+          <div><small>منصة X (تويتر)</small><strong>@somran288</strong></div>
           <div class="contact-ico" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </div>
@@ -1527,7 +1776,82 @@
     { group:"certificates", cat:"لغات", title:"الإنجليزي مستوى A1 (30 ساعة)", id:"1--DQyvHVG7F0BrA0basdMk4OdKr-1UZW" },
     { group:"certificates", cat:"ورشة", title:"ورشة تدريبية: جدول مواصفات الأوزان النسبية", id:"1YWTjGt9HDL75I_4oaOybzGK4ehnXVDm9" }
   ];
-  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...RESEARCH];
+  const MICROSOFT_FOLDER_URL = "https://drive.google.com/drive/folders/19bHEC31Cl_5VcyY0v7mE0XyoqMVhbPE5";
+  const MICROSOFT_CERTS = [
+    { group:"microsoft", track:"ai",      cat:"Microsoft · AI",        title:"الذكاء الاصطناعي للمعلمين", id:"1HzbQNbGLUCoBBSgYvIzKjfSqnoNdYk4T" },
+    { group:"microsoft", track:"ai",      cat:"Microsoft · AI",        title:"تمكين المعلمين من استكشاف إمكانات الذكاء الاصطناعي", id:"1F2xPA20Uh2R1kjtkfZtXu8czpSOSFviR" },
+    { group:"microsoft", track:"ai",      cat:"Microsoft · AI",        title:"تجهيز المتعلمين ودعمهم باستخدام أدوات الذكاء الاصطناعي من Microsoft", id:"1WwY17T64_HnAiMbs9sKBa9fEqVyldGtT" },
+    { group:"microsoft", track:"ai",      cat:"Microsoft · Copilot",   title:"تحسين التدريس والتعلم باستخدام Microsoft Copilot", id:"1RL7AI-DDoo0YsiDQAk0p-r12NyH3EFF4" },
+    { group:"microsoft", track:"ai",      cat:"Microsoft · AI Builder",title:"الشروع في العمل باستخدام AI Builder", id:"1dqzm3q28kuwVXLdlG1TMKCVsrBhsMmw4" },
+    { group:"microsoft", track:"trainer", cat:"Microsoft · تدريب",     title:"اكتشف فوائد أن تصبح مدربًا للمعلمين لدى Microsoft", id:"1sHryLtaZVimGeabj2THYPWxbqp1fRlXi" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"إدارة التطبيقات والروبوتات والموصلات في Microsoft Teams", id:"1vhnD4OC_uX5RaA6dHsPht57sJNpvVamm" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"إدارة اجتماعات Microsoft Teams وتأمينها", id:"18CCt3PSZ2TBLCtzIXEI2yvKCjK3tss3Z" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"إدارة الاجتماعات والمؤتمرات والأحداث باستخدام Microsoft Teams", id:"1KpJBBNrZaam7EUwF3aBl7ozMvUWn7rFi" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"إدارة تعاون الفريق باستخدام Microsoft Teams", id:"1cOusX4mZbwRijjX0TuN-xLJdAs1valLC" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"نشر الاجتماعات باستخدام Microsoft Teams", id:"1uBX3agIO0kkfGCTgPycca4WMDCIz3ny2" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"خطط لنشر اجتماعات Teams الخاصة بك", id:"1wG8zbE-JJdlALX36oHhLIa_mIav3N0mI" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"نشر Microsoft Teams", id:"1_C-GdFe_HLfVXdOj-A0gErYN8LYXaWXC" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft Teams",       title:"إدارة Microsoft Teams", id:"1Vb2ns47r--sOjYKKeiZ7IQC9ZmAyE5F5" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft 365",         title:"الاستعداد لنشر Teams باستخدام Microsoft 365 (1)", id:"1tR0O-XP-S2Kjm8LqrfG1mwCAeoZU6bwF" },
+    { group:"microsoft", track:"teams",   cat:"Microsoft 365",         title:"الاستعداد لنشر Teams باستخدام Microsoft 365 (2)", id:"1KsAJcZlsBR_9C6GWWpC1YfiR6fkK5mvG" },
+    { group:"microsoft", track:"data",    cat:"Microsoft Dataverse",   title:"مقدمة إلى التطبيقات المعتمدة على النماذج و Microsoft Dataverse", id:"19CV-5t4fITYr8yOup6ObNyb7fO9awNGU" },
+    { group:"microsoft", track:"data",    cat:"Microsoft Dataverse",   title:"إنشاء جداول في Dataverse", id:"13HM6yLSfHadUNrZ_VAz5JzwrFJ6tfv8H" },
+    { group:"microsoft", track:"data",    cat:"Microsoft Office",      title:"مقدمة حول تخصيص عميل Office باستخدام الوظائف الإضافية", id:"15LkPpMJ4WXyiJ8eEwxxJ1hjiEKBw5xct" }
+  ];
+  const ALL_FILES = [...DOCUMENTS, ...CERTIFICATES, ...MICROSOFT_CERTS, ...RESEARCH];
+
+  /* عرض بطاقات قسم شهادات Microsoft المتكامل */
+  const msGrid = document.getElementById('msStandaloneGrid');
+  const msSearchInput = document.getElementById('msSearchInput');
+  let activeMsTrack = 'all';
+
+  const MS_TRACK_STYLES = {
+    ai:      { bg:'rgba(0,164,239,.18)', fg:'#38bdf8', bd:'rgba(0,164,239,.42)' },
+    teams:   { bg:'rgba(96,165,250,.18)', fg:'#93c5fd', bd:'rgba(96,165,250,.42)' },
+    data:    { bg:'rgba(127,186,0,.18)', fg:'#a3e635', bd:'rgba(127,186,0,.42)' },
+    trainer: { bg:'rgba(255,185,0,.20)', fg:'#fbbf24', bd:'rgba(255,185,0,.45)' }
+  };
+
+  function renderStandaloneMsCerts() {
+    if (!msGrid) return;
+    const q = (msSearchInput?.value || '').trim();
+    const list = MICROSOFT_CERTS
+      .map((item, idx) => ({ ...item, num: String(idx + 1).padStart(2, '0') }))
+      .filter(item => (activeMsTrack === 'all' || item.track === activeMsTrack) && (!q || item.title.includes(q) || item.cat.includes(q)));
+
+    msGrid.innerHTML = '';
+    list.forEach(item => {
+      const st = MS_TRACK_STYLES[item.track] || MS_TRACK_STYLES.ai;
+      const card = document.createElement('div');
+      card.className = 'ms-cert-card';
+      card.style.setProperty('--ms-tag-bg', st.bg);
+      card.style.setProperty('--ms-tag-fg', st.fg);
+      card.style.setProperty('--ms-tag-bd', st.bd);
+      card.innerHTML = `
+        <div class="ms-cert-top">
+          <span class="ms-cert-badge">${item.cat}</span>
+          <span class="ms-cert-num">${item.num} / 19</span>
+        </div>
+        <h3>${item.title}</h3>
+        <div class="ms-cert-actions">
+          <button type="button" data-preview-id="${item.id}" data-preview-title="${item.title}">${SVG_EYE}<span>معاينة الشهادة</span></button>
+          <a href="https://drive.google.com/file/d/${item.id}/view" target="_blank" rel="noopener">فتح في Drive ↗</a>
+        </div>
+      `;
+      msGrid.appendChild(card);
+    });
+  }
+
+  document.querySelectorAll('[data-ms-track]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeMsTrack = btn.dataset.msTrack;
+      document.querySelectorAll('[data-ms-track]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStandaloneMsCerts();
+    });
+  });
+  if (msSearchInput) msSearchInput.addEventListener('input', renderStandaloneMsCerts);
+  renderStandaloneMsCerts();
 
   const modal = document.getElementById('attachModal');
   const modalTitle = document.getElementById('modalTitle');
@@ -1541,6 +1865,23 @@
   function renderItems(items) {
     modalBody.innerHTML = "";
     modalCounter.textContent = `${items.length} ملف`;
+    if (activeGroup === 'microsoft') {
+      const folderBanner = document.createElement('div');
+      folderBanner.className = 'doc-item';
+      folderBanner.style.gridColumn = '1 / -1';
+      folderBanner.style.flexDirection = 'row';
+      folderBanner.style.alignItems = 'center';
+      folderBanner.style.justifyContent = 'space-between';
+      folderBanner.style.flexWrap = 'wrap';
+      folderBanner.innerHTML = `
+        <div>
+          <span class="doc-badge">مجلد Google Drive الرسمي</span>
+          <h4 style="margin-top:6px;">مجلد شهادات Microsoft المعتمدة (19 شهادة)</h4>
+        </div>
+        <a href="${MICROSOFT_FOLDER_URL}" target="_blank" rel="noopener" class="btn-primary" style="padding:8px 16px;font-size:.85rem;">فتح المجلد الكامل على Drive ↗</a>
+      `;
+      modalBody.appendChild(folderBanner);
+    }
     items.forEach(item => {
       const card = document.createElement('div');
       card.className = 'doc-item';
@@ -1566,10 +1907,10 @@
     modalSearchBar.style.display = 'flex';
     modalSearchInput.value = '';
     activeGroup = type;
-    const titles = { documents:'الوثائق الرسمية والمؤهلات', research:'الأبحاث والتقارير العلمية', certificates:'الشهادات والدورات التدريبية', all:'جميع المرفقات والشواهد الموثقة' };
+    const titles = { documents:'الوثائق الرسمية والمؤهلات', research:'الأبحاث والتقارير العلمية', certificates:'الشهادات والدورات التدريبية', microsoft:'شهادات التدريب والاعتماد من Microsoft (19)', all:'جميع المرفقات والشواهد الموثقة' };
     activeGroupTitle = titles[type] || titles.all;
     modalTitle.textContent = activeGroupTitle;
-    const tabs = [{key:'all',label:'الكل (35)'},{key:'documents',label:'الوثائق (2)'},{key:'certificates',label:'الشهادات (18)'},{key:'research',label:'الأبحاث (15)'}];
+    const tabs = [{key:'all',label:'الكل (54)'},{key:'documents',label:'الوثائق (2)'},{key:'certificates',label:'الشهادات (18)'},{key:'microsoft',label:'شهادات Microsoft (19)'},{key:'research',label:'الأبحاث (15)'}];
     filterPills.innerHTML = '';
     tabs.forEach(t => {
       const b = document.createElement('button');
